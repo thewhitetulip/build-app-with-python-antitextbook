@@ -15,6 +15,7 @@ This will start the Python interpreter, which is basically an infinite loop whic
 #### Note: Hit the enter/return key twice.
 
 When you are working on the interpreter like below:
+
 	>>> if True:
 	...     print("hi")
 	...     print("another hi")
@@ -59,13 +60,19 @@ Comments are the lines in a python program which the interpreter will _ignore_. 
 2. Multi line comments:
 	Using # is great if you want to have a single line comment, but what if you want to write a comment which is spread across two or more lines? You use a multi line comment. Multi line comments are three quotes (single or double). ''' or """. They need to be closed appropriately, otherwise they result in an error.
 
-	""" This is 
-	    a multi line
-	    comment"""
+	""" 
+	This is 
+	
+	a multi line
+	
+	comment"""
 
 	'''
-  	    this is another
+  	    
+	    this is another
+	    
 	    multi line comment
+	
 	'''
 
 The location of the second ''' or """ doesn't matter, the only thing which matters is that **it should exist**. The interpreter while evaluating strings inside python will consider the value of a string **between** single quotes or double quotes.
