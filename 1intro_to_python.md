@@ -12,12 +12,21 @@ Along with this, what makes Python powerful is the presence of high level data s
 
 Python3 is the successor of Python2. In 2020 Python2 will be history. This tutorial is based on Python3 as it is the present and future of the language. The reason why they created python3 was that there were some shortcomings to the python language which weren't addressed for almost 30yrs and now, the authors decided that they should address them, while addressing them, it occurred to them that they have to create backwards incompatible changes to the language and thus python3 was created. If you write programs in Python3, there is no guarantee that it'll work in Python2, same is true vice versa, if you want your programs to work in both Python2 and Python3, then you have to write them specifically to run in both versions. It is beyond the scope of this tutorial, but you will find  lots of resources on the Internet which teach you how to write programs compatible with both versions.
 
+## Installation
+
+If you are on Windows, please go to https://python.org and download the latest .exe file of Python3. For Android, please download TermUX (https://termux.com/help.html). If you are on Mac (brew install python3), if you are on Linux, depending on your distro (apt-get install python3 or yum install python3)
+
+
 Enough theory.
 
 Let's write programs now. Make sure you have Python installed.
 
 ## Example: List all `*.txt` files
 We are going to print the list of all files which end with '.txt'.
+
+#### Note:
+
+Python doesn't use semi colons or braces for control flow of the programs, it uses **indentation**. It is mandatory to use indentation if you are using a `for`, `while`, `if` loop.
 
 ```python
 import os
