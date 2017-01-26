@@ -178,13 +178,57 @@ Sets are same as dictionaries with the following limitations
 	2
 
 
-1. duplicate entries are not allowed.
-2. sets are immutable, you can't append or delete elements to a set.
-3. sets can't have lists/dictionary/set as an element. Basically, sets can only have basic data types as elements.
+1. duplicate entries are not allowed
+1. sets can't have lists/dictionary/set as an element. Basically, sets can only have basic data types as elements.
 
 
 Try creating a list which contains a list as an element and try creating a set out of it.
 Use the `help` and `dir` to find out interesting information about sets and the methods that it allows us.	
+
+Sets allow various methods like add, copy, deepcopy, update, pop, remove.
+
+	>>> a = set() # creates a blank set
+	>>> a.add("this")
+	>>> a.add("that")
+	>>> a.add("this and that")
+	>>> a
+	{'that', 'this and that', 'this'}
+	>>> a.remove("this")
+	>>> a
+	{'that', 'this and that'}
+	>>> a.pop()
+	'that'
+	>>> a
+	{'this and that'}
+	>>> a.add("zebra")
+	>>> a
+	{'zebra', 'this and that'}
+	>>> b = set([1,2,3,4,5])
+	>>> b
+	{1, 2, 3, 4, 5}
+	>>> b = set([1,2,3,4,5])
+	>>> c = b # c and b point to the **same** set object
+	>>> c
+	{1, 2, 3, 4, 5}
+	>>> b
+	{1, 2, 3, 4, 5}
+	>>> c.add(12) # changing c changes b
+	>>> b
+	{1, 2, 3, 4, 5, 12}
+	>>> c
+	{1, 2, 3, 4, 5, 12}
+	>>>
+	>>> d = b.copy() # creates a COPY of b
+	>>> d
+	{1, 2, 3, 4, 5, 12}
+	>>> b
+	{1, 2, 3, 4, 5, 12}
+	>>> b.add(1000) # changing b does NOT change d
+	>>> b
+	{1, 2, 3, 4, 5, 1000, 12}
+	>>> d
+	{1, 2, 3, 4, 5, 12}
+
 
 ## Dictionary
 
