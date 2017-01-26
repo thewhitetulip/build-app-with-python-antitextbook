@@ -67,7 +67,7 @@ Try typing this out in an interpreter, it is better to check this in the interpr
 
 If you looked into the interpreter, you'd have seen that there are various methods for lists
 
-1. append
+## append
 
 	>>> a = []
 	>>> a.append(1)
@@ -83,9 +83,10 @@ If you looked into the interpreter, you'd have seen that there are various metho
 	>>> a
 	[1, '2', 1.11111, [1, 2, 3]]
 	
+	
 The `append` function takes **one** argument and adds it to the end of the list. If you want to merge two lists, then use `extend`
 
-2. extend
+## extend
 	
 	>>> a
 	[1, '2', 1.11111, [1, 2, 3]]
@@ -96,7 +97,7 @@ The `append` function takes **one** argument and adds it to the end of the list.
 
 here, the values of b were added individually at the end of the list `a`.
 
-3. pop
+## pop
 
 	>>> a.pop()
 	3
@@ -119,16 +120,17 @@ pop deletes the last element by default, if you pass an index, it'll delete that
 
 We are leaving the other functions as a homework. Learning a language requires self practice!
 
-4. insert
-5. copy
-6. clear
+1. insert
+1. copy
+1. clear
 
 #### Slicing
 
 Lists and strings allow you to slice elements. It is an easy way to fetch sub parts of them. For instance, if you wanted just the first three elements from the list [1,2,3,4,5], this is the syntax in Python.
 
-`# +ve indices     0,  1,  2, 3,  4`
-`# -ve indices	 -5, -4, -3,-2, -1`
+Positive Indices: 0,  1,  2, 3,  4
+
+Negative indices: -5, -4, -3,-2, -1
 
 	>>> l = [1,2,3,4,5]
 	>>> l
@@ -162,10 +164,6 @@ Slicing for strings is the same, just try that out.
 
 Sets are same as dictionaries with the following limitations
 
-1. duplicate entries are not allowed.
-2. sets are immutable, you can't append or delete elements to a set.
-3. sets can't have lists/dictionary/set as an element. Basically, sets can only have basic data types as elements.
-
 	>>> a = [1,2,3,4]
 	>>> b = set(a)
 	>>> a
@@ -178,6 +176,12 @@ Sets are same as dictionaries with the following limitations
 	<class 'list'>
 	>>> a[1]
 	2
+
+
+1. duplicate entries are not allowed.
+2. sets are immutable, you can't append or delete elements to a set.
+3. sets can't have lists/dictionary/set as an element. Basically, sets can only have basic data types as elements.
+
 
 Try creating a list which contains a list as an element and try creating a set out of it.
 Use the `help` and `dir` to find out interesting information about sets and the methods that it allows us.	
