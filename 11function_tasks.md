@@ -22,17 +22,19 @@ remove_task(index): deletes the task of index.
 
 By doing this, the main if-else ladder looks like this
 
-    if command == "add":
-        title = args[2]
-        content = args[3]
-        add_task(title, content)
-    elif command == "remove":
-        task_id = args[2]
-        remove_task(task_id)
-    elif command == "list": 
-        list_task()
-    else:
-        print("invalid command!")
+```python
+if command == "add":
+    title = args[2]
+    content = args[3]
+    add_task(title, content)
+elif command == "remove":
+    task_id = args[2]
+    remove_task(task_id)
+elif command == "list": 
+    list_task()
+else:
+    print("invalid command!")
+```
 
 Now, if we change the input from command line to say FTP, all we have to do is change the main function, write the FTP input function and call add_task, with the newly fetched title and content. Modularity is really important in programming.
 
@@ -42,13 +44,18 @@ We also do not want to write "add" every time we refer to the add command, so we
 
     ADD,REMOVE,LIST = "add","remove","list"
 
+###### Note: Magic numbers
+Constants like "add", "remove", "list" are generally called magic numbers (although, I have no clue why magic numbers, because they are neither magic nor numbers), so, it is better to have a variable defined to their name, the variable name is typically put in capital case.
+
 So, the next time we want to refer to "add", we will refer to ADD.
 
 This block also changes.
 
+```python
     if command not in (ADD,REMOVE,LIST):
         print("Invalid command\n Use %s/%s/%s"%(ADD,REMOVE,LIST))
         sys.exit(1)
+```
 
 We now try and run the code, and it works!
 
@@ -60,3 +67,5 @@ We now try and run the code, and it works!
     |-1--Finish Python book----Working on 10'th chapter-|
 
 The code looks cleaner than tasks4.py, but there is work to do! We can create a module for these three functions and reuse the file object instead of redefining the object in each function.
+
+A parting glance at the design of the functions. Each function should do _one_ thing and do it well. That way, our program is split into multiple functions which do one thing well, just like the UNIX philosophy.

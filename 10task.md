@@ -22,8 +22,10 @@ The `sys` package has the command line arguments stored into a variable called `
 
 ###### file: tasks1.py
 
-	import sys
-	print(sys.argv)
+```python
+import sys
+print(sys.argv)
+```
 
 Try running the code, you will see something like this
 
@@ -46,9 +48,11 @@ Before we get into file writing, let's print the results on the terminal, we can
 
 #### file: tasks2.py
 
-	import sys
-	for i in range(len(sys.argv)):
-	    print("%d %s"%(i, sys.argv[i]))
+```python
+import sys
+for i in range(len(sys.argv)):
+	print("%d %s"%(i, sys.argv[i]))
+```
 
 `print` allows us to have advanced printing features, rather than having to do `str` on each variable we want to print, we can use this syntax. 
 
@@ -88,22 +92,24 @@ Our application takes 3 commands, add, remove and list. The command is at index 
 
 ##### file: tasks3.py
 
-	import sys
-	args = sys.argv
-	
-	command = args[1]
+```python
+import sys
+args = sys.argv
 
-	if command not in ("add","remove","list"):
-		print("Invalid command, Use add/remove/list")
+command = args[1]
 
-	if command == "add":
-		print("adding")
-	elif command == "remove":
-		print("removing")
-	elif command == "list":
-		print("listing")
-	else:
-		print("invalid command!")
+if command not in ("add","remove","list"):
+	print("Invalid command, Use add/remove/list")
+
+if command == "add":
+	print("adding")
+elif command == "remove":
+	print("removing")
+elif command == "list":
+	print("listing")
+else:
+	print("invalid command!")
+```
 
 You'll get this output when you run the code, this is an `exception`.
 
@@ -120,11 +126,13 @@ What went wrong? we'd encourage you to figure out what went wrong, so we aren't 
 
 We didn't add a try-catch block to handle exception, so now the code looks like this.
 
+```python
 	try:
 		command = args[1]
 	except IndexError:
 		print("Invalid arguments!")
 		sys.exit(1)
+```
 	
 `exit` kills the program execution with the ID of what we pass in as an argument, 0 is successful exit, anything greater than 0 is unsuccessful exit 
 
@@ -147,9 +155,11 @@ We have handled the scenario where the user gives less input than what is requir
 
 We can see that the "invalid command" message is being repeated twice, we have to do something about that.
 
-	if command not in ("add","remove","list"):
-		print("Invalid command\n Use add/remove/list")
-		sys.exit(1)
+```python
+if command not in ("add","remove","list"):
+	print("Invalid command\n Use add/remove/list")
+	sys.exit(1)
+```
 
 We add another exit call after printing Invalid command. The reason being there is no need to go any further when we have established that the user has given us the invalid command.
 
@@ -167,8 +177,9 @@ Now, let's test the `list` command.
 Now that we have finished getting started with our menu driven program, let's go ahead and create a list. We need a variable to store the task list. When the program would be used the additions and deletions would be done on this list object, which would be written to the file when the output is required.
 
 Add this line after `args = sys.argv`
-
-	tasks = []
+```python
+tasks = []
+```
 
 This will create a variable by the name `tasks` which is visible in this file to all functions.
 
@@ -180,12 +191,17 @@ Update this block
 
 ## Listing tasks
 
-	elif command == "list":
-		if len(tasks) == 0:
-			print("there are no tasks!")
-		else:
-			for task in tasks:
-				print(task)
+```python
+# This is a snippet
+# can't have elif without parent if
+elif command == "list":
+	if len(tasks) == 0:
+		print("there are no tasks!")
+	else:
+		for task in tasks:
+			print(task)
+```
+
 
 We now simulate data, before we let the user have the ability to add a task, we will populate the task variable my ourselves.
 
@@ -195,52 +211,61 @@ update the `tasks = []` to this line, `tasks = ["title|content"]`.
 
 And the else block of len(tasks) to this
 
-       for task in tasks:
-            title, content = task.split('|')
-            print("%s %s" %(title, content))
+```python
+for task in tasks:
+	title, content = task.split('|')
+	print("%s %s" %(title, content))
+```
 
 We will now work on adding a new task. The input would be taken from the command line argument.
-
-	if command == "add":
-    	print("adding")
+```python
+if command == "add":
+	print("adding")
+```
 
 ## Adding a task
 
 This block is changed to this:
 
+```python
 	if command == "add":
 		title = args[2]
 		content = args[3]
 		task = title + content
 		tasks.append(task)
+```
 
 But changing this does nothing, this is because the `tasks` variable is stored during the runtime. It gets reset to the default variable when the program quits. We need to add file handling feature to store the task list.
 
 replace the `tasks` line to this to store an empty variable.
 
-	tasks = []
+```python
+tasks = []
+```
 
 The if-else block should look like this:
 
-	if command == "add":
-		title = args[2]
-		content = args[3]
-		task = title + content
-		file = open("tasks.txt", "a")
-		file.write(task+"\n")
-		file.close()
-	elif command == "remove":
-		print("removing")
-	elif command == "list":
-		file = open("tasks.txt", "r")
-		tasks = file.readlines()
-		if len(tasks) == 0:
-			print("there are no tasks!")
-		else:
-			for task in tasks:
-				title, content = task.split('|')
-				print("%s %s" %(title, content))
-		file.close()
+```python
+if command == "add":
+	title = args[2]
+	content = args[3]
+	task = title + content
+	file = open("tasks.txt", "a")
+	file.write(task+"\n")
+	file.close()
+elif command == "remove":
+	print("removing")
+elif command == "list":
+	file = open("tasks.txt", "r")
+	tasks = file.readlines()
+	if len(tasks) == 0:
+		print("there are no tasks!")
+	else:
+		for task in tasks:
+			title, content = task.split('|')
+			print("%s %s" %(title, content))
+	file.close()
+```
 
 ## Our first bug!
 
@@ -254,12 +279,14 @@ If you run this file, you'll get an IOError saying that tasks.txt doesn't exist.
 
 In the elif block of list, we make the following modifications:
 
-    try:
-        file = open("tasks.txt", "r")
-    except IOError as e:
-        print(str(e))
-        sys.exit(1)
-    tasks = file.readlines()
+```python
+try:
+	file = open("tasks.txt", "r")
+except IOError as e:
+	print(str(e))
+	sys.exit(1)
+tasks = file.readlines()
+```
 
 Now when we run the code, 
 
@@ -284,7 +311,10 @@ We don't have a | character between the title and content! We did a mistake when
 
 We need to do this, instead of `task = title + content`.
 
-		task = title + "|" + content
+
+```python
+task = title + "|" + content
+```
 
 This is the output now
 
@@ -307,60 +337,64 @@ You can see that the output of the list command isn't particularly good, so let'
 
 Replace the else block of `if len(tasks)==0` by this.
 
-	print("|-----%s----%s----|"%("title", "content"))	
-	tasks = [task.strip() for task in tasks]
-	for task in tasks:
-		title, content = task.split('|')
-		print("|-%s----%s-|" %(title, content))
+```python
+print("|-----%s----%s----|"%("title", "content"))	
+tasks = [task.strip() for task in tasks]
+for task in tasks:
+	title, content = task.split('|')
+	print("|-%s----%s-|" %(title, content))
+```
 
 Format specifiers enable us to control the layout of the print, we encourage you to try various things out.
 
 The final code should look like this.
 
-	import sys
+```python
+import sys
 
-	args = sys.argv
+args = sys.argv
 
-	tasks = []
+tasks = []
 
+try:
+	command = args[1]
+except IndexError:
+	print("Invalid arguments!")
+	sys.exit(1)
+
+if command not in ("add","remove","list"):
+	print("Invalid command\n Use add/remove/list")
+	sys.exit(1)
+
+
+if command == "add":
+	title = args[2]
+	content = args[3]
+	task = title + "|" + content
+	file = open("tasks.txt", "a")
+	file.write(task+"\n")
+	file.close()
+elif command == "remove":
+	print("removing")
+elif command == "list":
 	try:
-		command = args[1]
-	except IndexError:
-		print("Invalid arguments!")
+		file = open("tasks.txt", "r")
+	except IOError as e:
+		print(str(e))
 		sys.exit(1)
-
-	if command not in ("add","remove","list"):
-		print("Invalid command\n Use add/remove/list")
-		sys.exit(1)
-
-
-	if command == "add":
-		title = args[2]
-		content = args[3]
-		task = title + "|" + content
-		file = open("tasks.txt", "a")
-		file.write(task+"\n")
-		file.close()
-	elif command == "remove":
-		print("removing")
-	elif command == "list":
-		try:
-			file = open("tasks.txt", "r")
-		except IOError as e:
-			print(str(e))
-			sys.exit(1)
-		tasks = file.readlines()
-		if len(tasks) == 0:
-			print("there are no tasks!")
-		else:
-			print("|-----%s----%s----|"%("title", "content"))
-			tasks = [task.strip() for task in tasks]
-			for task in tasks:
-				title, content = task.split('|')
-				print("|-%s----%s-|" %(title, content))
-		file.close()
+	tasks = file.readlines()
+	if len(tasks) == 0:
+		print("there are no tasks!")
 	else:
-		print("invalid command!")
+		print("|-----%s----%s----|"%("title", "content"))
+		tasks = [task.strip() for task in tasks]
+		for task in tasks:
+			title, content = task.split('|')
+			print("|-%s----%s-|" %(title, content))
+	file.close()
+else:
+	print("invalid command!")
+```
 
 ## Removing tasks
 
@@ -372,20 +406,24 @@ We first need to modify the way we represent our tasks to the user, instead of s
 
 We can't loop like `for task in tasks`, we need to loop using `range`, `for i in range(len(tasks))` is the way to go. The only difference is that we have to then fetch the task as `tasks[i]` rather than just `task`, because now, there is no such variable as `task`.
 
-    else:
-        print("|-%s----%s----%s----|"%("index", "title", "content"))
-        tasks = [task.strip() for task in tasks]
-        for i in range(len(tasks)):
-            title, content = tasks[i].split('|')
-            print("|-%d--%s----%s-|" %(i, title, content))
+```python
+## Snippet, else can't exist without parent if
+else:
+	print("|-%s----%s----%s----|"%("index", "title", "content"))
+	tasks = [task.strip() for task in tasks]
+	for i in range(len(tasks)):
+		title, content = tasks[i].split('|')
+		print("|-%d--%s----%s-|" %(i, title, content))
+```
 
 In the actual delete block, we will use the del keyword which will simplify our task greatly.
 
-	elif command == "remove":
-	    task_id = args[2]
-	    del tasks[task_id]
-
-
+```python
+# Snippet
+elif command == "remove":
+	task_id = args[2]
+	del tasks[task_id]
+```
 	ch10 python3 tasks4.py remove 0
 	Traceback (most recent call last):
 	  File "tasks4.py", line 27, in <module>
@@ -399,22 +437,27 @@ We can see that "list indices must be integers" is the error we got for the del 
 
 We also need to read the file, for each instance, we read the file or appended it as required.
 
-	del tasks[int(task_id)]
+```python
+del tasks[int(task_id)]
+```
 
 Now try running the code.
 
 We just copy pasted the file opening syntax.
 
-	elif command == "remove":
-	    try:
-		file = open("tasks.txt", "r")
-	    except IOError as e:
-		print(str(e))
-		sys.exit(1)
-	    tasks = file.readlines()
-	    tasks = [task.strip() for task in tasks]
-	    task_id = args[2]
-	    del tasks[int(task_id)]
+```python
+## snippet
+elif command == "remove":
+	try:
+	file = open("tasks.txt", "r")
+	except IOError as e:
+	print(str(e))
+	sys.exit(1)
+	tasks = file.readlines()
+	tasks = [task.strip() for task in tasks]
+	task_id = args[2]
+	del tasks[int(task_id)]
+```
 
 Output:
 

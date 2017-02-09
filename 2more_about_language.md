@@ -16,10 +16,12 @@ This will start the Python interpreter, which is basically an infinite loop whic
 
 When you are working on the interpreter like below:
 
-	>>> if True:
-	...     print("hi")
-	...     print("another hi")
-	...
+```python
+>>> if True:
+...     print("hi")
+...     print("another hi")
+...
+```
 
 You need to hit the Enter or Return key **twice** to come out of the if block. You should see the `...` on the line and just hit enter again and the statement would be evaluated.
 
@@ -33,10 +35,12 @@ You can easily run any large python program using just the interpreter without s
 
 The other way, is to save everything to a file. Type the following code inside a text file and save it as `file.py`.
 
-	import os
-	files = os.listdir()
-	for file in files:
-	    print(file)
+```python
+import os
+files = os.listdir()
+for file in files:
+	print(file)
+```
 
 After saving the code in `file.py`, you'll have to `cd` to that directory inside your terminal.
 
@@ -60,20 +64,22 @@ Comments are the lines in a python program which the interpreter will _ignore_. 
 2. Multi line comments:
 	Using # is great if you want to have a single line comment, but what if you want to write a comment which is spread across two or more lines? You use a multi line comment. Multi line comments are three quotes (single or double). ''' or """. They need to be closed appropriately, otherwise they result in an error.
 
-	""" 
-	This is 
-	
-	a multi line
-	
-	comment"""
+```python
+""" 
+This is 
 
-	'''
-  	    
-	    this is another
-	    
-	    multi line comment
+a multi line
+
+comment"""
+
+'''
 	
-	'''
+	this is another
+	
+	multi line comment
+
+'''
+```
 
 The location of the second ''' or """ doesn't matter, the only thing which matters is that **it should exist**. The interpreter while evaluating strings inside python will consider the value of a string **between** single quotes or double quotes.
 
@@ -89,25 +95,29 @@ Doing this is a syntax error, '"sherlock", because it starts with a single quote
 
 Python uses indentation as a part of the syntax. C/Java use braces `{`. In those languages, indentation is just a good practice that programmers are encouraged to follow. In python, indentation is the necessity, you can't write programs if you don't indent them properly.
 
-
-	if a > 1:
-	    print("In the scope of the IF block")
-	    print("In the scope of the IF block")
-	    print("In the scope of the IF block")
-	    print("In the scope of the IF block")
-	print("not in the scope of the IF block")
-	print("not in the scope of the IF block")
-
+```python
+if a > 1:
+	print("In the scope of the IF block")
+	print("In the scope of the IF block")
+	print("In the scope of the IF block")
+	print("In the scope of the IF block")
+print("not in the scope of the IF block")
+print("not in the scope of the IF block")
+```
 
 While evaluating the above if loop, this is how Python works.
 
-	if a > 1:
-	[   ]print("In the scope of the IF block")
-	[   ]print("In the scope of the IF block")
-	[   ]print("In the scope of the IF block")
-	[   ]print("In the scope of the IF block")
-	print("not in the scope of the IF block")
-	print("not in the scope of the IF block")
+*This block isn't syntax highlighted intentionally.*
+
+```python
+if a > 1:
+[   ]print("In the scope of the IF block")
+[   ]print("In the scope of the IF block")
+[   ]print("In the scope of the IF block")
+[   ]print("In the scope of the IF block")
+print("not in the scope of the IF block")
+print("not in the scope of the IF block")
+```
 
 1. Does the statement equire scoping (for, if, while, elif, else). Typically these statements have a colon at the end.
 1. Calculate the number of spaces in the immediate second line. In this example, it is `four spaces`. The first `[]` block.
@@ -116,28 +126,30 @@ While evaluating the above if loop, this is how Python works.
 
 Having indentation **without** a if/for/while/elif block is a syntax error, for instance, you can't do the following:
 
-    if a > 1:
-        print("hi")
-    print("bye")
-        print("hi")
+```python
+if a > 1:
+	print("hi")
+print("bye")
+	print("hi")
+```
 
 This statement results in a syntax error, because the interpreter can't resolve which block the last print statement fits under. The first print statement is in the IF block, the second statement is NOT in the if block and the third statement is an orphan, hence it is a syntax error.
 
 We can have nested loops or structures like this
 
-	if a > 1:
-		if b < 1:
-			print(" b is less than 1")
-		print("a is greater than 1")
-	print("This is not in either of the above blocks")
-
+```python
+if a > 1:
+	if b < 1:
+		print(" b is less than 1")
+	print("a is greater than 1")
+print("This is not in either of the above blocks")
+```
 
 #### Spaces vs tabs
 
 Indentation can be either done with spaces or tabs, there is no hard and fast rule, but if you choose one, please stick to it till the end, if you mix them, then it is a human error.
 
 Standard is to use four spaces.
-
 
 	if a > 1:
 	[	]if b < 1:

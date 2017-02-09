@@ -9,16 +9,18 @@ Lists store multiple values in Python. Lists allow you to store values of any da
 You can access elements of the list by using indices, 0,1,2,3. Indices always start with a 0 in Python. python also allows you negative indices, in that case, the values are returned in reverse order.
 
 
-	l = [] # creates an empty list
-	l = [1,2,3] # a list with values 1,2,3
-	l = [1,2,3, 'sh', 'bm'] # a list contains 
-	l = [1,2,3, [1,2,3]] # A list which contains a list as a member
-	l = [ 1,1,1,1,1,1,1 ] # lists allow duplicates
+```python
+l = [] # creates an empty list
+l = [1,2,3] # a list with values 1,2,3
+l = [1,2,3, 'sh', 'bm'] # a list contains 
+l = [1,2,3, [1,2,3]] # A list which contains a list as a member
+l = [ 1,1,1,1,1,1,1 ] # lists allow duplicates
 
-	print(l[0]) # first value
-	print(l[1]) # second value
-	print(l[-1]) # last value
-	print(l[-2]) # second last value
+print(l[0]) # first value
+print(l[1]) # second value
+print(l[-1]) # last value
+print(l[-2]) # second last value
+```
 
 Lists are very powerful in Python, together with Sets and Dictionaries, they make Python a very powerful language.
 
@@ -42,22 +44,24 @@ There are two ways to get help in Python, `help` or `dir`.
 
 Both help and dir don't care if you pass an empty object, for instance, if you want help for the string data type, pass '', if you pass 'hello', then also you get the same output, the reason for that is, whatever you pass to help and dir, the functions return **help for the class of that object**.
 
-	>>> help('')
-	Help on class str in module builtins:
+```python
+>>> help('')
+Help on class str in module builtins:
 
-	class str(object)
-	 |  str(object='') -> str
-	 |  str(bytes_or_buffer[, encoding[, errors]]) -> str
-	 |
-	 |  Create a new string object from the given object. If encoding or
-	 |  errors is specified, then the object must expose a data buffer
-	 |  that will be decoded using the given encoding and error handler.
-	 |  Otherwise, returns the result of object.__str__() (if defined)
-	 |  or repr(object).
+class str(object)
+	|  str(object='') -> str
+	|  str(bytes_or_buffer[, encoding[, errors]]) -> str
+	|
+	|  Create a new string object from the given object. If encoding or
+	|  errors is specified, then the object must expose a data buffer
+	|  that will be decoded using the given encoding and error handler.
+	|  Otherwise, returns the result of object.__str__() (if defined)
+	|  or repr(object).
 
-	
-	>>> dir('')
-	['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+>>> dir('')
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+```
 
 By making use of `dir` and `help`, we can get help in a better way in Python.
 
@@ -69,53 +73,61 @@ If you looked into the interpreter, you'd have seen that there are various metho
 
 ## append
 
-	>>> a = []
-	>>> a.append(1)
-	>>> a
-	[1]
-	>>> a.append("2")
-	>>> a
-	[1, '2']
-	>>> a.append(1.11111)
-	>>> a
-	[1, '2', 1.11111]
-	>>> a.append([1,2,3])
-	>>> a
-	[1, '2', 1.11111, [1, 2, 3]]
+```python
+>>> a = []
+>>> a.append(1)
+>>> a
+[1]
+>>> a.append("2")
+>>> a
+[1, '2']
+>>> a.append(1.11111)
+>>> a
+[1, '2', 1.11111]
+>>> a.append([1,2,3])
+>>> a
+[1, '2', 1.11111, [1, 2, 3]]
+```
 	
 	
 The `append` function takes **one** argument and adds it to the end of the list. If you want to merge two lists, then use `extend`
 
 ## extend
-	
-	>>> a
-	[1, '2', 1.11111, [1, 2, 3]]
-	>>> b = [1,2,3]
-	>>> a.extend(b)
-	>>> a
-	[1, '2', 1.11111, [1, 2, 3], 1, 2, 3]
+
+```python
+>>> a
+[1, '2', 1.11111, [1, 2, 3]]
+>>> b = [1,2,3]
+>>> a.extend(b)
+>>> a
+[1, '2', 1.11111, [1, 2, 3], 1, 2, 3]
+```	
 
 here, the values of b were added individually at the end of the list `a`.
 
 ## pop
 
-	>>> a.pop()
-	3
-	>>> a.pop()
-	2
-	>>> a
-	[1, '2', 1.11111, [1, 2, 3], 1]
+```python
+>>> a.pop()
+3
+>>> a.pop()
+2
+>>> a
+[1, '2', 1.11111, [1, 2, 3], 1]
+```
 
 pop deletes the last element by default, if you pass an index, it'll delete that element and return it's value.
 
-	>>> a
-	[1, '2', 1.11111, [1, 2, 3], 1]
-	>>> a.pop(0)
-	1
-	>>> a
-	['2', 1.11111, [1, 2, 3], 1]
-	>>> a[1]
-	1.11111
+```python
+>>> a
+[1, '2', 1.11111, [1, 2, 3], 1]
+>>> a.pop(0)
+1
+>>> a
+['2', 1.11111, [1, 2, 3], 1]
+>>> a[1]
+1.11111
+```
 
 
 We are leaving the other functions as a homework. Learning a language requires self practice!
@@ -132,29 +144,31 @@ Positive Indices: 0,  1,  2, 3,  4
 
 Negative indices: -5, -4, -3,-2, -1
 
-	>>> l = [1,2,3,4,5]
-	>>> l
-	[1, 2, 3, 4, 5]
-	>>> l[0:3] # from 0 till 2nd element
-	[1, 2, 3]
-	>>> l[1:3] # new list starting from 1 till 2nd element
-	[2, 3]
-	>>> l[-1:] # last element
-	[5]
-	>>> l[0:-1] # new list from 0 excluding last element
-	[1, 2, 3, 4]
-	>>> l[0:-2] # new list starting from 0 till second last element
-	[1, 2, 3]
-	>>> l[::-1] # returns a new list with values reversed
-	[5, 4, 3, 2, 1]
-	>>> for i in l:
-	...     print(i)
-	...
-	1
-	2
-	3
-	4
-	5
+```python
+>>> l = [1,2,3,4,5]
+>>> l
+[1, 2, 3, 4, 5]
+>>> l[0:3] # from 0 till 2nd element
+[1, 2, 3]
+>>> l[1:3] # new list starting from 1 till 2nd element
+[2, 3]
+>>> l[-1:] # last element
+[5]
+>>> l[0:-1] # new list from 0 excluding last element
+[1, 2, 3, 4]
+>>> l[0:-2] # new list starting from 0 till second last element
+[1, 2, 3]
+>>> l[::-1] # returns a new list with values reversed
+[5, 4, 3, 2, 1]
+>>> for i in l:
+...     print(i)
+...
+1
+2
+3
+4
+5
+```
 
 It is this simple to loop through a list or set. **On an interpreter, you have to hit enter twice before the expression is evaluated.**
 
@@ -164,6 +178,7 @@ Slicing for strings is the same, just try that out.
 
 Sets are same as dictionaries with the following limitations
 
+```python
 	>>> a = [1,2,3,4]
 	>>> b = set(a)
 	>>> a
@@ -176,6 +191,7 @@ Sets are same as dictionaries with the following limitations
 	<class 'list'>
 	>>> a[1]
 	2
+```
 
 
 1. duplicate entries are not allowed
@@ -187,47 +203,49 @@ Use the `help` and `dir` to find out interesting information about sets and the 
 
 Sets allow various methods like add, copy, deepcopy, update, pop, remove.
 
-	>>> a = set() # creates a blank set
-	>>> a.add("this")
-	>>> a.add("that")
-	>>> a.add("this and that")
-	>>> a
-	{'that', 'this and that', 'this'}
-	>>> a.remove("this")
-	>>> a
-	{'that', 'this and that'}
-	>>> a.pop()
-	'that'
-	>>> a
-	{'this and that'}
-	>>> a.add("zebra")
-	>>> a
-	{'zebra', 'this and that'}
-	>>> b = set([1,2,3,4,5])
-	>>> b
-	{1, 2, 3, 4, 5}
-	>>> b = set([1,2,3,4,5])
-	>>> c = b # c and b point to the **same** set object
-	>>> c
-	{1, 2, 3, 4, 5}
-	>>> b
-	{1, 2, 3, 4, 5}
-	>>> c.add(12) # changing c changes b
-	>>> b
-	{1, 2, 3, 4, 5, 12}
-	>>> c
-	{1, 2, 3, 4, 5, 12}
-	>>>
-	>>> d = b.copy() # creates a COPY of b
-	>>> d
-	{1, 2, 3, 4, 5, 12}
-	>>> b
-	{1, 2, 3, 4, 5, 12}
-	>>> b.add(1000) # changing b does NOT change d
-	>>> b
-	{1, 2, 3, 4, 5, 1000, 12}
-	>>> d
-	{1, 2, 3, 4, 5, 12}
+```python
+>>> a = set() # creates a blank set
+>>> a.add("this")
+>>> a.add("that")
+>>> a.add("this and that")
+>>> a
+{'that', 'this and that', 'this'}
+>>> a.remove("this")
+>>> a
+{'that', 'this and that'}
+>>> a.pop()
+'that'
+>>> a
+{'this and that'}
+>>> a.add("zebra")
+>>> a
+{'zebra', 'this and that'}
+>>> b = set([1,2,3,4,5])
+>>> b
+{1, 2, 3, 4, 5}
+>>> b = set([1,2,3,4,5])
+>>> c = b # c and b point to the **same** set object
+>>> c
+{1, 2, 3, 4, 5}
+>>> b
+{1, 2, 3, 4, 5}
+>>> c.add(12) # changing c changes b
+>>> b
+{1, 2, 3, 4, 5, 12}
+>>> c
+{1, 2, 3, 4, 5, 12}
+>>>
+>>> d = b.copy() # creates a COPY of b
+>>> d
+{1, 2, 3, 4, 5, 12}
+>>> b
+{1, 2, 3, 4, 5, 12}
+>>> b.add(1000) # changing b does NOT change d
+>>> b
+{1, 2, 3, 4, 5, 1000, 12}
+>>> d
+{1, 2, 3, 4, 5, 12}
+```
 
 
 ## Dictionary
@@ -236,37 +254,46 @@ Dictionaries are key value pairs. When you use an array, they are indexed starti
 
 Before we go any further, we recommend you to read the `help` and `dir` output of `{}`, this is an empty dictionary object. type `help({})`
 
-	>>> a = {} # creates an empty dictionary
-	>>> a
-	{}
-	>>> a["IN"] = "India" # creates a new key value pair
-	>>> a
-	{'IN': 'India'}
-	>>> a["US"] = "United States of America" # new key value pair
-	>>> a
-	{'IN': 'India', 'US': 'United States of America'}
-	>>> a["ES"] = "Espanol"
-	>>> a
-	{'IN': 'India', 'US': 'United States of America', 'ES': 'Espanol'}
-	>>> a["IN"] # returns the value of "IN" key.
-	'India'
+```python
+>>> a = {} # creates an empty dictionary
+>>> a
+{}
+>>> a["IN"] = "India" # creates a new key value pair
+>>> a
+{'IN': 'India'}
+>>> a["US"] = "United States of America" # new key value pair
+>>> a
+{'IN': 'India', 'US': 'United States of America'}
+>>> a["ES"] = "Espanol"
+>>> a
+{'IN': 'India', 'US': 'United States of America', 'ES': 'Espanol'}
+>>> a["IN"] # returns the value of "IN" key.
+'India'
+```
 
 Dictionaries do not support slicing.
 
-	>>> a.keys()
-	dict_keys(['IN', 'US', 'ES'])
-	>>> a.values()
-	dict_values(['India', 'United States of America', 'Espanol'])
+```python
+>>> a.keys()
+dict_keys(['IN', 'US', 'ES'])
+>>> a.values()
+dict_values(['India', 'United States of America', 'Espanol'])
+```
 
 `keys` and `values` are two functions which return all the keys and values of the dictionary object. Since we can't use `for i in ` syntax to loop over dictionaries, we have to do this
 
-	>>> for i in a.keys():
-	...     print(i, ":", a[i])
-	...
-	IN : India
-	US : United States of America
-	ES : Espanol
+
+
+```python
+>>> for i in a.keys():
+...     print(i, ":", a[i])
+...
+IN : India
+US : United States of America
+ES : Espanol
+```
 
 We encourage you to try which elements are not acceptable as keys inside dictionaries. Value fields can have anything, but there are restrictions on the keys.
 
 We also encourage you to try out everything we did in this chapter, again! (on strings too)
+
