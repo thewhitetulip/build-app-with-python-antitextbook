@@ -1,13 +1,13 @@
 # Build applications in Python the anti-textbook
 
-This tutorial aims to teach Python3 via example. It accompanies the [YouTube series](https://www.youtube.com/playlist?list=PL41psiCma00wwvtQyLFMFpzWxUYmSZwZy).
+This tutorial aims to teach Python3 via example. It accompanies the [YouTube series](https://www.youtube.com/playlist?list=PL41psiCma00wwvtQyLFMFpzWxUYmSZwZy), the [code](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook) accompanies this tutorial.
 
 ## Background
 This tutorial is the culmination of the Python trainings I have given in the past. As I took the trainings, I found out that a lot of newcomers coming to Python are overwhelmed by the existing tutorials and books.
 
 There are many guides for Python, but I never did find a guide which explained me by example and didn't overwhelm me with everything. As someone said, "If your dream book hasn't been written, write it!", hence I started to write this guide. 
 
-I don't profess that I am an expert in Python, I am having decent knowledge of it, I just happen to LOVE Python, it has made me a better programmer and a better person, there was a time when I used to wish for having access to my home in Python, I could do, home.find("remote")and get the location of my tv remote :-D (I don't own or watch TV, but you get the point). Since this tutorial is open source on (Github)[], my mistakes can be rectified!
+I don't profess that I am an expert in Python, I am having decent knowledge of it, I just happen to LOVE Python, it has made me a better programmer and a better person, there was a time when I used to wish for having access to my home in Python, I could do, home.find("remote")and get the location of my tv remote :-D (I don't own or watch TV, but you get the point). Since this tutorial is open source on [Github](https://github.com/thewhitetulip/build-app-with-python-antitextbook) along with the [code](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook), my mistakes can be rectified!
 
 It was my dream to write a tutorial on Python ever since I got introduced to the language, purely by accident some six years ago. Finally, I was able to write it! 
 
