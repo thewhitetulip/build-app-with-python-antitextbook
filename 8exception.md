@@ -62,5 +62,5 @@ Of course, you can pick up something other than the Exception class. If you want
 
 ##### Links
 
-|[Next](9functions.md) | [Previous](7.2examples.md) | 
-| ----| ----| 
+|[Next](9functions.md) | [Previous](7.2examples.md) |  [Index](SUMMARY.md)
+| ----| ----| ----| 

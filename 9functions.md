@@ -60,5 +60,5 @@ But, if you are returning multiple values in a function, then you need to take s
 
 ##### Links
 
-|[Next](10task.md) | [Previous](8exception.md) | 
-| ----| ----| 
+|[Next](10task.md) | [Previous](8exception.md) |  [Index](SUMMARY.md)
+| ----| ----| ----| 

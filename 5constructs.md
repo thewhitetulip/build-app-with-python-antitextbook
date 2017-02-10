@@ -171,5 +171,5 @@ We encourage you to read more about the `range` function. Please **do not use th
 
 ##### Links
 
-|[Next](7.0filehandling.md) | [Previous](4listsetdict.md) | 
-| ----| ----| 
+|[Next](7.0filehandling.md) | [Previous](4listsetdict.md) |  [Index](SUMMARY.md)
+| ----| ----| ----| 

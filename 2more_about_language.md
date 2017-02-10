@@ -169,5 +169,5 @@ When you have two layers of indentation, this is called nesting. You can have as
 
 ##### Links
 
-|[Next](3.1understanding_variables.md) | [Previous](1intro_to_python.md) | 
-| ----| ----| 
+|[Next](3.1understanding_variables.md) | [Previous](1intro_to_python.md) |  [Index](SUMMARY.md)
+| ----| ----| ----| 

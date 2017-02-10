@@ -471,5 +471,5 @@ We have a fully working todo list manager as of now, what we need to do, is to r
 
 ##### Links
 
-|[Next](11function_tasks.md) | [Previous](9functions.md) | 
-| ----| ----| 
+|[Next](11function_tasks.md) | [Previous](9functions.md) |  [Index](SUMMARY.md)
+| ----| ----| ----| 

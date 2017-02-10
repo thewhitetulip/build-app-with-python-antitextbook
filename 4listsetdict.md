@@ -303,5 +303,5 @@ We also encourage you to try out everything we did in this chapter, again! (on s
 
 ##### Links
 
-|[Next](5constructs.md) | [Previous](3.2operators.md) | 
-| ----| ----| 
+|[Next](5constructs.md) | [Previous](3.2operators.md) |  [Index](SUMMARY.md)
+| ----| ----| ----| 
