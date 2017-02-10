@@ -59,3 +59,8 @@ except Exception as e:
 ```
 
 Of course, you can pick up something other than the Exception class. If you want to handle some specific scenario like FileNotFoundError, use it instead of the Exception as e class. When you use `Exception as e`, you get the exception thrown by the code into an object `e`, you can print the object or write it to a file. If you don't care for that, just use `except Exception:`, skip the `as e`.
+
+##### Links
+
+|[Next](9functions.md) | [Previous](7.2examples.md) | 
+| ----| ----| 

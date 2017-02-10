@@ -63,3 +63,8 @@ Exercise:
 
 1. Write a program to print all `*.csv` files, create multiple `.csv` files first.
 1. Install ipython using easy_install or pip. Be careful about the version of pip you use.
+
+##### Links
+
+|[Next](2more_about_language.md) | [Previous](README.md) | 
+| ----| ----| 

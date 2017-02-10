@@ -301,3 +301,7 @@ We encourage you to try which elements are not acceptable as keys inside diction
 
 We also encourage you to try out everything we did in this chapter, again! (on strings too)
 
+##### Links
+
+|[Next](5constructs.md) | [Previous](3.2operators.md) | 
+| ----| ----| 

@@ -57,3 +57,8 @@ def add(name, mode):
 ```
 
 But, if you are returning multiple values in a function, then you need to take special care in the programs which use such functions.
+
+##### Links
+
+|[Next](10task.md) | [Previous](8exception.md) | 
+| ----| ----| 

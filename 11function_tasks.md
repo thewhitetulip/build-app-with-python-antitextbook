@@ -69,3 +69,8 @@ We now try and run the code, and it works!
 The code looks cleaner than tasks4.py, but there is work to do! We can create a module for these three functions and reuse the file object instead of redefining the object in each function.
 
 A parting glance at the design of the functions. Each function should do _one_ thing and do it well. That way, our program is split into multiple functions which do one thing well, just like the UNIX philosophy.
+
+##### Links
+
+|[Next](12modules_tasks.md) | [Previous](10task.md) | 
+| ----| ----| 

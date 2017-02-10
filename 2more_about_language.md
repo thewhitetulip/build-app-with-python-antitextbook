@@ -167,3 +167,7 @@ You can understand scoping better if you think in terms of blocks. In the above 
 
 When you have two layers of indentation, this is called nesting. You can have as many nesting blocks as you want, typically, it isn't recommended to go beyond four or five.
 
+##### Links
+
+|[Next](3.1understanding_variables.md) | [Previous](1intro_to_python.md) | 
+| ----| ----| 

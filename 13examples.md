@@ -47,3 +47,8 @@ name,science,math,history
 tony,12,12,12
 antony,13,13,13
 bantony,14,14,14
+
+##### Links
+
+| [Previous](12modules_tasks.md) | 
+| ----| 

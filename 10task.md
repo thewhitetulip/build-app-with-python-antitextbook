@@ -468,3 +468,8 @@ Output:
 We do not print confirmation like "task deleted", "task added", it can be added. But we are following the philosophy of "no message = no error message", thus we skipped that. If something goes wrong, our program complains, if everything goes wrong, we say nothing.
 
 We have a fully working todo list manager as of now, what we need to do, is to reduce the redundancy. That'll be undertaken in the next chapter.
+
+##### Links
+
+|[Next](11function_tasks.md) | [Previous](9functions.md) | 
+| ----| ----| 

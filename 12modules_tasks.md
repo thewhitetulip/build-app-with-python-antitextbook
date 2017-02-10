@@ -97,3 +97,8 @@ To check the value of `__name__`, add
         print("this is some print statement")
 
 At the bottom of `tasks.py` NOT in the if block, if you add it to the if block then it won't be executed unless the file was executed.
+
+##### Links
+
+|[Next](13examples.md) | [Previous](11function_tasks.md) | 
+| ----| ----| 

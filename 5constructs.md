@@ -168,3 +168,8 @@ For instance, in the above if-else block, you really don't know what logic you a
 5. with 
 
 We encourage you to read more about the `range` function. Please **do not use the Internet**, use the `help` function. The faster you get familiar to using the documentation, the better programmer you become. In a world full of people Googling "how to create a string in Python", we really need to be self sufficient as to using the documentation that a language provides to differentiate from others. The mark of a great programmer isn't in how much things she can store in her memory, it is in the mastery of the tools she uses, documentation and the help command are among the tools.
+
+##### Links
+
+|[Next](7.0filehandling.md) | [Previous](4listsetdict.md) | 
+| ----| ----| 
