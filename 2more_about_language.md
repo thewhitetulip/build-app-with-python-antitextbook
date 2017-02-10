@@ -4,6 +4,8 @@ We left the last chapter by listing all files in the current working directory. 
 
 ## Running code
 
+Watch on [YouTube](https://www.youtube.com/watch?v=wSqRUTS7uAg)
+
 There are two ways of running Python programs, either use the interpreter and copy paste or type one line at a time. the interpreter will evaluate each line as you type/paste it, OR, save all the code in one file and then execute the file.
 
 #### Interactive mode
@@ -56,6 +58,7 @@ The best approach is to use _both_, interactive mode and file mode. The interact
 
 ## Comments
 
+Watch on [YouTube](https://www.youtube.com/watch?v=oU1rHEnfgcM)
 Comments are the lines in a python program which the interpreter will _ignore_. There are two types of comments:
 
 1. Single line comments:
@@ -93,6 +96,7 @@ Doing this is a syntax error, '"sherlock", because it starts with a single quote
 
 ## Indentation
 
+Watch on [YouTube](https://www.youtube.com/watch?v=hhMDv0Q6Kps)
 Python uses indentation as a part of the syntax. C/Java use braces `{`. In those languages, indentation is just a good practice that programmers are encouraged to follow. In python, indentation is the necessity, you can't write programs if you don't indent them properly.
 
 ```python
@@ -146,6 +150,8 @@ print("This is not in either of the above blocks")
 ```
 
 #### Spaces vs tabs
+
+Watch on [YouTube](https://www.youtube.com/watch?v=hhMDv0Q6Kps)
 
 Indentation can be either done with spaces or tabs, there is no hard and fast rule, but if you choose one, please stick to it till the end, if you mix them, then it is a human error.
 

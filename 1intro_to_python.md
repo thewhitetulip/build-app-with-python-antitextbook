@@ -1,5 +1,7 @@
 # Introduction
 
+[Watch on YouTube](https://www.youtube.com/watch?v=7wuKDDMb3R4)
+
 Python is an open source, cross platform, interpreted language. Since it is open source, you can distribute the language in any commercial software, since it is cross platform, you can write programs on Mac and they'll run exactly the same way on any other platform which Python supports. 
 
 Python has been around for more than 30 years and that is the reason there are many third party packages available, it is advisable to check out http://pypi.python.org before you start writing your package, because the changes are that someone already has written a package for that. There are millions of Python programmers out there, and python can be used for doing virtually anything, YouTube, Quora, Hulu are just a few platforms written in Python. We can write command line applications, linux's bootloader is written in Python, we can write webapps, front end apps and just about everything that you want to build.

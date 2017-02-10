@@ -4,6 +4,8 @@ In the last chapter we saw int, float, complex and strings. But that was just th
 
 ## List
 
+Watch on [YouTube](https://www.youtube.com/watch?v=30S9LnvanwY)
+
 Lists store multiple values in Python. Lists allow you to store values of any data type. Lists also allow duplicates
 
 You can access elements of the list by using indices, 0,1,2,3. Indices always start with a 0 in Python. python also allows you negative indices, in that case, the values are returned in reverse order.
@@ -175,6 +177,8 @@ It is this simple to loop through a list or set. **On an interpreter, you have t
 Slicing for strings is the same, just try that out.
 
 ## Set
+
+Watch on [YouTube](https://www.youtube.com/watch?v=QmfDyjp0Z8E)
 
 Sets are same as dictionaries with the following limitations
 
