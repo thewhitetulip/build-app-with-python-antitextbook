@@ -2,7 +2,7 @@
 
 | Source | Read online | Watch  | Download | Code |
 | ----| ---- | ---- | ------ | ------ |
-| On [Github](https://github.com/thewhitetulip/build-app-with-python-antitextbook)| Free on [Gitbooks](https://thewhitetulip.gitbooks.io/build-applications-in-python-the-anti-textbook) | The [YouTube series](https://github.com/thewhitetulip/build-app-with-python-antitextbook) | Coming Soon | On [Github](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook)
+| On [Github](https://github.com/thewhitetulip/build-app-with-python-antitextbook)| Free on [Gitbooks](https://thewhitetulip.gitbooks.io/build-applications-in-python-the-anti-textbook) | The [YouTube series](https://www.youtube.com/playlist?list=PL41psiCma00wwvtQyLFMFpzWxUYmSZwZy) | Coming Soon | On [Github](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook)
 
 ## What is this?
 An easy to understand introduction to the Python programming language by using examples. You will build a command line iodo list manager after you understand the basics of the language. Please have a Python 3 interpreter with you because you'll need to run code as you read! 
