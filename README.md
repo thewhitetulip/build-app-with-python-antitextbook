@@ -5,7 +5,7 @@
 | On [Github](https://github.com/thewhitetulip/build-app-with-python-antitextbook)| Free on [Gitbooks](https://thewhitetulip.gitbooks.io/build-applications-in-python-the-anti-textbook) | The [YouTube series](https://www.youtube.com/playlist?list=PL41psiCma00wwvtQyLFMFpzWxUYmSZwZy) | [Gitbooks](https://www.gitbook.com/book/thewhitetulip/build-applications-in-python-the-anti-textbook/details) | On [Github](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook) |[ ![Paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/sapatil)|
 
 ## Why donate?
-The tutorial is available for free download all formats via Gitbooks, your donations would help me add new content and make this guide better!
+The tutorial is available for free download all formats via Gitbooks, a $5 donation would go a long way to supporting this project.
 
 ## Feedback
 Your thoughts are essential for us! Please give your feedback in the [wiki page](https://github.com/thewhitetulip/build-app-with-python-antitextbook/wiki/ReaderFeedback)
@@ -14,7 +14,7 @@ Your thoughts are essential for us! Please give your feedback in the [wiki page]
 An easy to understand introduction to the Python programming language by using examples. You will build a command line todo list manager after you understand the basics of the language. Please have a Python 3 interpreter with you because you'll need to run code as you read! 
 
 ## Why Python?
-There are a large number of languages out there and new coming out new week, so this question is important, _why learn Python_ over X. There is one simple answer for this, Python is an open source language having a very wide adoption and it has one of the simplest syntaxes of all languages, it feels like writing English. You can quickly write programs to solve problems in Python (it takes less number of lines and less time for writing a Python script).
+There are a large number of languages out there and new ones coming out every week, so this question is important, _why learn Python_ over X. There is one simple answer for this, Python is an open source language having a very wide adoption and it has one of the simplest syntaxes of all languages, it literally feels like writing English. You can quickly write programs to solve problems in Python (it takes less number of lines and less time for writing a Python script).
 
 ## Installation
 Linux and Mac, congrats! You already have Python installed, use your package manager in Linux to install the `python3` package, and brew for Mac. 
