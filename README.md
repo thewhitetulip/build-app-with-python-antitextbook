@@ -40,11 +40,12 @@ We have thirteen chapters:
 
 * Each chapter has an associated YouTube screencast. 
 * Each chapter has concepts explained by an example (can be as stupid as 1+1=2)
-* Code that is supposed to run on the Interpreter starts with `>>>` like `>>> not True`. In this case, `>>> not True` is the statement and `False` is the output.
+* Code that is supposed to run on the Interpreter starts with `>>>` like `>>> not True`. 
 ```Python
 >>> not True
 	False
 ```
+In this case, `>>> not True` is the statement and `False` is the output.
 * Code that doesn't start with `>>>` is supposed to be run in a file of the extension .py
 * If there is significant code for the chapter, you can find a file in the code repository, please look on the basis of chapters.
 
