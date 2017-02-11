@@ -2,7 +2,7 @@
 
 | Source | Read online | Watch  | Download | Code | Donate |
 | ----| ---- | ---- | ------ | ------ | -------|
-| On [Github](https://github.com/thewhitetulip/build-app-with-python-antitextbook)| Free on [Gitbooks](https://thewhitetulip.gitbooks.io/build-applications-in-python-the-anti-textbook) | The [YouTube series](https://www.youtube.com/playlist?list=PL41psiCma00wwvtQyLFMFpzWxUYmSZwZy) | Coming Soon | On [Github](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook) |[ ![Paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/sapatil)|
+| On [Github](https://github.com/thewhitetulip/build-app-with-python-antitextbook)| Free on [Gitbooks](https://thewhitetulip.gitbooks.io/build-applications-in-python-the-anti-textbook) | The [YouTube series](https://www.youtube.com/playlist?list=PL41psiCma00wwvtQyLFMFpzWxUYmSZwZy) | [Gitbooks](https://www.gitbook.com/book/thewhitetulip/build-applications-in-python-the-anti-textbook/details) | On [Github](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook) |[ ![Paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/sapatil)|
 
 ## Why donate?
 The tutorial is available for free download all formats via Gitbooks, your donations would help me add new content and make this guide better!
