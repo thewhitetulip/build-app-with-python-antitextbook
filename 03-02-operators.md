@@ -17,75 +17,106 @@ Python has the following major operators:
 
 `=` is the assignment operator. It creates variables and stores the values which you give at the right hand side to the left hand side.
 
-	>>> a = 1
-	>>> b = a
+```python
+>>> a = 1
+>>> b = a
+```
 
 ## Equality
 
 `==` is the equality operator, it returns true if both the operands are same
 
+```python
 	>>> a = 1
 	>>> b = 1
 	>>> a == b
 	True
-
+```
 It is a classic mistake to use `==` when you really want to use `=` or vice versa. We encourage that you take extreme care to not misuse one when you want to use the other.
 
 ## Division
 
 If you have been from a C background, you'll find Python's divide operator a bit different.
 
-	>>> i = 10
-	>>> i/2 # / returns the quotient (floating point number)
-	5.0
-	>>> i//2 # returns the quotient (integer number)
-	5
-	>>> i%2 # returns the remainder (integer number)
-	0
+```python
+>>> i = 10
+>>> i/2 # / returns the quotient (floating point number)
+5.0
+>>> i//2 # returns the quotient (integer number)
+5
+>>> i%2 # returns the remainder (integer number)
+0
+```
 
 ## Power
 
 `**` is the operator for power.
-	
-	>>> a = 12
-	>>> a**2
-	144
 
-## List inclusion
-	
-	>>> a = [1,2,3]
-	>>> 3 in a
-	True
+```python	
+>>> a = 12
+>>> a**2
+144
+```
+
+## Membership test
+
+The in operator is used to check the membership, it works on lists, sets and tuples.
+```python
+>>> a = [1,2,3]
+>>> 3 in a
+True
+```
 
 ## Boolean operators
 
 ### not
 
-	>>> not True
-	False
-	>>> a = 2
-	>>> not a
-	False
-	>>> True==False
-	False
-	>>> True==True
-	True
+```python
+>>> not True
+False
+>>> a = 2
+>>> not a
+False
+>>> True==False
+False
+>>> True==True
+True
+>>> not ''
+True
+>>> not 'dd'
+False
+>>> not 1
+False
+>>> not 0
+True
+>>> not -1
+False
+>>> not dict()
+True
+>>> not list()
+True
+>>> not [1,2,3]
+False
+```
 
-Negation works with Boolean variable type. `True` and `False` are fixed as far as variable names are concerned, you can't create a variable named True or False. It was possible in python2 to do so.
+Negation works with various data type. `True` and `False` are fixed as far as variable names are concerned, you can't create a variable named True or False. It was possible in python2 to do so.
 
-The `not` keyword negates your existing expression, anything that is None is evaluated to False, anything which is not null is evaluated to True.
+Anything that can be evaluated to having some value is converted to False by using not. For instance, an empty list would be a _Falsy_ (I am not a big fan of this word) value, hence a `not list()` would evaluate to True.
+
+Same is the case with a `dict()`, or with an integer, 0 is False, anything non zero is True.
 
 ### or
 
-	>>> True or False
-	True
-	>>> False or False
-	False
+```python
+>>> True or False
+True
+>>> False or False
+False
+```
 
 OR is true when either of the operand is true.
 
 ### and
-
 
 AND is true when both the operands are true.
 
