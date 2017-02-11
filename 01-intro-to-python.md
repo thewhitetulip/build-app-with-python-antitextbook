@@ -4,7 +4,7 @@
 
 Python is an open source, cross platform, interpreted language. Since it is open source, you can distribute the language in any commercial software, since it is cross platform, you can write programs on Mac and they'll run exactly the same way on any other platform which Python supports. 
 
-Python has been around for more than 30 years and that is the reason there are many third party packages available, it is advisable to check out http://pypi.python.org before you start writing your package, because the changes are that someone already has written a package for that. There are millions of Python programmers out there, and python can be used for doing virtually anything, YouTube, Quora, Hulu are just a few platforms written in Python. We can write command line applications, linux's bootloader is written in Python, we can write webapps, front end apps and just about everything that you want to build.
+Python has been around for more than 30 years (as an idea, it's implementation started in early 1990s). and that is the reason there are many third party packages available, it is advisable to check out http://pypi.python.org before you start writing your package, because the changes are that someone already has written a package for that. There are millions of Python programmers out there, and python can be used for doing virtually anything, YouTube, Quora, Hulu are just a few platforms written in Python. We can write command line applications, linux's bootloader is written in Python, we can write webapps, front end apps and just about everything that you want to build.
 
 Python is dynamic typed language, which means that you don't have to define the data type of an object. It is a fully object oriented language. Because of it's English like syntax, Python makes for an excellent prototyping language, any program implemented in Python has significantly less number of lines as compared to Java, but because it is a dynamically typed language, it is somewhat difficult to debug the programs written in Python or we need to be extra careful while writing them. The reason for that is if you have a 100 line program and you define `i=1` at the first line and by mistake you do `i = '1'` somewhere in between the lines, then it won't complain that `i is an integer you can't assign string to it`, it'll just run the rest of the code assuming the new value of i.
 
@@ -16,7 +16,7 @@ Python3 is the successor of Python2. In 2020 Python2 will be history. This tutor
 
 ## Installation
 
-If you are on Windows, please go to https://python.org and download the latest .exe file of Python3. For Android, please download TermUX (https://termux.com/help.html). If you are on Mac (brew install python3), if you are on Linux, depending on your distro (apt-get install python3 or yum install python3)
+If you are on Windows, please go to https://python.org and download the latest .exe file of Python3. For Android, please download Termux (https://termux.com/help.html). If you are on Mac (brew install python3), if you are on Linux, depending on your distro (apt-get install python3 or yum install python3)
 
 Enough theory.
 

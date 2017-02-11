@@ -18,7 +18,7 @@ Linux and Mac, congrats! You already have Python installed, use your package man
 
 Windows, you can download the `.msi` or `.exe` file from https://python.org, run the installer, click on Next Next until it finishes.
 
-Android, install `termux` & run `apt-get install python3` to install python inside it.
+Android, install `termux` (https://termux.com/help.html) & run `apt-get install python3` to install python inside it.
 
 ## Background
 This tutorial is the culmination of the Python trainings I have given in the past. As I took the trainings, I wanted to refer the participants to a tutorial which would be light weight yet effective and would explain by example rather than by theory. There are many guides for Python, but I didn't find the one I was looking for. As someone said, "If your dream book hasn't been written, write it!", hence I started to write this guide. 
