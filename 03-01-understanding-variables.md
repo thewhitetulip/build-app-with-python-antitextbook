@@ -53,6 +53,14 @@ False
 >>> a is int
 False
 ```
+## isinstance
+
+We can also use `isinstance` method for checking the data type.
+
+```python
+>>> isinstance('a string', str)
+True
+```
 
 Variables can be of the following types:
 
