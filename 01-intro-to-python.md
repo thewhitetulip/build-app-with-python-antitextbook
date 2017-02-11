@@ -18,7 +18,6 @@ Python3 is the successor of Python2. In 2020 Python2 will be history. This tutor
 
 If you are on Windows, please go to https://python.org and download the latest .exe file of Python3. For Android, please download TermUX (https://termux.com/help.html). If you are on Mac (brew install python3), if you are on Linux, depending on your distro (apt-get install python3 or yum install python3)
 
-
 Enough theory.
 
 Let's write programs now. Make sure you have Python installed.
@@ -59,9 +58,23 @@ This is the beauty of the language, its syntax is very easy to understand and th
 
 If you want to list all the .txt files, you can use the unix utility `ls`, `ls *.txt`. We saw here, how to implement one feature of the `ls` utility in less than 5 lines. This is the power of Python.
 
+## Using glob
+There is a stdlib module which allows you to have advanced features which don't so that you don't have to check the extension of the file yourself.
+
+```python
+>>> import glob
+>>> files = glob.glob('*.txt')
+>>> files
+['file1.txt', 'file2.txt', 'file3.txt', 'file4.txt', 'file5.txt']
+ ```
+
+The `glob` method does a regular expression match on the current directory.
+
+As you advance your knowledge in Python, you'll feel the need to use as many stdlib functions as you can so as to reduce code duplication.
+
 Exercise:
 
-1. Write a program to print all `*.csv` files, create multiple `.csv` files first.
+1. Write a program to print all `*.csv` files, create multiple `.csv` files first, without using glob.
 1. Install ipython using easy_install or pip. Be careful about the version of pip you use.
 
 ##### Links
