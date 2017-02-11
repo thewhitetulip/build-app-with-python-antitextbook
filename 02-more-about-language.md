@@ -59,13 +59,28 @@ The best approach is to use _both_, interactive mode and file mode. The interact
 ## Comments
 
 Watch on [YouTube](https://www.youtube.com/watch?v=oU1rHEnfgcM)
-Comments are the lines in a python program which the interpreter will _ignore_. There are two types of comments:
+
+Comments are the lines which the interpreter will _ignore_. Comments are for those who will maintain the project. We should be commenting appropriately so that a newcomer reading our code would easily catch up to the code, this doesn't mean we comment each and every line, we should comment on everything that isn't non-intuitive. For instance, `a+=1` does not require a comment because it is obvious, but `a = (a*10)/200` might require a comment as it isn't really obvious what we are doing here.
+
+There are two types of comments:
 
 1. Single line comments:
+
 	They start with a `#`. Can be present on any position in a line, any text written **after** a `#` till the end of the line is _ignored_ by the interpreter.
 
-2. Multi line comments:
-	Using # is great if you want to have a single line comment, but what if you want to write a comment which is spread across two or more lines? You use a multi line comment. Multi line comments are three quotes (single or double). ''' or """. They need to be closed appropriately, otherwise they result in an error.
+	These are typically given to simple statements (and not functions/classes).
+
+2. Docstring comments:
+
+	Although there is no such thing as a multiple line comment, one can use triple quotes as docstrings. Either ''' or """. They need to be closed appropriately, otherwise they result in an error. 
+	
+	These comments are _not_ ignored, they are evaluated.
+	
+	These are typically given for functions, classes and modules (and not to statements).
+
+From the official docs:
+
+A string literal which appears as the first expression in a class, function or module. While ignored when the suite is executed, it is recognized by the compiler and put into the __doc__ attribute of the enclosing class, function or module. Since it is available via introspection, it is the canonical place for documentation of the object.
 
 ```python
 """ 
@@ -76,12 +91,20 @@ a multi line
 comment"""
 
 '''
-	
 	this is another
-	
 	multi line comment
-
 '''
+```
+
+It is not illegal to use triple quotes as generic comments, they are treated as strings and evaluated and not ignored.
+
+```python
+>>> def function():
+...     """ this is a function which does something"""
+...     print("hello world")
+...
+>>> function.__doc__
+' this is a function which does something'
 ```
 
 The location of the second ''' or """ doesn't matter, the only thing which matters is that **it should exist**. The interpreter while evaluating strings inside python will consider the value of a string **between** single quotes or double quotes.
@@ -97,6 +120,7 @@ Doing this is a syntax error, '"sherlock", because it starts with a single quote
 ## Indentation
 
 Watch on [YouTube](https://www.youtube.com/watch?v=hhMDv0Q6Kps)
+
 Python uses indentation as a part of the syntax. C/Java use braces `{`. In those languages, indentation is just a good practice that programmers are encouraged to follow. In python, indentation is the necessity, you can't write programs if you don't indent them properly.
 
 ```python
@@ -111,7 +135,7 @@ print("not in the scope of the IF block")
 
 While evaluating the above if loop, this is how Python works.
 
-######Note:
+##### Note:
 This is not valid Python code, `[]` is used just to show the indentation.
 
 ```
@@ -161,11 +185,13 @@ Standard is to use four spaces.
 ##### Note:
 This is not valid Python code, `[]` is used just to show the indentation.
 
-	if a > 1:
-	[	]if b < 1:
-	[	][	]print(" b is less than 1")
-	[	]print("a is greater than 1")
-	print("This is not in either of the above blocks")
+```
+if a > 1:
+[	]if b < 1:
+[	][	]print(" b is less than 1")
+[	]print("a is greater than 1")
+print("This is not in either of the above blocks")
+```
 
 You can understand scoping better if you think in terms of blocks. In the above example, there are three lines with the first `[ ]` block. The third line contains two blocks of [ ], this means, it is a part of BOTH if blocks. Directly, it lies in the second if block, indirectly, it lies in the first if block.
 
