@@ -66,5 +66,5 @@ Exercise:
 
 ##### Links
 
-|[Next](2more_about_language.md) | [Previous](README.md) |  [Index](SUMMARY.md)
-| ----| ----| ----| 
+|[Next](02-more-about-language.md) | [Previous](README.md) |  [Index](SUMMARY.md)
+| ---- | ---- | ---- |

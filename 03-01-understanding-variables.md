@@ -104,10 +104,10 @@ i = set([1,2,3,4,5])
 #### Dictionary
 
 ```python
-	i = {'IN':'India', 'US': 'United States'}
+i = {'IN':'India', 'US': 'United States'}
 ```
 
 ##### Links
 
-|[Next](3.2operators.md) | [Previous](2more_about_language.md) |  [Index](SUMMARY.md)
+|[Next](03-02-operators.md) | [Previous](02-more-about-language.md) |  [Index](SUMMARY.md)
 | ----| ----| ----| 

@@ -111,9 +111,10 @@ print("not in the scope of the IF block")
 
 While evaluating the above if loop, this is how Python works.
 
-*This block isn't syntax highlighted intentionally.*
+######Note:
+This is not valid Python code, `[]` is used just to show the indentation.
 
-```python
+```
 if a > 1:
 [   ]print("In the scope of the IF block")
 [   ]print("In the scope of the IF block")
@@ -157,6 +158,9 @@ Indentation can be either done with spaces or tabs, there is no hard and fast ru
 
 Standard is to use four spaces.
 
+##### Note:
+This is not valid Python code, `[]` is used just to show the indentation.
+
 	if a > 1:
 	[	]if b < 1:
 	[	][	]print(" b is less than 1")
@@ -169,5 +173,5 @@ When you have two layers of indentation, this is called nesting. You can have as
 
 ##### Links
 
-|[Next](3.1understanding_variables.md) | [Previous](1intro_to_python.md) |  [Index](SUMMARY.md)
+|[Next](03-01-understanding-variables.md) | [Previous](01-intro-to-python.md) |  [Index](SUMMARY.md)
 | ----| ----| ----| 

@@ -72,5 +72,5 @@ A parting glance at the design of the functions. Each function should do _one_ t
 
 ##### Links
 
-|[Next](12modules_tasks.md) | [Previous](10task.md) |  [Index](SUMMARY.md)
+|[Next](12-modules-tasks.md) | [Previous](10-task.md) |  [Index](SUMMARY.md)
 | ----| ----| ----| 

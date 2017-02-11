@@ -107,6 +107,15 @@ The `append` function takes **one** argument and adds it to the end of the list.
 
 here, the values of b were added individually at the end of the list `a`.
 
+## del
+
+```python
+>>> del a[0]
+>>> a
+['2', 1.11111, [1, 2, 3], 1, 2, 3]
+```
+`del` can be used to delete any variable, it de-allocates a variable, it can also be used to delete elements from any data type(list, set, dict, tuple).
+
 ## pop
 
 ```python
@@ -118,19 +127,19 @@ here, the values of b were added individually at the end of the list `a`.
 [1, '2', 1.11111, [1, 2, 3], 1]
 ```
 
-pop deletes the last element by default, if you pass an index, it'll delete that element and return it's value.
+pop deletes the last element by default, if you pass an index, it'll delete and **return** the element. This is the main difference between the `del` keyword and `pop`.
 
 ```python
 >>> a
 [1, '2', 1.11111, [1, 2, 3], 1]
->>> a.pop(0)
+>>> deleted_item = a.pop(0)
+>>> print(deleted_item)
 1
 >>> a
 ['2', 1.11111, [1, 2, 3], 1]
 >>> a[1]
 1.11111
 ```
-
 
 We are leaving the other functions as a homework. Learning a language requires self practice!
 
@@ -303,5 +312,5 @@ We also encourage you to try out everything we did in this chapter, again! (on s
 
 ##### Links
 
-|[Next](5constructs.md) | [Previous](3.2operators.md) |  [Index](SUMMARY.md)
+|[Next](05-constructs.md) | [Previous](03-02-operators.md) |  [Index](SUMMARY.md)
 | ----| ----| ----| 

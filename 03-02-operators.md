@@ -35,13 +35,13 @@ It is a classic mistake to use `==` when you really want to use `=` or vice vers
 
 If you have been from a C background, you'll find Python's divide operator a bit different.
 
-        >>> i = 10
-        >>> i/2 # / returns the quotient (floating point number)
-        5.0
-        >>> i//2 # returns the quotient (integer number)
-        5
-        >>> i%2 # returns the remainder (integer number)
-        0
+	>>> i = 10
+	>>> i/2 # / returns the quotient (floating point number)
+	5.0
+	>>> i//2 # returns the quotient (integer number)
+	5
+	>>> i%2 # returns the remainder (integer number)
+	0
 
 ## Power
 
@@ -100,5 +100,5 @@ Along with this, you can use this syntax for other operations like -=, /=. In ea
 
 ##### Links
 
-|[Next](4listsetdict.md) | [Previous](3.1understanding_variables.md) |  [Index](SUMMARY.md)
+|[Next](04-list-set-dict.md) | [Previous](03-01-understanding-variables.md) |  [Index](SUMMARY.md)
 | ----| ----| ----| 

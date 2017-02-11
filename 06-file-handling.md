@@ -228,5 +228,5 @@ We encourage you to try out file IO on your own, please refer to help(f) for any
 
 ##### Links
 
-|[Next](7.2examples.md) | [Previous](5constructs.md) |  [Index](SUMMARY.md)
+|[Next](07-examples.md) | [Previous](05-constructs.md) |  [Index](SUMMARY.md)
 | ----| ----| ----| 

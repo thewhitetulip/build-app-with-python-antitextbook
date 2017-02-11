@@ -39,5 +39,5 @@ Either this, or utilize the `a.keys()` method. Every new element you loop throug
 
 ##### Links
 
-|[Next](8exception.md) | [Previous](7.0filehandling.md) |  [Index](SUMMARY.md)
+|[Next](08-exception.md) | [Previous](06-file-handling.md) |  [Index](SUMMARY.md)
 | ----| ----| ----| 
