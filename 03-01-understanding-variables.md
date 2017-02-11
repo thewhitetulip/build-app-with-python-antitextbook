@@ -56,7 +56,8 @@ i = 123333
 
 ```python
 i = "this string\n\t" # \n and \t are special values if used with "
-i = 'this string\n\t' # \n and \t don't hold special value if used with '
+i = 'this string\n\t' # \n and \t hold special value if used with '
+i = r'this string\n\t' # \n and \t do not hold special value if prepended with r, r stands for raw'
 i = ''' multi line string
 	which has
 	multi lines'''
