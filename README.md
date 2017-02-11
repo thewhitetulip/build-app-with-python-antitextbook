@@ -7,6 +7,9 @@
 ## Why donate?
 The tutorial is available for free download all formats via Gitbooks, your donations would help me add new content and make this guide better!
 
+## Feedback
+Your thoughts are essential for us! Please give your feedback in the [wiki page](https://github.com/thewhitetulip/build-app-with-python-antitextbook/wiki/ReaderFeedback)
+
 ## What is this?
 An easy to understand introduction to the Python programming language by using examples. You will build a command line todo list manager after you understand the basics of the language. Please have a Python 3 interpreter with you because you'll need to run code as you read! 
 
