@@ -164,8 +164,30 @@ else:
 
 For instance, in the above if-else block, you really don't know what logic you are going to put, so you can either use `print("TODO")`, or use the pass statement. pass doesn't print anything. You can use pass in any loop.
 
-4. try - except
+4. try - except - finally
+
+try-except is used for exception handling, we'll take a look at it in a later chapter. The logic behind this is that sometimes there might be exceptional scenarios which can make our program crash, we use try-except block to handle them.
+
 5. with 
+
+The with block was added in [PEP 343](https://www.python.org/dev/peps/pep-0343/). support of the [Resource Acquisition Is Initialization](http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization) idiom commonly used in C++. It is intended to allow safe acquisition and release of operating system resources.
+
+Resources are created within a scope/block, resources are cleanly released whether the block exists normally or because of an exception.
+
+```python
+>>> with open('file.py') as ip, open('op.txt','w') as op:
+...     for line in ip.readlines():
+...         op.write(line)
+...
+10
+1
+21
+19
+30
+20
+```
+
+Because of scoping, the `input_file` and `output_file` variables are only available within the with clause. This can result in some clean code, but it is upto you totally. I like to use try-except-finally.
 
 We encourage you to read more about the `range` function. Please **do not use the Internet**, use the `help` function. The faster you get familiar to using the documentation, the better programmer you become. In a world full of people Googling "how to create a string in Python", we really need to be self sufficient as to using the documentation that a language provides to differentiate from others. The mark of a great programmer isn't in how much things she can store in her memory, it is in the mastery of the tools she uses, documentation and the help command are among the tools.
 

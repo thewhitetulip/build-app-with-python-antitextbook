@@ -42,6 +42,18 @@ if type(a) == type(1):
 
 `type(a)` is going to return the "str" class, `type("")` is going to return the "str" class. They both are same, thus comparison `==` (**Double equal signs!**) will return true.
 
+## is
+
+Like the `type()` functionn, we have the `is` operator can be used to check the data type of a variable. It can be used in function which accept only a particular data type, you can do `if a is str:` if you want to accept only strings.
+
+```python
+>>> a = False
+>>> a is bool
+False
+>>> a is int
+False
+```
+
 Variables can be of the following types:
 
 #### Integer
@@ -88,6 +100,7 @@ j = False
 print(i)
 print(i and j)
 print(i or j)
+print(not j)
 ```
 
 #### List
