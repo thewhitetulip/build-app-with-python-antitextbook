@@ -76,7 +76,7 @@ i = 123333
 
 ```python
 i = "this string\n\t" # \n and \t are special values if used with "
-i = 'this string\n\t' # \n and \t hold special value if used with '
+i = 'this string\n\t' # \n and \t are special values if used with '
 i = r'this string\n\t' # \n and \t do not hold special value if prepended with r, r stands for raw'
 i = ''' multi line string
 	which has
@@ -113,11 +113,31 @@ print(not j)
 
 #### List
 
+List stores an array of values of heterogenous type. Lists can have lists as elements.
+
 ```python
-i = [1,2,3,4,5]
+i = [1,"Linux",3,"bash",[1,2,"sh"]]]
 ```
 
 #### Set
+
+Sets stores "hashable" data types. You can remember this by remembering that sets allow you to store immutable data types (like integer, string, float, tuples). Basic data types like int, float and strings are immutable, when you perform any operation on them, python creates a new variable and does not.
+
+### Immutability
+`id()` returns the address of the variable, if two `id` function call return the same address, then it is the same variable, thus, mutable.
+
+```python
+>>> a = 1
+>>> id(a)
+4469201376
+>>> a = a + 1
+>>> id(a)
+4469201408
+```
+
+ Hashing is the process of converting some large amount of data into a much smaller amount (typically a single integer) in a repeatable way so that it can be looked up in a table in constant-time (O(1)), which is important for high-performance algorithms and data structures. [1](http://stackoverflow.com/questions/2671376/ddg#2671398)
+
+ Dictionary and List are not allowed, but Tuples are.
 
 ```python
 i = set([1,2,3,4,5])
@@ -125,8 +145,28 @@ i = set([1,2,3,4,5])
 
 #### Dictionary
 
+A key value pair.
+
 ```python
 i = {'IN':'India', 'US': 'United States'}
+```
+
+#### Tuples
+
+Like lists but immutable. Once you create a tuple, you can't delete or add elements. Tuples typically are used when you want to store values which aren't going to change in the lifetime of a program.
+
+
+```python
+>>> a = (1,2)
+>>> a[0]=2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+```
+
+```python
+a = (1,2,3)
+print(a)
 ```
 
 ##### Links
