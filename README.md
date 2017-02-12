@@ -59,5 +59,5 @@ We need your help to become a great guide! All contributions are welcome. Please
 
 ##### Links
 
-| [Next](01-intro-to-python.md) | [Index](SUMMARY.md)
+| [Next](manuscript/01-intro-to-python.md) | [Index](SUMMARY.md)
 | ----| ----| 
