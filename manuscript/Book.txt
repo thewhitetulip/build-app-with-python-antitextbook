@@ -1,0 +1,15 @@
+01-intro-to-python.md
+02-more-about-language.md
+03-01-understanding-variables.md
+03-02-operators.md
+04-list-set-dict.md
+05-constructs.md
+06-file-handling.md
+07-examples.md
+08-exception.md
+09-functions.md
+10-task.md
+11-function-tasks.md
+12-modules-tasks.md
+13-examples.md
+Book.txt
