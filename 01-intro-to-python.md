@@ -64,6 +64,10 @@ If you want to list all the .txt files, you can use the unix utility `ls`, `ls *
 ## Using glob
 There is a stdlib module which allows you to have advanced features which don't so that you don't have to check the extension of the file yourself.
 
+#### Note:
+
+If the third line, `files` doesn't work, then please use `print(files)`. When we use the interpreter, typing in a variable name should typically print the value of the variable, but in some cases it might not, hence we use the print statement, for brevity, we are not going to add a print statement to each line, but you should, if you want to see the output and it isn't working in your case!
+
 ```python
 >>> import glob
 >>> files = glob.glob('*.txt')
