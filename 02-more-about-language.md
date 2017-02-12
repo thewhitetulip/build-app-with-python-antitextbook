@@ -54,7 +54,7 @@ This will execute `file.py`. And, you'll see the list of all files and folders i
 
 ### Hybrid approach
 
-The best approach is to use _both_, interactive mode and file mode. The interactive mode is to be used when you want to test a small block of code, later, you add it to the file. The reason it is a good practice is that we then split our code into easy to understand and test blocks rather than write one huge function with million if else blocks. In an era where computers also are capable to write Python scripts, we need to be better than them!
+The best approach is to use _both_, interactive mode and file mode. The interactive mode is to be used when you want to test a small block of code, later, you add it to the file. The reason it is a good practice is that we then split our code into easy to understand and test blocks rather than write one huge function with million if else blocks. In an era where computers also are capable of writing Python scripts, we need to be better than them!
 
 ## Comments
 
