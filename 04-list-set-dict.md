@@ -114,7 +114,7 @@ here, the values of b were added individually at the end of the list `a`.
 >>> a
 ['2', 1.11111, [1, 2, 3], 1, 2, 3]
 ```
-`del` can be used to delete any variable, it de-allocates a variable, it can also be used to delete elements from any data type(list, set, dict, tuple).
+`del` can be used to delete any variable, it de-allocates a variable, it can also be used to delete elements from any data type(list, set, dict). We can't delete individual elements from tuples, but using `del`, we can delete the variable of the tuple itself.
 
 ## pop
 
@@ -184,6 +184,23 @@ Negative indices: -5, -4, -3,-2, -1
 It is this simple to loop through a list or set. **On an interpreter, you have to hit enter twice before the expression is evaluated.**
 
 Slicing for strings is the same, just try that out.
+
+## Tuples
+
+Tuples are immutable lists. You can't add or remove elements from it, you can use the `in` clause to check the membership.
+Try using the `dir` on a tuple object to find out methods related to the type.
+
+```python
+>>> a = (1,2)
+>>> type(a)
+<class 'tuple'>
+>>> 1 in a
+True
+```
+
+Typically, we use lists where we are not sure how many values we'll be having, since lists support addition and deletion, that can be helpful.
+
+Tuples are to be used when we know in advance how many values we want, plus when we are sure that the values are not going to change, this is because tuples are immutable.
 
 ## Set
 
