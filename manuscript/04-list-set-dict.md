@@ -6,6 +6,8 @@ In the last chapter we saw int, float, complex and strings. But that was just th
 
 Watch on [YouTube](https://www.youtube.com/watch?v=30S9LnvanwY)
 
+Read the [docs](https://docs.python.org/3/library/stdtypes.html#list)
+
 Lists store multiple values in Python. Lists allow you to store values of any data type. Lists also allow duplicates
 
 You can access elements of the list by using indices, 0,1,2,3. Indices always start with a 0 in Python. python also allows you negative indices, in that case, the values are returned in reverse order.
@@ -187,6 +189,8 @@ Slicing for strings is the same, just try that out.
 
 ## Tuples
 
+Read the [docs](https://docs.python.org/3/library/stdtypes.html#tuple)
+
 Tuples are immutable lists. You can't add or remove elements from it, you can use the `in` clause to check the membership.
 Try using the `dir` on a tuple object to find out methods related to the type.
 
@@ -205,6 +209,7 @@ Tuples are to be used when we know in advance how many values we want, plus when
 ## Set
 
 Watch on [YouTube](https://www.youtube.com/watch?v=QmfDyjp0Z8E)
+Read the [docs](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
 
 Sets are same as dictionaries with the following limitations
 
@@ -279,6 +284,8 @@ Sets allow various methods like add, copy, deepcopy, update, pop, remove.
 
 
 ## Dictionary
+
+Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict)
 
 Dictionaries are key value pairs. When you use an array, they are indexed starting with 0. First element has index 0, second element has 1 and so on. But dictionaries are different, you choose the key and value BOTH, instead of just the value as in the case of the list.
 

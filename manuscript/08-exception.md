@@ -2,6 +2,8 @@
 
 Python throws an `exception` if something goes wrong. `Exception` is a class from which other exceptions are derived. The child classes of Exception usually end with Error like FileNotFoundError.
 
+Read the [docs](https://docs.python.org/3/tutorial/errors.html#errors-and-exceptions)
+
 #### file: exception.py
 ```python
 i = 0

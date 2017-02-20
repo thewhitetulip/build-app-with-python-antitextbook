@@ -105,6 +105,12 @@ Anything that can be evaluated to having some value is converted to False by usi
 
 Same is the case with a `dict()`, or with an integer, 0 is False, anything non zero is True.
 
+Read the [docs](http://docs.python.org/3/library/stdtypes.html#truth-value-testing)
+
+## Boolean Operators
+
+Read the [docs](http://python.org/library/stdtypes.html#boolean-operations-and-or-not)
+
 ### or
 
 ```python
@@ -128,6 +134,24 @@ If you want to increment a variable by some value, instead of using `a = a + 2`,
  There is no operator for `++` or `--`, you can use `a+=1` and `a-=1` for those purposes.
 
 Along with this, you can use this syntax for other operations like -=, /=. In each of such operation you perform that operation and store it's value in the variable itself.
+
+#### Comparision Operators
+
+Read the [docs](https://docs.python.org/3/library/stdtypes.html#comparisons)
+
+There are eight comparison operations in Python. They all have the same priority (which is higher than that of the Boolean operations). Comparisons can be chained arbitrarily; for example, x < y <= z is equivalent to x < y and y <= z, except that y is evaluated only once (but in both cases z is not evaluated at all when x < y is found to be false).
+
+This table summarizes the comparison operations:
+|Operation |	Meaning|
+|------|------|
+|< |	strictly less than|
+|<= |	less than or equal|
+|> 	|strictly greater than|
+|>= |	greater than or equal|
+|== |	equal|
+|!= |	not equal|
+|is |	object identity|
+|is not |	negated object identity|
 
 ##### Links
 
