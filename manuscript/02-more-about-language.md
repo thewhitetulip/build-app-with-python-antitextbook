@@ -31,7 +31,7 @@ You can easily run any large python program using just the interpreter without s
 
 ### Installing packages
 
-`pip` or `easy_install` is used for installing third party packages in Python. `pip` stands for Python installer package. The packages needs to be hosted on https://pypi.python.org and you can just call `pip install shbh` to install a package named shbh which is present on https://pypi.python.org
+`pip` or `easy_install` is used for installing third party packages in Python. `pip` stands for Python installer package. The packages needs to be hosted on https://pypi.python.org and you can just call `pip install shbh` to install a package named shbh which is present on https://pypi.python.org. Read the [docs](https://docs.python.org/3/installing/index.html) for more details.
 
 #### Using files
 
@@ -60,27 +60,29 @@ The best approach is to use _both_, interactive mode and file mode. The interact
 
 Watch on [YouTube](https://www.youtube.com/watch?v=oU1rHEnfgcM)
 
+Read the [docs](https://docs.python.org/3/reference/lexical_analysis.html?highlight=comments#comments)
+
 Comments are the lines which the interpreter will _ignore_. Comments are for those who will maintain the project. We should be commenting appropriately so that a newcomer reading our code would easily catch up to the code, this doesn't mean we comment each and every line, we should comment on everything that isn't non-intuitive. For instance, `a+=1` does not require a comment because it is obvious, but `a = (a*10)/200` might require a comment as it isn't really obvious what we are doing here.
 
-There are two types of comments:
+Officially, the only type of comments are single line comments.
 
-1. Single line comments:
+#### Single Line Comments
 
-	They start with a `#`. Can be present on any position in a line, any text written **after** a `#` till the end of the line is _ignored_ by the interpreter.
+They start with a `#`. Can be present on any position in a line, any text written **after** a `#` till the end of the line is _ignored_ by the interpreter.
+These are typically given to simple statements (and not functions/classes).
 
-	These are typically given to simple statements (and not functions/classes).
+Alongwith single line comments, we have something called docstring. 
+#### Docstring
 
-2. Docstring comments:
+Read the [docs](https://docs.python.org/3/library/doctest.html)
 
-	Although there is no such thing as a multiple line comment, one can use triple quotes as docstrings. Either ''' or """. They need to be closed appropriately, otherwise they result in an error. 
-	
-	These comments are _not_ ignored, they are evaluated.
-	
-	These are typically given for functions, classes and modules (and not to statements).
+Although there is no such thing as a multiple line comment, one can use triple quotes as docstrings. Either ''' or """. They need to be closed appropriately, otherwise they result in an error. 
+Unlike comments, which are ignored, docstrings are evaluated, **not ignored**.
+These are typically given for functions, classes and modules (and not to statements).
 
 From the official docs:
 
-A string literal which appears as the first expression in a class, function or module. While ignored when the suite is executed, it is recognized by the compiler and put into the __doc__ attribute of the enclosing class, function or module. Since it is available via introspection, it is the canonical place for documentation of the object.
+A string literal which appears as the first expression in a class, function or module. While ignored when the suite is executed, it is recognized by the compiler and put into the `__doc__` attribute of the enclosing class, function or module. Since it is available via introspection, it is the canonical place for documentation of the object.
 
 ```python
 """ 
@@ -96,7 +98,7 @@ comment"""
 '''
 ```
 
-It is not illegal to use triple quotes as generic comments, they are treated as strings and evaluated and not ignored.
+It is not illegal to use triple quotes as generic comments, they are treated as strings and evaluated and not ignored. One has to think before using
 
 ```python
 >>> def function():
