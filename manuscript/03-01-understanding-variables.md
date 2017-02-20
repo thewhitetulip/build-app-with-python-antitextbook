@@ -48,9 +48,9 @@ if type(a) == type(1):
 
 ## is
 
-Like the `type()` functionn, we have the `is` operator can be used to check the data type of a variable. It can be used in function which accept only a particular data type, you can do `if a is str:` if you want to accept only strings.
+Read the [docs](https://docs.python.org/3.6/reference/expressions.html#is
 
-Read the [docs](https://docs.python.org/3/library/stdtypes.html#comparisons)
+The operators is and is not test for object identity: x is y is true if and only if x and y are the same object. Object identity is determined using the id() function. x is not y yields the inverse truth value. [4])
 
 ```python
 >>> a = False
@@ -58,6 +58,9 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#comparisons)
 False
 >>> a is int
 False
+# Can be rewritten as
+>>> id(x) == id(x)
+True
 ```
 ## isinstance
 
