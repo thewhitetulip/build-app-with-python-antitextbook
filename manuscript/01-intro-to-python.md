@@ -2,11 +2,13 @@
 
 [Watch on YouTube](https://www.youtube.com/watch?v=7wuKDDMb3R4)
 
-Python is an open source, cross platform, interpreted language. Since it is open source, you can distribute the language in any commercial software, since it is cross platform, you can write programs on Mac and they'll run exactly the same way on any other platform which Python supports. 
+Python is an [open source](https://github.com/python/cpython), cross platform, interpreted language. Since it is open source, you can distribute the language in any commercial software, since it is cross platform, you can write programs on Mac and they'll run exactly the same way on any other platform which Python supports. 
 
-Python has been around and open source pretty much since 1990s, that is the reason there are many third party packages available, it is advisable to check out http://pypi.python.org before you start writing your package, because the chances are that someone already has written a package for that. There are millions of Python programmers out there, and python can be used for doing virtually anything, YouTube, Quora, Hulu are just a few platforms written in Python. We can write command line applications, Linux's bootloader is written in Python, we can write webapps, front end apps and just about everything that you want to build.
+There are many third party packages available since Python has been around and open source pretty much since 1990s. The packages are available at http://pypi.python.org. 
 
-Because of its English like syntax, Python makes for an excellent prototyping language. Any program implemented in Python has significantly less number of lines as compared to Java. But because it is a dynamically typed language, it is somewhat difficult to debug the programs written in Python. Thus, we need to be extra careful while writing them.
+There are millions of Python programmers out there, and Python can be used for doing virtually anything, YouTube, Quora, Hulu are just a few platforms written in Python. We can write command line applications, Linux's bootloader is written in Python, we can write webapps, front end apps and just about everything that you want to build.
+
+Because of its English like syntax, Python makes for an excellent prototyping language. Any program implemented in Python has significantly less number of lines as compared to Java. But, because it is a dynamically typed language, it is somewhat difficult to debug the programs written in Python. Thus the need to be extra careful while writing & designing them.
 
 The reason for that is if you have a 100 line program and you define `i=1` at the first line and by mistake you do `i = '1'` somewhere in between the lines, then it won't complain that `i is an integer you can't assign string to it`, it'll just run the rest of the code assuming the new value of i.
 
@@ -62,7 +64,7 @@ This is the beauty of the language, its syntax is very easy to understand and th
 If you want to list all the .txt files, you can use the unix utility `ls`, `ls *.txt`. We saw here, how to implement one feature of the `ls` utility in less than 5 lines. This is the power of Python.
 
 ## Using glob
-There is a stdlib module which allows you to have advanced features which don't so that you don't have to check the extension of the file yourself.
+[glob](https://docs.python.org/3/library/glob.html) is part of the standard library and allows you to have advanced functions which save you from the usage of `os.listdir`.
 
 #### Note:
 
@@ -75,7 +77,7 @@ If the third line, `files` doesn't work, then please use `print(files)`. When we
 ['file1.txt', 'file2.txt', 'file3.txt', 'file4.txt', 'file5.txt']
  ```
 
-The `glob` method does a regular expression match on the current directory.
+The `glob` method does a regular expression match on the current directory. If you want to explore how to use regular expressions, check out [re](https://docs.python.org/3/library/re.html), part of the standard library.
 
 As you advance your knowledge in Python, you'll feel the need to use as many stdlib functions as you can so as to reduce code duplication.
 
