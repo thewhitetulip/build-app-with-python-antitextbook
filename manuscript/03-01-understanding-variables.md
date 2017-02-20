@@ -82,14 +82,19 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#numeric-types-in
 i = 0
 i = 10000
 i = 123333
+print(type(1))
 ```
+The output of `print(type(1))` is `<type 'int'>`.
 
 #### Float
 
 ```python
 i = 1.1
 i = 3.3333344445
+print(type(1.0))
 ```
+
+The output of `print(type(1.0))` is `<type 'float'>`.
 
 #### Complex
 
