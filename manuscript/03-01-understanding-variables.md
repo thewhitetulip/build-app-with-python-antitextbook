@@ -148,7 +148,7 @@ i = [1,"Linux",3,"bash",[1,2,"sh"]]]
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
 
-Sets stores "hashable" data types. You can remember this by remembering that sets allow you to store immutable data types (like integer, string, float, tuples). Basic data types like int, float and strings are immutable, when you perform any operation on them, python creates a new variable and does not.
+Sets stores "hashable" data types. You can remember this by remembering that sets allow you to store immutable data types (like integer, string, float, tuples). Basic data types like int, float and strings are immutable, when you perform any operation on them, python creates a new variable and does not modify the existing variable, for checking if a new variable is created, you can use the `id()` function described below.
 
 ### Immutability
 `id()` returns the address of the variable, if two `id` function call return the same address, then it is the same variable, thus, mutable. Read the [docs](https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types)
