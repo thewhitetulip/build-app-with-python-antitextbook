@@ -206,6 +206,8 @@ Typically, we use lists where we are not sure how many values we'll be having, s
 
 Tuples are to be used when we know in advance how many values we want, plus when we are sure that the values are not going to change, this is because tuples are immutable.
 
+You can access the elements of a tuple in the same way you can access elements inside a list.
+
 ## Set
 
 Watch on [YouTube](https://www.youtube.com/watch?v=QmfDyjp0Z8E)
@@ -286,6 +288,7 @@ Sets allow various methods like add, copy, deepcopy, update, pop, remove.
 ## Dictionary
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict)
+Watch on [YouTube](https://www.youtube.com/watch?v=pQV3wbSMBRI)
 
 Dictionaries are key value pairs. When you use an array, they are indexed starting with 0. First element has index 0, second element has 1 and so on. But dictionaries are different, you choose the key and value BOTH, instead of just the value as in the case of the list.
 
