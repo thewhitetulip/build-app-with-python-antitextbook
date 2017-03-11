@@ -190,9 +190,13 @@ Slicing for strings is the same, just try that out.
 ## Tuples
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#tuple)
+Watch the [video]()
 
-Tuples are immutable lists. You can't add or remove elements from it, you can use the `in` clause to check the membership.
-Try using the `dir` on a tuple object to find out methods related to the type.
+A tuple object, once created, doesn't allow us to add, delete or update an element.
+Tuples allow the `in` operator to check membership, we can access elements of a tuple just the way we access elements of a list, using `a[]`, we can slice a tuple object, they are basically read only lists.
+
+###### Note:
+Try using the `dir` on a tuple object to find out methods related to the type, you'll see that there are only two methods, `count` and `index`.
 
 ```python
 >>> a = (1,2)
@@ -200,13 +204,16 @@ Try using the `dir` on a tuple object to find out methods related to the type.
 <class 'tuple'>
 >>> 1 in a
 True
+>>> a[0]
+1
+>>> a[::-1]
+(2,1)
 ```
 
-Typically, we use lists where we are not sure how many values we'll be having, since lists support addition and deletion, that can be helpful.
+### List vs Tuple
+Lists are used when we are not sure how many values we'll be having, since lists support addition and deletion.
 
-Tuples are to be used when we know in advance how many values we want, plus when we are sure that the values are not going to change, this is because tuples are immutable.
-
-You can access the elements of a tuple in the same way you can access elements inside a list.
+Tuples are used when there is a fixed number of values to deal with. Tuples don't support addition and deletion.
 
 ## Set
 
