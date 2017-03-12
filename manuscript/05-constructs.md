@@ -10,6 +10,7 @@ Please do not copy paste the code below, it won't work, please type the code.
 1. if else
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement)
+Watch the [video 1](https://youtu.be/fbCsCFuj6zE), [video 2](https://youtu.be/YjUo6TQ2EzE)
 
 if-else statement is for conditional branching.
 ```Python
