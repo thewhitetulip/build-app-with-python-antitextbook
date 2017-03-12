@@ -109,7 +109,7 @@ Read the [docs](http://docs.python.org/3/library/stdtypes.html#truth-value-testi
 
 ## Boolean Operators
 
-Read the [docs](http://python.org/library/stdtypes.html#boolean-operations-and-or-not)
+Read the [docs](http://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
 
 ### or
 

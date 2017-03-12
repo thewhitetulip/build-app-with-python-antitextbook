@@ -2,7 +2,7 @@
 
 File handling is one of the most important features of any programming language. As always, python makes it very easy to handle files.
 
-When we create a file object, we are using the io module's TextIOWrapper class, [docs](http://localhost:9090/library/io.html#io.TextIOWrapper)
+When we create a file object, we are using the io module's TextIOWrapper class, [docs](https://docs.python.org/3/library/io.html#io.TextIOWrapper)
 
 *Note: this is the interpreter*
 

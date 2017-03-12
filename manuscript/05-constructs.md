@@ -5,11 +5,11 @@ There are following constructs in Python. We will use the interpreter in this ch
 For these statements, you'll use the indentation rule which we looked in the second chapter, refresh the chapter if you can't recollect indentation!
 
 ### Note: 
-Please do not copy paste the code below, we encourage you to type the code.
+Please do not copy paste the code below, it won't work, please type the code.
 
 1. if else
 
-Read the [docs](http://localhost:9090/reference/compound_stmts.html#the-if-statement)
+Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement)
 
 if-else statement is for conditional branching.
 ```Python
@@ -54,7 +54,7 @@ Try running these blocks
 
 2. for
 
-Read the [docs](http://localhost:9090/reference/compound_stmts.html#the-for-statement)
+Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)
 
 For is the looping construct used for looping definitely. For instance you have a dictionary containing n elements, you'll loop through the keys of the dictionary and print the values, or you have a list and you want to print all the values, in these cases, you'll use the for construct.
 
@@ -101,7 +101,7 @@ Range returns the next value to the for statement whenever it gets executed, it 
 
 3. while
 
-Read the [docs](http://localhost:9090/reference/compound_stmts.html#the-while-statement)
+Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
 
 while is used when you have to loop for a specific condition. If you don't have a condition, you can use `True` and that would result in an infinite loop.
 
@@ -136,7 +136,7 @@ Run the below code in the interpreter, first see the output of the code, try to 
 
 1. break
 
-Read the [docs](http://localhost:9090/reference/simple_stmts.html#break)
+Read the [docs](https://docs.python.org/3/reference/simple_stmts.html#break)
 
 When you use the break statement, you kill the current loop.
 
@@ -151,7 +151,7 @@ The above block will print all the numbers until it hits 4. The moment it hits 4
 
 2. continue
 
-Read the [docs](http://localhost:9090/reference/simple_stmts.html#continue)
+Read the [docs](https://docs.python.org/3/reference/simple_stmts.html#continue)
 
 When you use the continue statement, you move to the next iteration
 
@@ -177,12 +177,12 @@ else:
 For instance, in the above if-else block, you really don't know what logic you are going to put, so you can either use `print("TODO")`, or use the pass statement. pass doesn't print anything. You can use pass in any loop.
 
 4. try - except - finally
-Read the [docs](http://localhost:9090/reference/compound_stmts.html#the-try-statement)
+Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-try-statement)
 
 try-except is used for exception handling, we'll take a look at it in a later chapter. The logic behind this is that sometimes there might be exceptional scenarios which can make our program crash, we use try-except block to handle them.
 
 5. with 
-Read the [docs](http://localhost:9090/reference/compound_stmts.html#the-with-statement)
+Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-with-statement)
 
 The with block was added in [PEP 343](https://www.python.org/dev/peps/pep-0343/). support of the [Resource Acquisition Is Initialization](http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization) idiom commonly used in C++. It is intended to allow safe acquisition and release of operating system resources.
 
