@@ -201,5 +201,5 @@ When you have two layers of indentation, this is called nesting. You can have as
 
 ##### Links
 
-|[Next](03-01-understanding-variables.md) | [Previous](01-intro-to-python.md) |  [Index](SUMMARY.md)
+|[Next](03-01-understanding-variables.md) | [Previous](01-intro-to-python.md) |  [Index](../SUMMARY.md)
 | ----| ----| ----| 
