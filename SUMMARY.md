@@ -12,3 +12,4 @@
 * [Adding Functions](manuscript/11-function-tasks.md)
 * [Adding Modules](manuscript/12-modules-tasks.md)
 * [Some more examples](manuscript/13-examples.md)
+* [Object oriented programming basics](manuscript/14-object-oriented-programming.md)
