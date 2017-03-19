@@ -469,6 +469,9 @@ We do not print confirmation like "task deleted", "task added", it can be added.
 
 We have a fully working todo list manager as of now, what we need to do, is to reduce the redundancy. That'll be undertaken in the next chapter.
 
+## Homework
+Translate this todo list app to use sqlite3 database which comes inbuilt with Python. Please do not use the Internet, use the sqlite3 documentation.
+
 ##### Links
 
 |[Next](11-function-tasks.md) | [Previous](09-functions.md) |  [Index](SUMMARY.md)
