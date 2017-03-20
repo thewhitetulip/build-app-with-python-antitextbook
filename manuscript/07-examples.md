@@ -26,7 +26,7 @@ a = [1,1,1,1,2,2,2,2,23,3,3,3,3,3,4,4,4,4,4]
 
 4. Solve the above example using a dictionary
 
-Create an empty dictionary and go on assinging values. 
+Create an empty dictionary and go on assigning values. 
 
 ```python
 >>> a = {}
