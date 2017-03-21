@@ -4,9 +4,11 @@ Watch on [YouTube](https://www.youtube.com/watch?v=3_-W0S1VdLo)
 
 Read the [docs](https://docs.python.org/3/reference/expressions.html#atom-identifiers)
 
-Variables are used to perform operations. Python is a dynamic language, thus, you don't have to define the data type o the variable, the interpreter will evaluate it correctly when it hits the execution, please do note that it happens **during the runtime**.
+This chapter introduces us to variables and the various variable types in python, it is understandable if you can't recollect each and every type of variable in one read, don't worry, give it time, eventually you'll remember them byheart.
 
-Python is a completely object oriented language, whenever you create a variable, you are creating an object of the class. 
+Variables are used to perform operations. Python is a dynamic language, thus, you don't have to define the data type o the variable, the interpreter will evaluate it when it hits the execution, please do note that it happens **during the runtime**. Although the interpreter does evaluate the object type dynamically, it can't read minds! Thus, some responsibility lies with us, as we will see in a future chapter.
+
+Python is a completely object oriented language, even data types are classes. When a variable is created, it's an object of that class.
 
 #### Note:
 
@@ -19,7 +21,7 @@ i = 1
 print(id(i))
 ```
 
-If you type `i = 1`, it creates a variable i, it creates an object of type "int" and stores the address of the object in i.
+`i = 1` creates a variable i. It is an object of type "int" and stores the address of the object in i.
 
 ###### Note:
 type is a function which returns the data type of the value it is passed. `type(1)` returns the data type of 1, which is an integer. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=id#type)
@@ -48,9 +50,9 @@ if type(a) == type(1):
 
 ## is
 
-Read the [docs](https://docs.python.org/3.6/reference/expressions.html#is
+Read the [docs](https://docs.python.org/3.6/reference/expressions.html#is)
 
-The operators is and is not test for object identity: x is y is true if and only if x and y are the same object. Object identity is determined using the id() function. x is not y yields the inverse truth value. [4])
+The operators `is` and `is not` test for object identity: x is y is true if and only if x and y are the same object. Object identity is determined using the id() function. x is not y yields the inverse truth value.)
 
 ```python
 >>> a = False
@@ -64,16 +66,16 @@ True
 ```
 ## isinstance
 
-We can also use `isinstance` method for checking the data type. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=isinstance#isinstance)
+Method for checking the data type which returns either True or False. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=isinstance#isinstance)
 
 ```python
 >>> isinstance('a string', str)
 True
 ```
 
-Variables can be of the following types:
+## Variable types
 
-## Numeric types
+## Numeric 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex).
 
 #### Integer
