@@ -1,71 +1,60 @@
 # Operators
 
-We will be learning this chapter in an interpreter, so start a session.
-
-        ~ python3
-        Python 3.6.0 (default, Jan 13 2017, 22:22:15)
-        Type "help", "copyright", "credits" or "license" for more information.
-	>>>
-
-When you get this prompt, the interpreter has started.
-
 Python has the following major operators:
 
-<,>,=,==,>=,<=,!=,\*,+,-,\*\*, +=, -=, /=, \*=, in, and, not
+<,>,=,==,>=,<=,!=,\*,+,-,\*\*, +=, -=, /=, \*=, in, and, not, is.
 
 ## Assignment
-
-`=` is the assignment operator. It creates variables and stores the values which you give at the right hand side to the left hand side.
 
 ```python
 >>> a = 1
 >>> b = a
 ```
+`=` is the assignment operator. It created two variables, `a` and `b` of type integer.
 
 ## Equality
 
-`==` is the equality operator, it returns true if both the operands are same
-
 ```python
-	>>> a = 1
-	>>> b = 1
-	>>> a == b
-	True
+>>> a = 1
+>>> b = 1
+>>> a == b
+True
 ```
-It is a classic mistake to use `==` when you really want to use `=` or vice versa. We encourage that you take extreme care to not misuse one when you want to use the other.
+`==` is the equality operator, it returns true if both the operands are same. 
+
+It is a classic mistake to use `==` when you really want to use `=` or vice versa. 
 
 ## Division
-
-If you have been from a C background, you'll find Python's divide operator a bit different.
 
 ```python
 >>> i = 10
 >>> i/2 # / returns the quotient (floating point number)
 5.0
->>> i//2 # returns the quotient (integer number)
+>>> i//2 # // returns the quotient (integer number)
 5
->>> i%2 # returns the remainder (integer number)
+>>> i%2 # % returns the remainder (integer number)
 0
 ```
+If you have been from a C background, you'll find Python's divide operator a bit different.
 
 ## Power
-
-`**` is the operator for power.
 
 ```python	
 >>> a = 12
 >>> a**2
 144
 ```
+`**` is the operator for power.
 
 ## Membership test
 
-The in operator is used to check the membership, it works on lists, sets and tuples.
 ```python
 >>> a = [1,2,3]
 >>> 3 in a
 True
 ```
+The in operator is used to check the membership, it works on lists, sets and tuples.
+
 ## Object Identity
 
 Read the [docs](https://docs.python.org/3.6/reference/expressions.html#is)
@@ -84,6 +73,9 @@ True
 ```
 
 ## Boolean operators
+
+## True and False
+`True` and `False` are special values in Python3. In previous version of the language, we were allowed to create a variable of name True and False, but since Python3, they are specially reserved.
 
 ### not
 
@@ -114,8 +106,6 @@ True
 >>> not [1,2,3]
 False
 ```
-
-Negation works with various data type. `True` and `False` are fixed as far as variable names are concerned, you can't create a variable named True or False. It was possible in python2 to do so.
 
 Anything that can be evaluated to having some value is converted to False by using not. For instance, an empty list would be a _Falsy_ (I am not a big fan of this word) value, hence a `not list()` would evaluate to True.
 
@@ -158,6 +148,7 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#comparisons)
 There are eight comparison operations in Python. They all have the same priority (which is higher than that of the Boolean operations). Comparisons can be chained arbitrarily; for example, x < y <= z is equivalent to x < y and y <= z, except that y is evaluated only once (but in both cases z is not evaluated at all when x < y is found to be false).
 
 This table summarizes the comparison operations:
+
 |Operation |	Meaning|
 |------|------|
 |< |	strictly less than|
