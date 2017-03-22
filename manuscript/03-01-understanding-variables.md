@@ -1,30 +1,31 @@
 # Variables
 
-Watch on [YouTube](https://www.youtube.com/watch?v=3_-W0S1VdLo)
+Watch on [YouTube](https://www.youtube.com/watch?v=3_-W0S1VdLo) | Read the [docs](https://docs.python.org/3/reference/expressions.html#atom-identifiers)
 
-Read the [docs](https://docs.python.org/3/reference/expressions.html#atom-identifiers)
+Variables are used to store values in memory. This chapter introduces us to variables, their types and usage. It is understandable if you can't recollect each and every type of data type, come back to this chapter until you remember each data type by heart.
 
-This chapter introduces us to variables and the various variable types in python, it is understandable if you can't recollect each and every type of variable in one read, don't worry, give it time, eventually you'll remember them byheart.
+Since Python is a dynamic language, we do not have to declare the data type of the variable. The interpreter will automatically deduce the data type during runtime. Python is a completely object oriented language (even data types are classes), variables are objects. A variable has an address and a value.
 
-Variables are used to perform operations. Python is a dynamic language, thus, you don't have to define the data type o the variable, the interpreter will evaluate it when it hits the execution, please do note that it happens **during the runtime**. Although the interpreter does evaluate the object type dynamically, it can't read minds! Thus, some responsibility lies with us, as we will see in a future chapter.
-
-Python is a completely object oriented language, even data types are classes. When a variable is created, it's an object of that class.
-
-#### Note:
-
-Read the [docs](https://docs.python.org/3/library/functions.html?highlight=id#id)
-
-id() is a function which returns the address of an object.
+Defining a variable is simple, the below block declares a variable named `i`, the data type of the variable is deduced by the interpreter as `int`.
 
 ```python
-i = 1
-print(id(i))
+>>> i = 1
+>>> print(i)
+1
 ```
 
-`i = 1` creates a variable i. It is an object of type "int" and stores the address of the object in i.
+#### Finding address of variables.
 
-###### Note:
-type is a function which returns the data type of the value it is passed. `type(1)` returns the data type of 1, which is an integer. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=id#type)
+id() is a function which returns the address of an object. You can read more in the docs [here](https://docs.python.org/3/library/functions.html?highlight=id#id).
+
+```python
+>>> i = 1
+>>> print(id(i))
+405911019
+```
+
+#### Finding data type of variables.
+`type` is a builtin function which returns the data type of the argument passed to it. `type(1)` returns the data type of 1, which is an integer. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=id#type)
 
 ```python
 type(1) # <class 'int'>
@@ -34,39 +35,9 @@ type("") # <class 'string'>
 # "" or '' is an empty string, equivalent of 0 of integer.
 ```
 
-You can use `type` to check the data type of a variable. Let's say you want to print a message if a variable is a string.
-
-```python
-a = getSomething()
-
-if type(a) == type(""):
-	print("a is string")
-
-if type(a) == type(1):
-	print("a is integer")
-```
-
-`type(a)` is going to return the "str" class, `type("")` is going to return the "str" class. They both are same, thus comparison `==` (**Double equal signs!**) will return true.
-
-## is
-
-Read the [docs](https://docs.python.org/3.6/reference/expressions.html#is)
-
-The operators `is` and `is not` test for object identity: x is y is true if and only if x and y are the same object. Object identity is determined using the id() function. x is not y yields the inverse truth value.)
-
-```python
->>> a = False
->>> a is bool
-False
->>> a is int
-False
-# Can be rewritten as
->>> id(x) == id(x)
-True
-```
 ## isinstance
 
-Method for checking the data type which returns either True or False. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=isinstance#isinstance)
+isinstance takes two arguments, object and class. If the object is an instance of the clas, it returns True, otherwise, it returns False. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=isinstance#isinstance)
 
 ```python
 >>> isinstance('a string', str)
@@ -81,12 +52,12 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#numeric-types-in
 #### Integer
 
 ```python
-i = 0
-i = 10000
-i = 123333
-print(type(1))
+>>> i = 0
+>>> i = 10000
+>>> i = 123333
+>>> print(type(1))
+`<type 'int'>`
 ```
-The output of `print(type(1))` is `<type 'int'>`.
 
 #### Float
 
@@ -106,7 +77,6 @@ i = complex(12,23) # 12 + 23j
 ```
 
 #### String
-
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
 
 ```python
