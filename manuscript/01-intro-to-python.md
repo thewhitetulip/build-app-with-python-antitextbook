@@ -35,10 +35,8 @@ Install Termux (https://termux.com/help.html), and then `apt-get install python3
 
 You are not expected to understand everything in one go, but keep reading, till we reach the end of the book, you'll start writing Python code.
 
-##Your first Python Script
+## Your first Python Script
 Problem statement: List all text files in the current working directory.
-
-#### Note:
 
 Python doesn't use semi colons or braces for control flow (if/for/while), it uses **indentation**. It is mandatory to use indentation if you are using a `for`, `while`, `if` loop.
 
