@@ -66,6 +66,22 @@ The in operator is used to check the membership, it works on lists, sets and tup
 >>> 3 in a
 True
 ```
+## Object Identity
+
+Read the [docs](https://docs.python.org/3.6/reference/expressions.html#is)
+
+The operators `is` and `is not` test for object identity: `x is y` returns True only if x and y are the same object. Object identity is determined using the id() function; `x is not y` yields the inverse truth value.)
+
+```python
+>>> a = False
+>>> a is bool
+False
+>>> a is int
+False
+# Can be rewritten as
+>>> id(x) == id(x)
+True
+```
 
 ## Boolean operators
 
