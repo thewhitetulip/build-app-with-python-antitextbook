@@ -6,14 +6,18 @@ Watch on [YouTube](https://www.youtube.com/watch?v=wSqRUTS7uAg)
 
 There are two ways of running Python programs, 
 
-1. Interactive mode: In which you copy paste or type one line at a time and the code will be evaluate immediately
+1. Interactive mode: Type code which will be evaluate immediately, but you can't save it to a file.
 2. Batch Mode: Save the code in one file and then execute the file.
 
 #### Interactive mode
+In the Interactive mode, you type python code inside an interpreter session which is evaluated immediately, it is suitable for short edits. To start the Python interpreter, type `python3` or `python` in the terminal. You should see something like this.
 
-Typing `python3` or `python` on your machine will start the interpreter. You should see `Python 3.` on the next line, then you are good to go. If you don't, then you'll have to figure out how to run Python3.
-
-This will start the Python interpreter. The `>>>` signifies the input location. We recommend using ipython instead of the default python interpreter as it is more powerful and feature rich.
+```bash
+    Python 3.6.0 (default, Jan 13 2017, 22:22:15)
+    Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+This shows that the default Python shell has started. The `>>>` signifies the input location. 
 
 > Note: As you can seen below, you need to hit the Enter or Return key **twice** to come out of the if block. You should see the `...` on the line and just hit enter again and the statement would be evaluated.
 
@@ -23,9 +27,6 @@ This will start the Python interpreter. The `>>>` signifies the input location. 
 ...     print("another hi")
 ...
 ```
-
-Interactive mode is suitable for short edits.
-
 #### Batch Mode
 
 In this mode, you type all the code and save it in a text file. Later, we execute it as `python3 file.py`.
@@ -49,7 +50,7 @@ This will execute `file.py`. And, you'll see the list of all files and folders i
 We are going to use `python3` to run the code. Type `python --version`, if this says 2, then you'll need to install python3 and execute code using python3.
 If `python --version` gives you 3, then you'll need to run all the code in this book as `python file.py`
 
-### Hybrid approach
+#### Hybrid approach
 Typically, you'd want to use both the interactive mode and the batch mode. When you'll write small blocks of code, you would want to run it first in the interpreter and then add it to your file. It is a matter of taste.
 
 ##### Installing packages
@@ -64,7 +65,11 @@ Read the [docs](https://docs.python.org/3/reference/lexical_analysis.html?highli
 
 Comments are the lines which the interpreter will _ignore_. The significance of comments lies purely for code readability. It makes  maintaining the project an easier task. If programming is a religion then Comment would be it's most powerful God capable of making or breaking lives. 
 
-Programs should have appropriate comments, typically, code which is non obvious should have a comment associated with it, for instance, this line of code is obvious, `a+=1`, so there is no need to add a comment saying `increments the variable a by 1`, but `a = 4*c+4*d/6*c` is not obvious, it might be Sarick's coefficient, and thus would warrant a comment. There is no such thing as Sarick's coefficient.
+Programs should have appropriate comments, typically, non obvious code should have a comment associated with it. 
+
+Consider this line of code, `a+=1`, there is no need to add a comment saying `increments the variable a by 1` because it is ovious. 
+
+Now, consider this line of code, `a = 4*c+4*d/6*c`. This is not obvious, it might be Sarick's coefficient, and thus would warrant a comment. There is no such thing as Sarick's coefficient.
 
 #### Single Line Comments
 
@@ -72,7 +77,7 @@ They start with a `#`. Can be present on any position in a line, any text writte
 
 These are typically given to statements and not to functions/classes.
 
-#### Docstring
+#### Docstring Comments
 
 Read the [docs](https://docs.python.org/3/library/doctest.html)
 
@@ -123,7 +128,7 @@ print("not in the scope of the IF block")
 
 When we use indentation, we need to understand the scope of each block which we use. Each statement belongs to one or more "scopes", one direct scope and multiple indirect scopes. 
 
-Plain if-else
+Plain if-else statement.
 
 ```python
 if True:
@@ -135,33 +140,9 @@ else:
     # scope of the else statement.
     print("Statement is false")
 ```
-
-Understanding scoping for nested if-else statement is critical for written Python scripts.
-
-```
-if True:
-    # statements here are in the 
-    # scope of the if statement.
-    print("Statement is true")
-    if True:
-        # statements here are in the inner if
-	# but overall, lie in the scope of 
-	# the outer if 
-        print("Another statement")
-else:
-    # statements here are in the 
-    # scope of the else statement.
-    print("Statement is false")
-    if True:
-        # statements here are in the inner if
-	# but overall, lie in the scope of 
-	# the outer else
-        print("Another statement")
-```
+For visualization, let's draw `[]` around the spaces, so the code now looks like this:
 
 > Note: This is not valid Python code, `[]` is used just to show the indentation.
-
-For visualization, let's draw `[]` around the spaces, so the code now looks like this:
 
 ```
 if a > 1:
@@ -172,13 +153,13 @@ if a > 1:
 print("not in the scope of the IF block")
 print("not in the scope of the IF block")
 ```
-This means, all lines except the last two lie in the if block.
+All lines except the last two are in the scope of the `if` block.
 
-Consider these steps in finding the scope of each statement:
+#### How to find scope?
 1. After a construct which ends with a colon (if/for/while/try/except), calculate the number of spaces in the immediate next line. In this example, it is `four spaces`. The first `[]` block.
 1. Every line below this line which has `four spaces` at the start until we get a line which **doesn't** have four spaces is in the if block.
 
-> Note: Having indentation **without** a if/for/while/elif block is a syntax error, for instance, you can't do the following:
+> Note: Having indentation **without** an if/for/while/elif block is a syntax error, for instance, you can't do the following:
 
 ```python
 if a > 1:
@@ -187,11 +168,13 @@ print("bye")
 	print("hi")
 ```
 
-When you run this code, the interpreter can't resolve which block the last print statement fits into.
+The syntax error is because the interpreter isn't able to find out what block the statement belongs to.
 
 #### Nesting
 
-We can have multiple if blocks inside an if block, the same logic applies to other statements like for and while. This concept is called nesting. When we write nested if statements, then the same logic applies to indentation.
+We can have multiple if blocks inside an if block (same is true with for/while statements). This is called nesting. When we write nested if statements, then the same logic applies to indentation.
+
+This is an example of two level nesting:
 
 ```python
 if a > 1:
@@ -200,6 +183,9 @@ if a > 1:
 	print("a is greater than 1")
 print("This is not in either of the above blocks")
 ```
+Let's add `[]` to the code to understand scoping for nested blocks. 
+
+Each `[ ]` can be considered as a block, we can see that `if b < 1` has only one block, but this statement, `print(" b is less than 1")` has two blocks of spaces, the first one is to `if b < 1` which is the primary scope, the secondary scope is to `if a > 1`.
 
 > Note: This is not valid Python code, `[]` is used just to show the indentation.
 
@@ -210,10 +196,32 @@ if a > 1:
 [	]print("a is greater than 1")
 print("This is not in either of the above blocks")
 ```
+### Scoping for nested blocks
 
-You can understand scoping better if you think in terms of blocks. In the above example, there are three lines with the first `[ ]` block. The third line contains two blocks of [ ], this means, it is a part of BOTH if blocks. Directly, it lies in the second if block, indirectly, it lies in the first if block.
+Here, the statements which lie in the inner if statement lie in two blocks, the inner if statement's block and the outer if statement's block.
+
+```python
+if True:
+    # statements here are in the 
+    # scope of the if statement.
+    print("Statement is true")
+    if True:
+        # statements here are in the inner if
+	# but overall, lie in the scope of 
+	# the outer if. 
+        print("Another statement")
+else:
+    # statements here are in the 
+    # scope of the else statement.
+    print("Statement is false")
+    if True:
+        # statements here are in the inner if
+	# but overall, lie in the scope of 
+	# the outer else.
+        print("Another statement")
+```
 
 ##### Links
 
-|[Next](03-01-understanding-variables.md) | [Previous](01-intro-to-python.md) |  [Index](../SUMMARY.md)
-| ----| ----| ----| 
+|[Next](03-01-understanding-variables.md) | [Previous](01-intro-to-python.md) |  [Index](SUMMARY.md)
+| --------| --------| --------| 
