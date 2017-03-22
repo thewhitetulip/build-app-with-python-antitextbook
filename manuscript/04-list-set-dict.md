@@ -4,49 +4,41 @@ In the last chapter we saw int, float, complex and strings. But that was just th
 
 ## List
 
-Watch on [YouTube](https://www.youtube.com/watch?v=30S9LnvanwY)
+Watch on [YouTube](https://www.youtube.com/watch?v=30S9LnvanwY) | Read the [docs](https://docs.python.org/3/library/stdtypes.html#list)
 
-Read the [docs](https://docs.python.org/3/library/stdtypes.html#list)
-
-Lists store multiple values in Python. Lists allow you to store values of any data type. Lists also allow duplicates
-
-You can access elements of the list by using indices, 0,1,2,3. Indices always start with a 0 in Python. python also allows you negative indices, in that case, the values are returned in reverse order.
-
+List allows us to store multiple values of any data type. Lists support duplicate elements. Elements of a list can be accessed by using indices. Indices in Python start with 0, 1, 2, 3 etc. Lists also support negative indices. Let's see that by example.
 
 ```python
 l = [] # creates an empty list
-l = [1,2,3] # a list with values 1,2,3
-l = [1,2,3, 'sh', 'bm'] # a list contains 
+l = [1,2,3] # creates a list with values 1,2,3
+l = [1,2,3, 'sh', 'bm'] # creates a list contains 
 l = [1,2,3, [1,2,3]] # A list which contains a list as a member
 l = [ 1,1,1,1,1,1,1 ] # lists allow duplicates
 
-print(l[0]) # first value
-print(l[1]) # second value
-print(l[-1]) # last value
-print(l[-2]) # second last value
+print(l[0]) # first value.
+print(l[1]) # second value.
+print(l[-1]) # last value.
+print(l[-2]) # second last value.
+print(l[-100]) # index out of range error.
 ```
-
-Lists are very powerful in Python, together with Sets and Dictionaries, they make Python a very powerful language.
-
-Now, let's learn how to harness the help commands in Python.
-
-Open up the interpreter.
-
-If you see this, then you are in the interpreter
-
-	Python 3.6.0 (default, Jan 13 2017, 22:22:15)
-	[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.38)] on darwin
-	Type "help", "copyright", "credits" or "license" for more information.
-	>>>
 
 ## Getting Help
 
-There are two ways to get help in Python, `help` or `dir`.
+There are two ways to get help `help` or `dir`.
 
-`help` is a function which takes an argument and returns the documentation of the data type.
-`dir` is a function which takes an argument and returns all the methods valid for that data type.
+* `help` is a function which takes an argument and returns the documentation of the data type.
+* `dir` is a function which takes an argument and returns all the methods valid for that data type.
 
-Both help and dir don't care if you pass an empty object, for instance, if you want help for the string data type, pass '', if you pass 'hello', then also you get the same output, the reason for that is, whatever you pass to help and dir, the functions return **help for the class of that object**.
+Both `help` and `dir` return help about the class of the object which is passed as an argument. 
+
+```python
+help(1) # help about integer class.
+help('') # help about strings.
+help(1.1) # help about float.
+help([]) # help about lists
+```
+
+### Output of `help`
 
 ```python
 >>> help('')
@@ -61,21 +53,30 @@ class str(object)
 	|  that will be decoded using the given encoding and error handler.
 	|  Otherwise, returns the result of object.__str__() (if defined)
 	|  or repr(object).
-
-
->>> dir('')
-['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
 ```
 
-By making use of `dir` and `help`, we can get help in a better way in Python.
+### Output of `dir`
 
-Now, try getting help and the list of functions out for the list data type, instead of `''`, pass `[]`. `[]` means an empty list.
+```python
+>>> dir('')
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+'__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', 
+'__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', 
+'__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 
+'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 
+'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 
+'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+```
 
-Try typing this out in an interpreter, it is better to check this in the interpreter because that way, you'll understand things  in a better way and quickly.
+Try getting the list of methods for the list data type.
 
-If you looked into the interpreter, you'd have seen that there are various methods for lists
+## Methods of the List datatype.
 
-## append
+### append
+The `append` function takes **one** argument and adds it to the end of the list. If we append a list to an existing list, the entire list will be added as a new element in the original list.
+
+> Note:
+If you want to merge two lists, then use `extend`
 
 ```python
 >>> a = []
@@ -92,11 +93,8 @@ If you looked into the interpreter, you'd have seen that there are various metho
 >>> a
 [1, '2', 1.11111, [1, 2, 3]]
 ```
-	
-	
-The `append` function takes **one** argument and adds it to the end of the list. If you want to merge two lists, then use `extend`
 
-## extend
+### extend
 
 ```python
 >>> a
@@ -107,18 +105,18 @@ The `append` function takes **one** argument and adds it to the end of the list.
 [1, '2', 1.11111, [1, 2, 3], 1, 2, 3]
 ```	
 
-here, the values of b were added individually at the end of the list `a`.
+Extend takes one argument of type list, individual elements of list `b` were added at the end of the list `a`.
 
-## del
+### del
 
 ```python
 >>> del a[0]
 >>> a
 ['2', 1.11111, [1, 2, 3], 1, 2, 3]
 ```
-`del` can be used to delete any variable, it de-allocates a variable, it can also be used to delete elements from any data type(list, set, dict). We can't delete individual elements from tuples, but using `del`, we can delete the variable of the tuple itself.
+`del` can be used to delete any variable, it de-allocates a variable, it can also be used to delete elements from any data type except tuple. `del` can delete the variable of the tuple itself.
 
-## pop
+### pop
 
 ```python
 >>> a.pop()
@@ -129,7 +127,7 @@ here, the values of b were added individually at the end of the list `a`.
 [1, '2', 1.11111, [1, 2, 3], 1]
 ```
 
-pop deletes the last element by default, if you pass an index, it'll delete and **return** the element. This is the main difference between the `del` keyword and `pop`.
+pop deletes the last element by default, if you pass an index, it'll delete and **return** the element at that index. This is the main difference between the `del` keyword and `pop`.
 
 ```python
 >>> a
