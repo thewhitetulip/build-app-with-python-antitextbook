@@ -1,36 +1,12 @@
 # Constructs
 
-There are following constructs in Python. We will use the interpreter in this chapter too.
+> Note: If you don't remember the indentation rule, you might want to go back and read the previous chapter.
 
-For these statements, you'll use the indentation rule which we looked in the second chapter, refresh the chapter if you can't recollect indentation!
+### if-else statment
 
-### Note: 
-Please do not copy paste the code below, it won't work, please type the code.
+Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement) |Watch [video 1](https://youtu.be/fbCsCFuj6zE)| Watch [video 2](https://youtu.be/YjUo6TQ2EzE)
 
-1. if else
-
-Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement)
-Watch the [video 1](https://youtu.be/fbCsCFuj6zE), [video 2](https://youtu.be/YjUo6TQ2EzE)
-
-if-else statement is for conditional branching.
-```Python
->>> a = 10
->>> if a > 10:
-...     print("A is greater than 10")
-... elif a < 10:
-...     print("A is less than 10")
-... else:
-...     print("A is equal to 10")
-...
-A is equal to 10
-
-```
-
-If a is greater than 10, then the first print statement is executed.
-If a is NOT greater than 10 and is less than 10 then the second statement.
-If both of the above are false, then the last.
-
-The way the if statement works, is 
+if-else statement is for conditional branching. The syntax of the if statement is:
 
 ```python
 if condition:
@@ -41,66 +17,116 @@ else:
 	<code>
 ```
 
-The `condition` here is something that evaluates to a Boolean True. If it evaluates to a boolean False, then it doesn't execute.
+`condition` is an expression which evaluates to True or False. 
 
-Try running these blocks
+When the condition of the `if` block evaluates to False, it will go to the `elif` blocks until it finds a condition which evaluates to True, when no condition evaluates to True, then the else block is executed.
+
+Try running this block:
 
 ```python
->>> if True:
-...    print("This is the true block")
+if True:
+   print("The if block.")
 
->>> if False:
-...    print("This is the false block")
+if False:
+   print("The if block.")
+else:
+   print("The else block.")
+
+if True:
+   print("The if block.")
+else:
+   print("The else block.")
+```
+The output is:
+
+```
+The if block.
+The else block.
+The if block.
 ```
 
-2. for
+The `elif` block is special, it gets evaluated if the parent `if` block has been evaluated to False.
+
+```Python
+a = 10
+if a > 100:
+    print("A is greater than 100")
+elif a < 100:
+    print("A is less than 100")
+else:
+    print("A is equal to 100")
+```
+Output:
+```
+A is less than 100
+```
+Explanation:
+Is a greater than 100? -> A is greater than 100.
+Is a less than 100 (and not greater than 100)  -> A is less than 100.
+Both of above conditions are False? -> A is equal to 100.
+
+## for loop.
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)
 
-For is the looping construct used for looping definitely. For instance you have a dictionary containing n elements, you'll loop through the keys of the dictionary and print the values, or you have a list and you want to print all the values, in these cases, you'll use the for construct.
-
-If you have a list [1,2,3,4,5] there are two ways in which you can loop on the list
+`for` statement is used to cycle over a list/set/tuple. 
 
 ```python
->>> l = [1,2,3,4,5]
->>> for i in l:
-...     print(i)
-...
-1
-2
-3
-4
-5
->>> for i in range(len(l)):
-...     print(l[i])
-...
+l = [1,2,3,4,5]
+for i in l:
+    print(i)
+```
+Output:
+```
 1
 2
 3
 4
 5
 ```
+
+Explanation:
+The above for loop will print each item in the list `l`. During the loop's execution, each value of the list is stored in the variable `i`, on which we can perform operations. Here, we are just printing the variable `i`, but we can do a host of other things.
+
+An another way to print all the values of a list is this:
+
+```
+for i in range(len(l)):
+    print(l[i])
+```
+Output:
+1
+2
+3
+4
+5
+
+Explanation:
+`range` returns a list of numbers starting from 0 to the length of the list. In this case, it returns [0,1,2,3,4], we then print the respective index of the list.
+
+#### The Else Block
 
 `for` has an else block. It is strange at first glance, but it is quite helpful in certain cases, like finding if a number if prime or not.
 
 
 ```python
->>> for i in [1,2,3]:
-...     print(i)
-... else:
-...     print("out of for loop")
-...
+for i in [1,2,3]:
+    print(i)
+else:
+    print("out of for loop")
+```
+
+Output:
+```
 1
 2
 3
 out of for loop
 ```
 
-The logic of the `else` block in the `for` statement is the same as the `else` of the `if` statement. The first block of statements are executed when the counter is iterating on the variable used after `in`. The moment it finishes iteration the `else` block is executed.
+The `else` block of the `for` statement is same as the else block of the `if` statement. The first block of statements are executed when the counter is iterating on the variable used after `in`. The moment it finishes iteration the `else` block is executed.
 
-Range returns the next value to the for statement whenever it gets executed, it is lazy loading. It returns an iterable object, you are highly encouraged to loop up "Iterable objects in Python" on any search engine, preferable https://duckduckgo.com, we find that DDG returns better results for coding questions. (I am not getting paid for suggesting you to use DDG, it is that good)
-
-3. while
+## while loop.
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
 
