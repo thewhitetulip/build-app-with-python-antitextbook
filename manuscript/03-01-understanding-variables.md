@@ -4,9 +4,11 @@ Watch on [YouTube](https://www.youtube.com/watch?v=3_-W0S1VdLo) | Read the [docs
 
 Variables are used to store values in memory. This chapter introduces us to variables, their types and usage. It is understandable if you can't recollect each and every type of data type, come back to this chapter until you remember each data type by heart.
 
-Since Python is a dynamic language, we do not have to declare the data type of the variable. The interpreter will automatically deduce the data type during runtime. Python is a completely object oriented language (even data types are classes), variables are objects. A variable has an address and a value.
+Since Python is a dynamic language, we do not have to declare the data type of the variable. The interpreter will automatically deduce the data type during runtime. Python is a completely object oriented language (even data types are classes) hence all variables are objects. 
 
-Defining a variable is simple, the below block declares a variable named `i`, the data type of the variable is deduced by the interpreter as `int`.
+A variable has an address and a value.
+
+Creating a variable is simple, the below block creates a variable named `i`, the data type of the variable is deduced by the interpreter as `int`.
 
 ```python
 >>> i = 1
@@ -37,7 +39,7 @@ type("") # <class 'string'>
 
 ## isinstance
 
-isinstance takes two arguments, object and class. If the object is an instance of the clas, it returns True, otherwise, it returns False. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=isinstance#isinstance)
+isinstance takes two arguments, object and class. If the object is an instance of the class, it returns True, otherwise, it returns False. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=isinstance#isinstance)
 
 ```python
 >>> isinstance('a string', str)
@@ -110,7 +112,7 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-l
 
 #### List
 
-List stores an array of values of heterogenous type. Lists can have lists as elements.
+List stores multiple values of heterogenous type. Lists can have lists as elements.
 
 ```python
 i = [1,"Linux",3,"bash",[1,2,"sh"]]]
@@ -146,7 +148,7 @@ i = set([1,2,3,4,5])
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#tuple)
 
-Like lists but immutable. Once you create a tuple, you can't delete or add elements. Tuples typically are used when you want to store values which aren't going to change in the lifetime of a program.
+They are like lists but immutable. Once you create a tuple, you can't delete or add elements. Tuples typically are used when you want to store values which aren't going to change in the lifetime of a program.
 
 ```python
 >>> a = (1,2)

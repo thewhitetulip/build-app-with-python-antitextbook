@@ -4,32 +4,30 @@
 
 Watch on [YouTube](https://www.youtube.com/watch?v=wSqRUTS7uAg)
 
-There are two ways of running Python programs, 
-
-1. Interactive mode: Type code which will be evaluate immediately, but you can't save it to a file.
-2. Batch Mode: Save the code in one file and then execute the file.
+There are two ways of running Python programs, Interactive and Batch.
 
 #### Interactive mode
-In the Interactive mode, you type python code inside an interpreter session which is evaluated immediately, it is suitable for short edits. To start the Python interpreter, type `python3` or `python` in the terminal. You should see something like this.
+In the Interactive mode, code is typed inside an interpreter session which gets evaluated immediately. This mode is suitable for small edits. To start the Python interpreter, type `python3` or `python` in the terminal. You should see something like this.
 
-```bash
+```
     Python 3.6.0 (default, Jan 13 2017, 22:22:15)
     Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
-This shows that the default Python shell has started. The `>>>` signifies the input location. 
 
-> Note: As you can seen below, you need to hit the Enter or Return key **twice** to come out of the if block. You should see the `...` on the line and just hit enter again and the statement would be evaluated.
+This shows that the default Python shell has started. `>>>` signifies the input location. 
+
+> Note: When you type an if/for/while block in the interpreter, you need to hit the Enter or Return key **twice** for the block to be evaluated.
 
 ```python
 >>> if True:
 ...     print("hi")
-...     print("another hi")
+...     print("another hi") # hit enter twice here
 ...
 ```
 #### Batch Mode
 
-In this mode, you type all the code and save it in a text file. Later, we execute it as `python3 file.py`.
+In this mode, you type all the code and save it in a text file.
 
 ```python
 import os
@@ -44,38 +42,34 @@ Assuming `$` is your terminal, just type
 
     $ python3 file.py
 
-This will execute `file.py`. And, you'll see the list of all files and folders in the current working directory.
+This will execute `file.py`.
 
-#### Executing 3 vs 2
+###### Executing 3 vs 2
 We are going to use `python3` to run the code. Type `python --version`, if this says 2, then you'll need to install python3 and execute code using python3.
 If `python --version` gives you 3, then you'll need to run all the code in this book as `python file.py`
 
 #### Hybrid approach
-Typically, you'd want to use both the interactive mode and the batch mode. When you'll write small blocks of code, you would want to run it first in the interpreter and then add it to your file. It is a matter of taste.
+It is a better practice to use both interpreter and batch mode while writing Python scripts, that way, we can incrementally test small blocks and later add them to our file.
 
-##### Installing packages
+## Installing packages
 
-`pip` or `easy_install` is used for installing third party packages in Python. `pip` stands for Python installer package. The package that you are installing, needs to be hosted on https://pypi.python.org and you can just call `pip install shbh` to install a package named shbh. Read the [docs](https://docs.python.org/3/installing/index.html) for more details.
+`pip` or `easy_install` is used for installing third party packages in Python. `pip` stands for Python installer package. The package that you are installing, needs to be hosted on https://pypi.python.org and you can just call `pip install ipython` to install a package named ipython. Read the [docs](https://docs.python.org/3/installing/index.html) for more details.
 
 ## Comments
 
-Watch on [YouTube](https://www.youtube.com/watch?v=oU1rHEnfgcM)
+Watch on [YouTube](https://www.youtube.com/watch?v=oU1rHEnfgcM) | Read the [docs](https://docs.python.org/3/reference/lexical_analysis.html?highlight=comments#comments)
 
-Read the [docs](https://docs.python.org/3/reference/lexical_analysis.html?highlight=comments#comments)
+Comments are the lines which the interpreter will _ignore_. The significance of comments lies purely for code readability. It makes  maintaining the project easier. If programming is a religion then Comment would be it's most powerful God capable of making or breaking lives. 
 
-Comments are the lines which the interpreter will _ignore_. The significance of comments lies purely for code readability. It makes  maintaining the project an easier task. If programming is a religion then Comment would be it's most powerful God capable of making or breaking lives. 
+Each block of non obvious code should have appropriate comments associated with it. Consider `a+=1`, there is no need to add a comment saying `increments the variable a by 1` because it is ovious. 
 
-Programs should have appropriate comments, typically, non obvious code should have a comment associated with it. 
-
-Consider this line of code, `a+=1`, there is no need to add a comment saying `increments the variable a by 1` because it is ovious. 
-
-Now, consider this line of code, `a = 4*c+4*d/6*c`. This is not obvious, it might be Sarick's coefficient, and thus would warrant a comment. There is no such thing as Sarick's coefficient.
+Now, consider `a = 4*c+4*d/6*c`. This is not obvious, it might be Sarick's coefficient, and thus would warrant a comment. There is no such thing as Sarick's coefficient.
 
 #### Single Line Comments
 
-They start with a `#`. Can be present on any position in a line, any text written **after** the `#` till the end of the line is _ignored_ by the interpreter.
+They start with a `#`. It can be present in any position of a line, the text **after** the `#` till the end of the line is _ignored_ by the interpreter.
 
-These are typically given to statements and not to functions/classes.
+Single line comments are used for statements other than functions/classes.
 
 #### Docstring Comments
 
@@ -83,7 +77,9 @@ Read the [docs](https://docs.python.org/3/library/doctest.html)
 
 Python does not support multiple line comments. Triple quotes can be used as 'docstrings', for documentation purposes of functions and classes. 
 
-Triple quotes can either be made up of ''' or """. They need to be closed appropriately, otherwise they result in an error. Unlike comments, which are ignored, docstrings are evaluated, **not ignored**. These are typically given for functions, classes and modules (and not to statements).
+Triple quotes can either be made up of three single quote or three double quotes. They need to be closed appropriately, otherwise they result in an error. Unlike comments, which are ignored, docstrings are evaluated, **not ignored**.
+
+Below is an example:
 
 ```python
 >>> def function():
@@ -98,13 +94,13 @@ A string literal which appears as the first expression in a class, function or m
 
 ##### String validity
 
-The location of the ending ''' or """ doesn't matter, the only thing which matters is that **it should exist**. The value of a documentation string is in between the starting and ending triple quotes.
+The location of the ending triple quote doesn't matter, the only thing which matters is that **it should exist**. The value of a documentation string is in between the starting and ending triple quotes.
 
 Take the following strings as an example, `'this is a string', "this is a string", "'this is a string", '"this is a string', """ this is 'a string '""", '"""hi'`
 
-These all are *valid* strings, they start and end with the same quote. If a string starts and ends with a single quote, then a double quote can be part of the string, the same is true vice versa. 
+These all are *valid* strings, they start and end with the same quote. If a string starts and ends with a single quote, then any number of double quotes can be part of the string, the same is true vice versa. 
 
-But, when the string starts with a single quote, but has no ending single quote, it is a syntax error. `'"sherlock"` is an invalid string, so is `"sherlock''`, because both of these strings do not start and end with the same quote.
+But, when the string starts with a single quote, but has no ending single quote (or has more than one single quote), it is a syntax error. `'"sherlock"` is an invalid string, so is `"sherlock''`, because both of these strings do not start and end with the same quote.
 
 ## Indentation
 
@@ -185,7 +181,7 @@ print("This is not in either of the above blocks")
 ```
 Let's add `[]` to the code to understand scoping for nested blocks. 
 
-Each `[ ]` can be considered as a block, we can see that `if b < 1` has only one block, but this statement, `print(" b is less than 1")` has two blocks of spaces, the first one is to `if b < 1` which is the primary scope, the secondary scope is to `if a > 1`.
+Each `[ ]` can be considered as an indentation block, we can see that `if b < 1` has only one block, but this statement, `print(" b is less than 1")` has two blocks of spaces, the first one is to `if b < 1` which is the primary scope, the secondary scope is to `if a > 1`.
 
 > Note: This is not valid Python code, `[]` is used just to show the indentation.
 
