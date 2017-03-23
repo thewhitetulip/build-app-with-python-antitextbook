@@ -4,9 +4,11 @@
 
 ### if-else statment
 
-Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement) |Watch [video 1](https://youtu.be/fbCsCFuj6zE)| Watch [video 2](https://youtu.be/YjUo6TQ2EzE)
+Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement) | Watch [video 1](https://youtu.be/fbCsCFuj6zE)| Watch [video 2](https://youtu.be/YjUo6TQ2EzE)
 
-if-else statement is for conditional branching. The syntax of the if statement is:
+if-else statement is for conditional branching. 
+
+###### Syntax
 
 ```python
 if condition:
@@ -16,6 +18,7 @@ elif condition:
 else:
 	<code>
 ```
+###### Evaluation
 
 `condition` is an expression which evaluates to True or False. 
 
@@ -37,13 +40,21 @@ if True:
 else:
    print("The else block.")
 ```
-The output is:
+**Output:**
 
 ```
 The if block.
 The else block.
 The if block.
 ```
+
+**Explanation:**
+
+The statements in the `if` block get executed if the condition evaluates to `True`.
+
+The statements in the `else` block get executed when the `if condition` evaluates to `False`.
+
+#### elif
 
 The `elif` block is special, it gets evaluated if the parent `if` block has been evaluated to False.
 
@@ -56,16 +67,21 @@ elif a < 100:
 else:
     print("A is equal to 100")
 ```
-Output:
+
+**Output:**
 ```
 A is less than 100
 ```
-Explanation:
+
+**Explanation:**
+
 Is a greater than 100? -> A is greater than 100.
+
 Is a less than 100 (and not greater than 100)  -> A is less than 100.
+
 Both of above conditions are False? -> A is equal to 100.
 
-## for loop.
+### for loop.
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)
 
@@ -76,7 +92,7 @@ l = [1,2,3,4,5]
 for i in l:
     print(i)
 ```
-Output:
+**Output:**
 ```
 1
 2
@@ -85,24 +101,41 @@ Output:
 5
 ```
 
-Explanation:
-The above for loop will print each item in the list `l`. During the loop's execution, each value of the list is stored in the variable `i`, on which we can perform operations. Here, we are just printing the variable `i`, but we can do a host of other things.
+**Explanation:**
 
-An another way to print all the values of a list is this:
+The program goes through five iterations
+
+Iteration 1: Value of i is 1; loop prints 1;
+
+Iteration 2: Value of i is 2; loop prints 2;
+
+Iteration 3: Value of i is 3; loop prints 3;
+
+Iteration 4: Value of i is 4; loop prints 4;
+
+Iteration 5: Value of i is 5; loop prints 5;
+
+In a `for` loop, we can perform other operations too, for the sake of simplicity, we just printed the value of the variable i.
+
+#### Another approach.
 
 ```
 for i in range(len(l)):
     print(l[i])
 ```
-Output:
+**Output:**
+```
 1
 2
 3
 4
 5
+```
 
-Explanation:
-`range` returns a list of numbers starting from 0 to the length of the list. In this case, it returns [0,1,2,3,4], we then print the respective index of the list.
+**Explanation:**
+`range` returns a list [0,1,2,3,4].
+
+The execution of this program is exactly the same as above, we have five iterations and we are printing the values of a list based on the by fetching elements of the list by index.
 
 #### The Else Block
 
@@ -116,7 +149,7 @@ else:
     print("out of for loop")
 ```
 
-Output:
+**Output:**
 ```
 1
 2
@@ -124,91 +157,98 @@ Output:
 out of for loop
 ```
 
-The `else` block of the `for` statement is same as the else block of the `if` statement. The first block of statements are executed when the counter is iterating on the variable used after `in`. The moment it finishes iteration the `else` block is executed.
+**Explanation:**
+This is same as the else block of the `if` statement. The above program executes in three iterations
 
-## while loop.
+1'st iteration: value of i is 1
+
+2'nd iteration: value of i is 2
+
+3'rd iteration: value of i is 3
+
+4'th iteration: goes to the else block since all values have been consumed.
+
+
+### while loop.
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
 
-while is used when you have to loop for a specific condition. If you don't have a condition, you can use `True` and that would result in an infinite loop.
+`while` is used when you have to loop for a specific condition. If you don't have a condition, you can use `True` and that would result in an infinite loop.
 
 ```python
->>> i = 100
->>> while i >=0:
-...     print(i)
-...     i = i - 1
-...
+i = 100
+while i >= 0:
+    print(i)
+    i = i - 1
+```
+
+**Output:**
+```
 100
 ```
 
-If you want to print all numbers from 100 till 0, you'd use the above code. Of course, you can use `for` with `range(100,0)`, but for the sake of a while loop, we used one.
+**Explanation:**
+`while` is a looping statement like `for`, it is going through iterations, just the difference lies in the condition. The `while` statement will loop on the condition, until the condition evaluates to `False`. The loop exits when the condition becomes False.
 
-
-This is the syntax of a while loop
+###### Syntax
 
 ```python
 while condition:
 	<code>
 ```
 
-The `while` statement also has an else block, we encourage you to play with it to understand it better.
-
-The condition should evaluate to a Boolean True, the moment it hits False, we get out of the loop.
-
-There are more constructs which we will look at later.
+> Note: The `while` statement also has an else block, we encourage you to play with it to understand it better.
 
 #### break, continue, pass
 
-Run the below code in the interpreter, first see the output of the code, try to visualize how it works and then read the description.
-
-1. break
+#### break
 
 Read the [docs](https://docs.python.org/3/reference/simple_stmts.html#break)
 
-When you use the break statement, you kill the current loop.
+The break statement kills the current loop. If we have nested loops, then we have to position the `break` properly to kill the correct loop.
 
 ```python
 for i in range(100):
-	if i == 4:
-		break
-	print(i)
+    if i == 4:
+        break
+    print(i)
 ```
 
-The above block will print all the numbers until it hits 4. The moment it hits 4, it'll kill the for loop.
+The above block will print all the numbers until it hits 4. The moment it hits 4, the for loop will stop executing.
 
-2. continue
+#### continue
 
 Read the [docs](https://docs.python.org/3/reference/simple_stmts.html#continue)
 
-When you use the continue statement, you move to the next iteration
+The continue statement takes the execution to the next iteration.
 
 ```python
 for i in range(100):
-	if i == 4:
-		continue
-	print(i)
+    if i == 4:
+       continue
+    print(i)
 ```
 
 The above block will print all numbers **except** 4. It continues to the next iteration.
 
-3. pass
+#### pass
 Pass can be used as an empty placeholder in places where you don't have anything to add.
 
 ```python
 if a > 1:
-	pass
+    pass
 else:
-	print("TODO")
+    print("TODO")
 ```
 
 For instance, in the above if-else block, you really don't know what logic you are going to put, so you can either use `print("TODO")`, or use the pass statement. pass doesn't print anything. You can use pass in any loop.
 
-4. try - except - finally
+#### try - except - finally
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-try-statement)
 
-try-except is used for exception handling, we'll take a look at it in a later chapter. The logic behind this is that sometimes there might be exceptional scenarios which can make our program crash, we use try-except block to handle them.
+try-except is used for exception handling, we'll take a look at it in a later chapter. 
 
-5. with 
+#### with 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-with-statement)
 
 The with block was added in [PEP 343](https://www.python.org/dev/peps/pep-0343/). support of the [Resource Acquisition Is Initialization](http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization) idiom commonly used in C++. It is intended to allow safe acquisition and release of operating system resources.
@@ -216,10 +256,12 @@ The with block was added in [PEP 343](https://www.python.org/dev/peps/pep-0343/)
 Resources are created within a scope/block, resources are cleanly released whether the block exists normally or because of an exception.
 
 ```python
->>> with open('file.py') as ip, open('op.txt','w') as op:
-...     for line in ip.readlines():
-...         op.write(line)
-...
+with open('file.py') as ip, open('op.txt','w') as op:
+    for line in ip.readlines():
+    op.write(line)
+```
+**Output:**
+```
 10
 1
 21
