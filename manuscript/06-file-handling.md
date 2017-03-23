@@ -2,56 +2,62 @@
 
 Managing files is one of the most important features of any programming language. Python supports file handling via the io module's TextIOWrapper class, [docs](https://docs.python.org/3/library/io.html#io.TextIOWrapper)
 
-Modes in which a file can be opened:
+There are two basic modes in which we can manipulate files, Text and Binary.
+
+Files need to be opened for any manipulation, we can open files in the following modes:
 
 ###  read
 
 ```python
 f = open("file.txt", "r")
 ```
-
-* The second argument to the `open` function should be `r`.
-* Files which are already existing can be read.
-* An exception is thrown if the file doesn't exist.
-* Writing or appending the file is not allowed.
+	
+	* The second argument to the `open` function should be `r`.
+	* Files which are already existing can be read.
+	* An exception is thrown if the file doesn't exist.
+	* Writing or appending the file is not allowed.
 
 ### write
 
 ```python
 f = open("file.txt", "w")
 ```
-
-* The second argument should be `w`.
-* Creates a file if it isn't present. 
-* If a file is present, it gets overwritten. If a file is overwritten, all the data is lost and is unrecoverable.
-* Doesn't allow the file to be read.
+	
+	* The second argument should be `w`.
+	* Creates a file if it isn't present. 
+	* If a file is present, it gets overwritten. If a file is overwritten, all the data is lost and is unrecoverable.
+	* Doesn't allow the file to be read.
 
 ### append
 
 ```python
 f = open("file.txt", "a")
 ```
+	
+	* The second argument should be `a`.
+	* Creates a file if it isn't present. 
+	* Adds content to the end of the file.
+	* Does not overwrite the file like the write mode.
+	* Doesn't allow file to be read.
 
-* The second argument should be `a`.
-* Creates a file if it isn't present. 
-* Adds content to the end of the file.
-* Does not overwrite the file like the write mode.
-* Doesn't allow file to be read.
 
-### binary
+When we use the above modes (read/write/append), they mean text files unless we use the binary mode.
+
+
+### Binary Mode
 
 ```python
-f = open("file.txt", "b")
+f = open("file.txt", "rb")
 ```
 
-r, w, a are modes for working with textual files. Python allows manipulation of binary files by using the binary mode, the second argument to the open function should be `b`.
+Python allows us to manipulate binary files, we have to club the modes, `b` stands for binary, along with `b`, we can use any of r/w/a.
 
-Python allows modes to be clubbed.
-
-* Read a binary file: "rb".
-* Write a binary file: "wb".
-* Read and append to a file: "ra".
-* Read and write: "rw".
+Clubbing can be done without using the binary mode:
+	
+	* Read a binary file: "rb".
+	* Write a binary file: "wb".
+	* Read and append to a file: "ra".
+	* Read and write: "rw".
 
 ### Sample file handling programs
 
@@ -66,7 +72,7 @@ f.close()
 ```
 Save this program in a file and run it.
 
-The first error you will get is 
+After executing, you'll see this error: 
 
 ```
 Traceback (most recent call last):
@@ -78,17 +84,15 @@ Change `f.write(i)` to `f.write(str(i))`.
 
 **Explanation:**
 
-All read or write operations on files are done via strings, when we tried `f.write(i)`, we were trying to write an integer to the file, which is a syntax error since the `write` method expects a string argument and not an integer. 
+All read or write operations (on files, networks everwhere) are done via strings. The `f.write(i)` function call expects a string argument, but the `i` variable is an integer and that is a syntax error.
 
-When we work with files, it is mandatory to close the file when we are done with it. It helps in saving system resources. There is another reason for closing a file: buffering. 
+It is mandatory to close the file after it's use to free system resources. Another reason for closing files is when file writing is taking place. 
 
-When we write anything to a file, it gets written to a buffer and not directly to the underlying file. The buffer is flushed to the underlying file after we call the close method. 
-
-However, the buffer can be bypassed by using `flush()` immediately after a `write` call, that way, everything is written down to the underlying file and not just in the buffer.
+When we write anything to a file, it gets written to a buffer and not directly to the underlying file. The buffer is flushed to the underlying file after we call the close method. However, the buffer can be bypassed by using `flush()` immediately after a `write` call, that way, everything is written down to the underlying file and not just in the buffer.
 
 Try running the code again, this time, it will succeed. 
 
-Open the output file in a text editor. You'll notice that it wrote the numbers in a single line. This is where file handling differs from printing on the terminal. On the terminal, the print() statement adds a "\n" newline at the end by default, but when it comes to files, you have to handle the new line characters by yourself.
+Open the output file in a text editor. You'll notice that it wrote the numbers in a single line. This is where file handling differs from printing on the terminal. On the terminal, the print() statement adds a newline ("\n") but the `write` method does not.
 
 Create a new file with the name "lines.txt" and write four random lines to it. After that, save the following code in a file in the same directory and run the file.
 
@@ -98,7 +102,7 @@ lines = f.readlines()
 print(lines)
 ```
 
-The output you'll see would have "\n" after each line in the list. This is because the textual representation of a new line is `\n`, thus, when you read the file in python, you'll see `\n` at the end of each new line. When you write to a file in Python, you have to append `\n` to the end of each line, only then will you see a new line, otherwise it'll just keep writing to the file.
+The output would be a list of four items, with each item ending with a "\n". This is because the textual representation of a new line is `\n`, thus, when you read the file in python, you'll see `\n` at the end of each new line. When you write to a file in Python, you have to append `\n` to the end of each line, only then will you see a new line, otherwise it'll just keep writing to the file in a single line.
 
 ```python
 f = open("even.txt", "w")
@@ -114,7 +118,7 @@ Now open the even.txt, you'll see everything printed into the file on a new line
 
 `str(i)` converts anything that is stored in the variable i to string. There are other functions like `int()`, `list()`, `dict()`, `set()` which do type conversions, but they convert specific types and don't work with anything you throw at them.
 
-One essential part of working with files is removing the `\n`.
+> Note: One essential part of working with files is removing the `\n` or adding it when it is required.
 
 ```python
 f = open("lines.txt")
