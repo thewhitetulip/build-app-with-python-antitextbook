@@ -4,7 +4,7 @@ Managing files is one of the most important features of any programming language
 
 Modes in which a file can be opened:
 
-1. read
+###  read
 
 ```python
 f = open("file.txt", "r")
@@ -15,7 +15,7 @@ f = open("file.txt", "r")
 * An exception is thrown if the file doesn't exist.
 * Writing or appending the file is not allowed.
 
-2. write
+### write
 
 ```python
 f = open("file.txt", "w")
@@ -26,7 +26,7 @@ f = open("file.txt", "w")
 * If a file is present, it gets overwritten. If a file is overwritten, all the data is lost and is unrecoverable.
 * Doesn't allow the file to be read.
 
-3. append
+### append
 
 ```python
 f = open("file.txt", "a")
@@ -38,7 +38,7 @@ f = open("file.txt", "a")
 * Does not overwrite the file like the write mode.
 * Doesn't allow file to be read.
 
-4. binary
+### binary
 
 ```python
 f = open("file.txt", "b")
@@ -90,7 +90,7 @@ Try running the code again, this time, it will succeed.
 
 Open the output file in a text editor. You'll notice that it wrote the numbers in a single line. This is where file handling differs from printing on the terminal. On the terminal, the print() statement adds a "\n" newline at the end by default, but when it comes to files, you have to handle the new line characters by yourself.
 
-Create a new file with the name "lines.txt" and write four random lines to it.
+Create a new file with the name "lines.txt" and write four random lines to it. After that, save the following code in a file in the same directory and run the file.
 
 ```python
 f = open("lines.txt") # mode is optional, defaults to read
@@ -98,23 +98,23 @@ lines = f.readlines()
 print(lines)
 ```
 
-The textual representation of a new line is \n, thus, when you read the file in python, you'll see \n at the end of each new line. When you write to a file in Python, you have to append "\n" to the end of each line, only then will you see a new line, otherwise it'll just keep writing to the file.
+The output you'll see would have "\n" after each line in the list. This is because the textual representation of a new line is `\n`, thus, when you read the file in python, you'll see `\n` at the end of each new line. When you write to a file in Python, you have to append `\n` to the end of each line, only then will you see a new line, otherwise it'll just keep writing to the file.
 
 ```python
 f = open("even.txt", "w")
 for i in range(100):
-	if i %2 == 0:
-		f.write(str(i) + "\n")
+    if i %2 == 0:
+        f.write(str(i) + "\n")
 f.close()
 ```
 
-Now open the even.txt file, you'll see everything printed into the file on a new line.
+Now open the even.txt, you'll see everything printed into the file on a new line.
 
 #### Note
 
 `str(i)` converts anything that is stored in the variable i to string. There are other functions like `int()`, `list()`, `dict()`, `set()` which do type conversions, but they convert specific types and don't work with anything you throw at them.
 
-One essential part of working with files is removing the \n.
+One essential part of working with files is removing the `\n`.
 
 ```python
 f = open("lines.txt")
@@ -124,19 +124,21 @@ lines = [line.strip() for line in lines] # list comprehension
 print(lines)
 ```
 
-
-List comprehension is a shortcut way of working with lists. They work if you want to filter the list or perform some operation on the entire list.
+#### List comprehension 
+It is a shortcut of working with lists, to perform filter or some other operation on the entire list.
 
 	lines = [line.strip() for line in lines]
 
-this line can be replaced with a normal for statement as 
+List comprehension replaces the following block:
 
 ```python
 for i in range(len(lines)):
-	lines[i] = lines[i].strip()
+    lines[i] = lines[i].strip()
 
 lines = [line.strip() for line in lines]
 ```
+##### Syntax
+
 	[ condition for i in <list> if <another condition>]
 
 List comprehension returns a new list based on the current list, the first argument `list.strip()` would be the elements of the list. The second argument is the for loop, the third argument is optional, you can have an `if` block there.
@@ -154,6 +156,8 @@ There are various functions for File IO
 Takes an argument as number of bytes to be read. When you open a file for reading, the pointer is at the 0'th position. if you do `f.read(1)`, the pointer moves to 1. If you do `f.read(1)` again, the pointer would return the 2nd character of the file and not the first one.
 
 All the read functions returns characters based from the current pointer, you can know where the pointer is located currently by using `f.tell()`.
+
+> Note: This is a session for the Interpreter.
 
 ```python
 >>> f = open("lines.txt")
