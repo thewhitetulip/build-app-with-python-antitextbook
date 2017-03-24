@@ -112,7 +112,7 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-l
 
 #### List
 
-List stores multiple values of heterogenous type. Lists can have lists as elements.
+List stores multiple values of heterogenous type. Lists can have lists as elements. List values are stored in a continuous order, we can access elements of a list by using idexes, which is the place of the item in the list, indexes start with 0.
 
 ```python
 i = [1,"Linux",3,"bash",[1,2,"sh"]]]
@@ -166,12 +166,20 @@ print(a)
 #### Dictionary
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict)
 
-A key value pair.
+Lists store multiple heterogenous values in an indexed order starting from 0 and increasing by one, dictionaries are to be used when there is no apparent order in the data, for instance the country acronym and the long form, we can't store that in a list because we would then require two lists, one to store acronym and one to store the full name.
+
+Here, 'IN' and 'US' are the keys and 'India', 'United States' are the values. The values can be any Python data type, but keys can only be hashable data types (basic data types, int/float/string/complex).
 
 ```python
 i = {'IN':'India', 'US': 'United States'}
+print(i['IN'])
+print(i['US'])
 ```
-
+**Output:**
+```
+India
+United States
+```
 ##### Links
 
 |[Next](03-02-operators.md) | [Previous](02-more-about-language.md) |  [Index](SUMMARY.md)
