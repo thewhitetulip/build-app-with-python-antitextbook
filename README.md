@@ -5,10 +5,12 @@
 | On [Github](https://github.com/thewhitetulip/build-app-with-python-antitextbook)| Free on [Gitbooks](https://thewhitetulip.gitbooks.io/build-applications-in-python-the-anti-textbook) | The [YouTube series](https://www.youtube.com/playlist?list=PL41psiCma00wwvtQyLFMFpzWxUYmSZwZy) | [Leanpub](https://leanpub.com/antitextbookpy/) | On [Github](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook) |[ ![Paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/sapatil)|
 
 ## Who is this tutorial for?
-This book is not for a completely noob programmer, it expects _some_ initial programming experience, if you are completely new to programming, we recommend learning the C programming language before jumping ship to Python.
+This book is not for a completely noob programmer, it expects _some_ initial programming experience.
 
 ## What is this?
-This book is an easy to understand introduction to the Python programming language by using examples. You will build a command line todo list manager after you understand the basics of the language. Please have a Python 3 interpreter with you because you'll need to run code as you read! 
+It's an easy to understand introduction to the Python programming language which focuses on teaching concepts via examples. The initial chapters explain various concepts and in a later chapter, you will build a command line todo list manager.
+
+The motto of this book is not just teach the language, but to enable you to write tools which you would use in day to day life, like a simple todo list manager, we encourage you to explore the language more after you read the book and start writing tools for your daily usage.
 
 ## Why Python?
 There are a large number of languages out there and new ones coming out every week, thus, it begs the question _why learn Python_ over X. 
@@ -18,9 +20,9 @@ Python has the following advantages:
 1. Easy to understand syntax. Reads just like English.
 1. Huge community.
 1. Open source hence millions of packages available.
-1. Programs are typically short in number of lines.
+1. Short time needed for writing code.
 
-A programming language's usability is direct proportion to the size of its community, this is because the core team writes the language, but the content(books,podcasts, tutorials, packages) surrounding the language is created by the community.
+A programming language's usability is direct proportion to the size of its community squared, this is because the core team writes the language, but the content(books, podcasts, tutorials, packages, Q&A) surrounding the language is created by the community.
 
 ## Which Python?
 This guide focuses only on Python3, Python2 is on life support and we do not recommend using it, unless there is an exceptional scenario.
@@ -48,15 +50,14 @@ In this case, `>>> not True` is the statement and `False` is the output.
 ## Installation
 
 1. Linux and Mac: Use a package manager to install the python3 package.
-
 1. Windows: Download the `.msi` or `.exe` file from https://python.org, run the installer, click on Next Next until it finishes.
-
 1. Android:	Install `termux` (https://termux.com/help.html) & run `apt-get install python3` to install python inside it.
+1. iOS: Python3 for iOS (not free).
 
 ## Background
-This tutorial is the culmination of the Python trainings I have given in the past. When I was taking the, I wanted the participants to refer to a tutorial which would be light weight yet effective, one which would explain concepts by example and still not overwhelm the reader who is new to Python (but not to programming). 
+This tutorial is the culmination of the various Python trainings I have given in the past. There was a lack of a guide which taught programming by building tools without overwhelming the readers, thus, this project got started.
 
-Of course, there are many many tutorials, I was asked on Reddit, so why a new one? It is because this is the tutorial I wished I had when I was learning Python, so I wouldn't have had to read the documentation ten times!
+They say that write the book you wish existed in the world. This is a book which I wished existed when I was learning the language.
 
 Please note that I don't profess to be a God at anything, but I do feel that good things happen when a group comes together for one goal. 
 
