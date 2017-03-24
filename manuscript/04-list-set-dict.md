@@ -1,18 +1,30 @@
 # High level data structures
 
-In the last chapter we saw int, float, complex and strings. But that was just the basic introduction. Let's now take a look at the high level data structures in Python.
+In the last chapter we saw the various data types present in Python, in this chapter we'll look at the high level data types in detail.
 
 ## List
 
 Watch on [YouTube](https://www.youtube.com/watch?v=30S9LnvanwY) | Read the [docs](https://docs.python.org/3/library/stdtypes.html#list)
 
-List allows us to store multiple values of any data type. Lists support duplicate elements. Elements of a list can be accessed by using indices. Indices in Python start with 0, 1, 2, 3 etc. Lists also support negative indices. Let's see that by example.
+Lists are an editable sequence of any data type. Each element of a list has an index, indices in Python start with 0. Lists in Python can be negative, as we can see in the below example.
+
+Let's say we have a list of five values, `a = [11,22,33,44,55]`.
+
+| Value | Positive Index  | Negative Index |
+| ----| ----| ----| 
+|11|0|-5|
+|22|1|-4|
+|33|2|-3|
+|44|3|-2|
+|55|4|-1|
+
+Now that we understood list indices, let's see how we can create a list.
 
 ```python
-l = [] # creates an empty list
-l = [1,2,3] # creates a list with values 1,2,3
-l = [1,2,3, 'sh', 'bm'] # creates a list contains 
-l = [1,2,3, [1,2,3]] # A list which contains a list as a member
+l = [] # creates an empty list.
+l = [1,2,3] # creates a list with integer values.
+l = [1,2,3, 'sh', 'bm'] # creates a list with integer and string values. 
+l = [1,2,3, [1,2,3]] # creates a list which contains a list as a member.
 l = [ 1,1,1,1,1,1,1 ] # lists allow duplicates
 
 print(l[0]) # first value.
@@ -24,12 +36,12 @@ print(l[-100]) # index out of range error.
 
 ## Getting Help
 
-There are two ways to get help `help` or `dir`.
+Before we start understanding how to manipulate lists, we need to understand how to get help in Python.
 
-* `help` is a function which takes an argument and returns the documentation of the data type.
-* `dir` is a function which takes an argument and returns all the methods valid for that data type.
+* `help`: returns the documentation of the data type.
+* `dir`: returns all the methods valid for that data type.
 
-Both `help` and `dir` return help about the class of the object which is passed as an argument. 
+Example:
 
 ```python
 help(1) # help about integer class.
@@ -68,15 +80,12 @@ class str(object)
 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
 ```
 
-Try getting the list of methods for the list data type.
+Find out the methods related to the List data type.
 
 ## Methods of the List datatype.
 
 ### append
-The `append` function takes **one** argument and adds it to the end of the list. If we append a list to an existing list, the entire list will be added as a new element in the original list.
-
-> Note:
-If you want to merge two lists, then use `extend`
+The `append` function takes **one** argument and adds it to the end of the list. 
 
 ```python
 >>> a = []
@@ -86,13 +95,17 @@ If you want to merge two lists, then use `extend`
 >>> a.append("2")
 >>> a
 [1, '2']
+# here '2' was added at the end of the existing list.
 >>> a.append(1.11111)
 >>> a
 [1, '2', 1.11111]
 >>> a.append([1,2,3])
 >>> a
 [1, '2', 1.11111, [1, 2, 3]]
+# here, the entire list was inserted at the end of 
+# the existing list.
 ```
+When we append sequences to a list, the entire sequence is inserted as one record at the end of the list.
 
 ### extend
 
@@ -103,20 +116,23 @@ If you want to merge two lists, then use `extend`
 >>> a.extend(b)
 >>> a
 [1, '2', 1.11111, [1, 2, 3], 1, 2, 3]
+# All elements of the list b were added individually
+# to the list a.
 ```	
 
-Extend takes one argument of type list, individual elements of list `b` were added at the end of the list `a`.
-
 ### del
+`del` can be used to delete any variable, it de-allocates a variable. It can also be used to delete elements from any data type except tuple. 
 
 ```python
 >>> del a[0]
 >>> a
 ['2', 1.11111, [1, 2, 3], 1, 2, 3]
 ```
-`del` can be used to delete any variable, it de-allocates a variable, it can also be used to delete elements from any data type except tuple. `del` can delete the variable of the tuple itself.
 
 ### pop
+pop deletes and returns one element. It takes one optional argument:
+
+If no argument is passed: Deletes and returns the last element.
 
 ```python
 >>> a.pop()
@@ -126,8 +142,7 @@ Extend takes one argument of type list, individual elements of list `b` were add
 >>> a
 [1, '2', 1.11111, [1, 2, 3], 1]
 ```
-
-pop deletes the last element by default, if you pass an index, it'll delete and **return** the element at that index. This is the main difference between the `del` keyword and `pop`.
+If a valid index is passed: deletes and returns the value at that index.
 
 ```python
 >>> a
@@ -141,60 +156,56 @@ pop deletes the last element by default, if you pass an index, it'll delete and 
 1.11111
 ```
 
-We are leaving the other functions as a homework. Learning a language requires self practice!
-
-1. insert
-1. copy
-1. clear
+#### Other functions
+Learning a language requires self practice! If we explain each and every function, we will hinder your path of exploring the language, we encourage you to use the `help()` function to find out more about other functions which are allowed on Lists.
 
 #### Slicing
 
-Lists and strings allow you to slice elements. It is an easy way to fetch sub parts of them. For instance, if you wanted just the first three elements from the list [1,2,3,4,5], this is the syntax in Python.
+Lists and strings allow you to slice elements. It is an easy way to fetch sub parts of them. This feature also allows a programmer to write complex features with very few lines of code as compared to other languages.
 
-Positive Indices: 0,  1,  2, 3,  4
+The syntax of slicing is `l[start_index : end_index]`.
 
-Negative indices: -5, -4, -3,-2, -1
+```
+l: the list
+start_index: Starting point with the element at this index included; defaults to 0 if left blank.
+end_index: Ending point, but this index is excluded; defaults to -1 if left blank.
+```
+
+Slicing returns a new object (list or string) from the `start_index` to the `end_index` without including `end_index`.
 
 ```python
->>> l = [1,2,3,4,5]
->>> l
-[1, 2, 3, 4, 5]
+>>> l = [0,1,2,3,4]
 >>> l[0:3] # from 0 till 2nd element
-[1, 2, 3]
+	   # the element of index 3 is not returned
+[0, 1, 2]
 >>> l[1:3] # new list starting from 1 till 2nd element
-[2, 3]
->>> l[-1:] # last element
-[5]
+	   # 3rd element is not returned
+[1, 2]
+>>> l[-1:] # new list containing the last element
+[4]
 >>> l[0:-1] # new list from 0 excluding last element
-[1, 2, 3, 4]
->>> l[0:-2] # new list starting from 0 till second last element
-[1, 2, 3]
+[0, 1, 2, 3]
+>>> l[0:-2] 
+[0, 1, 2]
 >>> l[::-1] # returns a new list with values reversed
-[5, 4, 3, 2, 1]
+[4, 3, 2, 1, 0]
 >>> for i in l:
 ...     print(i)
 ...
+0
 1
 2
 3
 4
-5
 ```
 
-It is this simple to loop through a list or set. **On an interpreter, you have to hit enter twice before the expression is evaluated.**
-
-Slicing for strings is the same, just try that out.
+Slicing works in the same was with strings and tuples as well, we invite you to try them out, we'd like to reiterate our stance here, we want you to program as much as you can while reading this book.
 
 ## Tuples
 
-Read the [docs](https://docs.python.org/3/library/stdtypes.html#tuple)
-Watch the [video]()
+Read the [docs](https://docs.python.org/3/library/stdtypes.html#tuple) | Watch the [video]()
 
-A tuple object, once created, doesn't allow us to add, delete or update an element.
-Tuples allow the `in` operator to check membership, we can access elements of a tuple just the way we access elements of a list, using `a[]`, we can slice a tuple object, they are basically read only lists.
-
-###### Note:
-Try using the `dir` on a tuple object to find out methods related to the type, you'll see that there are only two methods, `count` and `index`.
+Tuples are read only lists. A tuple object, once created, doesn't allow us to add, delete or update an element. When we use the `dir` on a tuple object, we find that there are only two methods, `count` and `index`.
 
 ```python
 >>> a = (1,2)
@@ -211,38 +222,37 @@ True
 ### List vs Tuple
 Lists are used when we are not sure how many values we'll be having, since lists support addition and deletion.
 
-Tuples are used when there is a fixed number of values to deal with. Tuples don't support addition and deletion.
+Tuples are used when there is a fixed number of values to deal with, since tuples don't support addition and deletion.
 
 ## Set
 
-Watch on [YouTube](https://www.youtube.com/watch?v=QmfDyjp0Z8E)
-Read the [docs](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
+Watch on [YouTube](https://www.youtube.com/watch?v=QmfDyjp0Z8E) | Read the [docs](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
 
-Sets are same as dictionaries with the following limitations
+Sets are same as lists with the following limitations:
+ 1. duplicate entries are not allowed
+ 1. Sets can only have basic data types as elements (lists/dictionary/set/tuple)
 
 ```python
-	>>> a = [1,2,3,4]
-	>>> b = set(a)
-	>>> a
-	[1, 2, 3, 4]
-	>>> b
-	{1, 2, 3, 4}
-	>>> type(b)
-	<class 'set'>
-	>>> type(a)
-	<class 'list'>
-	>>> a[1]
-	2
+>>> a = [1,2,3,4]
+>>> b = set(a)
+>>> a
+[1, 2, 3, 4]
+>>> b
+{1, 2, 3, 4}
+>>> type(b)
+<class 'set'>
+>>> type(a)
+<class 'list'>
+>>> a[1]
+2
 ```
+When we try to create a set from a list which has a list element, it is an error:
 
-
-1. duplicate entries are not allowed
-1. sets can't have lists/dictionary/set as an element. Basically, sets can only have basic data types as elements.
-
-
-Try creating a list which contains a list as an element and try creating a set out of it.
-Use the `help` and `dir` to find out interesting information about sets and the methods that it allows us.	
-
+```python
+a = [1,2,3,[2,3]]
+set(a)
+## Throws an error.
+```
 Sets allow various methods like add, copy, deepcopy, update, pop, remove.
 
 ```python
@@ -292,10 +302,11 @@ Sets allow various methods like add, copy, deepcopy, update, pop, remove.
 
 ## Dictionary
 
-Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict)
-Watch on [YouTube](https://www.youtube.com/watch?v=pQV3wbSMBRI)
+Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict) | Watch on [YouTube](https://www.youtube.com/watch?v=pQV3wbSMBRI)
 
-Dictionaries are key value pairs. When you use an array, they are indexed starting with 0. First element has index 0, second element has 1 and so on. But dictionaries are different, you choose the key and value BOTH, instead of just the value as in the case of the list.
+Dictionaries are key value pairs. Keys can only be hashable data types i.e. basic data types. There is no such restriction on the values.
+
+When you use a list, they are indexed starting with 0. First element has index 0, second element has 1 and so on. But dictionaries are different, you choose the key and value _both_, instead of just the value as in the case of the list. They are not stored in continuous memory locations.
 
 Before we go any further, we recommend you to read the `help` and `dir` output of `{}`, this is an empty dictionary object. type `help({})`
 
@@ -325,7 +336,7 @@ dict_keys(['IN', 'US', 'ES'])
 dict_values(['India', 'United States of America', 'Espanol'])
 ```
 
-`keys` and `values` are two functions which return all the keys and values of the dictionary object. Since we can't use `for i in ` syntax to loop over dictionaries, we have to do this
+`keys()` and `values()` are two functions which return all the keys and values of the dictionary object. Since we can't use `for i in ` syntax to loop over dictionaries, we have to do this
 
 
 
@@ -337,8 +348,6 @@ IN : India
 US : United States of America
 ES : Espanol
 ```
-
-We encourage you to try which elements are not acceptable as keys inside dictionaries. Value fields can have anything, but there are restrictions on the keys.
 
 We also encourage you to try out everything we did in this chapter, again! (on strings too)
 
