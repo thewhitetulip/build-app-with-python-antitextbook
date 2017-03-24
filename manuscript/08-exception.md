@@ -1,6 +1,6 @@
 # Exception handling
 
-Python throws an `exception` if something goes wrong. `Exception` is a class from which other exceptions are derived. The child classes of Exception usually end with Error like FileNotFoundError.
+When something goes wrong, Python throws an an exception object. `Exception` is a class from which other exceptions are derived. The name of the child classes usually end with Error like FileNotFoundError.
 
 Read the [docs](https://docs.python.org/3/tutorial/errors.html#errors-and-exceptions)
 
@@ -11,41 +11,39 @@ j = 100/i
 print("This is the print statement")
 ```
 
-Run this file [`python3 exception.py`] , it'll stop execution at the second line, as it will throw `ZeroDivisionError: division by zero`. The problem with exceptions is that your program is killed the moment it throws an exception. Clearly, this is not a good sign. We have the `try-catch` block to handle these exceptions.
+This code won't run, it would throw the ZeroDivisionError exception.
+
+The problem with exceptions is that your program is killed the moment it throws an exception. When writing large scale software in Python, this becomes an issue. This is where exception handling comes into picture. We want our programs to be resilient about errors that might happen during the runtime and we do not want our code to exit for any such reasons.
 
 #### file: exception2.py
 
 ```python
 i = 0
 try:
-	j = 100/i
+    j = 100/i
 except:
-	print("Can't divide by 0!!")
-print("This is the print statement")
+    print("Can't divide by 0!!")
 ```
 
-When you run this program, you'll see that it doesn't kill the program, it also executes the last print statement, which was not the case when we had not used the try catch block.
-
-Exception handling is done so that our program doesn't quit execution, we want our code to be robust. Think for a moment that you are building some web service that someone uses, if by some mishap, the code doesn't have read access on some folder, it will exit from the execution and your service would be unreachable.
-
-Rather than your service being unreachable, you handle the exceptions so that you are good to go. When you handle the exceptions, your service will **not** exit at such code point, it will continue execution while executing the `except` block.
+When you run this program, you'll see that it doesn't kill the program.
 
 A try catch block is to be used for lines which we suspect that something might go wrong, for instance if you are trying to open a file, there are many things which could go wrong, for instance, the disk space would go full, the file might not exist or a million other things, thus, we wrap the `open` function call in a try catch block.
+
+The `try` block contains all the lines where we suspect that something might go wrong, the `except` block is where the damage control lines are present. What we do for handling exceptions is upto us, we can just print on the terminal or we can send emails to the respective teams, or just log that there was an exception.
 
 ```python
 i = 0
 try:
-	j = 100/i
+    j = 100/i
 except ZeroDivisionError as e:
-	print(e)
+    print(e)
 except Exception as e:
-	print(e)
+    print(e)
 finally:
-	print("this block always gets executed")
-print("This is the print statement")
+    print("this block always gets executed")
 ```
 
-the try-catch block allows you to handle multiple exceptions, they must be in the reverse order of generality. For instance, if you want to handle every kind of exception, just use ` except Exception`, the smallest exception statement should be at the top.
+The try-catch block allows you to handle multiple exceptions, they must be in the reverse order of generality. For instance, if you want to handle every kind of exception, just use ` except Exception`, the smallest exception statement should be at the top.
 
 #### Finally
 
