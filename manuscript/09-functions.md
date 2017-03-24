@@ -1,44 +1,57 @@
 # Functions
 
-Functions are used to save us from code duplication. At times, we require to implement the same functionality in multiple locations. At such times, it is better to create a function and use it elsewhere rather than code duplication.
-
-We encourage you to execute the code from this point on in a file.
+Functions are used to save code duplication. When we want a block of code duplicated across multiple locations, rather than physically copy pasting the code, it is better to declare a function and use it wherever we require it.By doing this, we write easy to edit code, because when our logic changes, we have to make changes only to the function definition and not everywhere the block is present.
 
 ###### file: func.py
 
+The following is the typical function definition on Python, def is the keyword. 'function\_name' is the name to be given to the function.
+
+Functions support zero or more arguments.
+
 ```python
-def doSomething(var1,var2):
-     print("This function does something")
-doSomething(1,2)
+def function_name(argument1, argument2):
+    <statements>
 ```
 
-The first line defines a function, and the last line invokes it. Now, comment the last line and run the code again.
+Let's write a simple program to print the square of a number passed to it as an argument.
 
-The output would be blank, because you just defined a function but you didn't invoke it. This is very important concept in Python (or rather any other scripting language), if you use functions, you have to make sure that you call at least one of them, typically, the name of such function is `main`, but it can be anything. There is no special significance to the naming of a function.
+### Invoking functions.
 
-Functions support arguments, you can have as many of them as you want, they are evaluated from left to right. You have a choice of using them, you can use them, it is all right if you don't use them at all.
+```python
+def square(number1):
+    print(number1**2)
+```
+
+Save the file and run it. 
+
+You will notice that the program didn't give any output, and that is because we just defined a function. When the interpreter comes across the def block, it will create a function of that name, taking some arguments and performing some action. 
+
+It will not execute the function, if we want the function to be used, we need to invoke it.
+
+Add `square(2)` to the end of the above file. Save and run the program again. This time, you'll see the output. This is called function invocation.
+
+Here, 2 is an argument which is stored in number1 during the function invocation. Just because an argument is defined doesn't mean that we have to use it, we can ignore it altogether if we want.
 
 ### Default arguments
+
+Now that we wrote the square function, we want to generalize it to calculate power. This function will take two arguments, number and the power, and return number \*\* exponential.
 
 ###### file: defaultargs.py
 
 ```python
-def doSomething(var1, var2="sh"):
-    print("does something")
-    print(var2)
+def power(number, exp=2):
+    print(number ** exp)
 
-doSomething(1,"hi")
-doSomething(1)
+power(2, 3) # value of exp is 3.
+power(2) # since no value of exp
+	 # is given, defaults to 2.
 ```
 
-When we use default arguments, we are providing a default value for an argument, so that when we invoke the function, it isn't a mandatory variable.
+Some or all arguments in Python can be optional. When an argument is optional, the default value of the argument is used.
 
-When we see the two invokations of doSomething, the first one sends 1 and "hi", var1 is going to be 1 and var2 is going to be "hi".
+The rule with default arguments is that they need to be at the right most side of the argument listing, after all the mandatory arguments.
 
-But the second invokation is missing the value for var2. Since we have already given the value for var2 in the function definition, the value of var2 would be "sh".
-
-One important point that we have to note is that default arguments need to be at the end. We need to have them after mandatory arguments.
-
+The following block of code will result in a SyntaxError.
 ```python
 def do(var1=2,var2):
     print("hi")
@@ -46,17 +59,20 @@ def do(var1=2,var2):
 do(1)
 ```
 
-If you run this file, you'll get a `SyntaxError: non-default argument follows default argument`. The default argument should be the last argument in the list.
-
 ## Return
-You can return as many values as you want, but you don't need to define that a function returns anything, just add the return statement like this.
+In the above examples, we saw function which prints the output. A function can also return the its output to the caller. This is helpful when processing data which we do not want to print.
+
+There is no restriction on the number of values that can be returned. Values are returned using the return statement and it is not a part of the function signature, a return statement should be directly added in the function definition.
 
 ```python
 def add(name, mode):
     return name+mode, name-mode
+
+one, two = add('this', 'that')
+print(one, two)
 ```
 
-But, if you are returning multiple values in a function, then you need to take special care in the programs which use such functions.
+Here, we have a function which returns two values. The two values are then printed after the function call.
 
 ##### Links
 

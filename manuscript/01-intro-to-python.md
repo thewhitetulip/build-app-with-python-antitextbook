@@ -4,15 +4,15 @@
 
 Python is an [open source](https://github.com/python/cpython), cross platform, interpreted language. Cross platform means that a program written on any platform is guaranteed to run across any platform which Python supports. It is a powerful language because there are many third party packages available. The official repository of those packages is http://pypi.python.org. Python comes with a tool called `pip` which allows downloading libraries from the official repository.
 
-Python is widely used across major domains. YouTube, Quora, Hulu, Dropbox are just a few platforms written in Python. We can write command line applications Linux bootloader, Robots, Machine Learning algorithms, automate test cases, do system administration etc using Python, among other things.
+Python is widely used across major domains. YouTube, Quora, Hulu, Dropbox are just a few platforms written in Python. We can write command line applications, bootloaders, Robots, Machine Learning algorithms, automate test cases, system administration automation etc using Python.
 
 There are few things which make Python an awesome language:
 
-1. English like syntax: It takes very little time to learn the language and write code. This makes it an excellent prototyping language. Typically, Python is used to write prototypes which are later totally replaced with systems written in a compiled language.
+1. English like syntax: It takes very little time to learn the language and write code. This makes it an excellent prototyping language. 
 
-2. Less number of lines: Any program implemented in Python has significantly less number of lines as compared to other languages.
+2. Less number of lines: Programs implemented in Python have significantly less number of lines as compared to other languages.
 
-3. High level data structures: High level data structures like hashmaps, sets, lists make it really easy to write complex programs.
+3. High level data structures: Hashmaps, sets, lists make it really easy to write complex programs with comparatively less effort..
 
 Drawbacks:
 

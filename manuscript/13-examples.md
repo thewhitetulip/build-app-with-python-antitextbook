@@ -49,10 +49,12 @@ file.close()
 
 Say that you want to build some analytics software for a school for some reason, you have the following data in a csv file:
 
+```
 name,science,math,history
 tony,12,12,12
 antony,13,13,13
 bantony,14,14,14
+```
 
 ### file name: ch13/student_scores.py
 

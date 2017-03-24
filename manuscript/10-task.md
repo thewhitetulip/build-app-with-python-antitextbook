@@ -1,24 +1,35 @@
 # Building a todo list manager
 
-From this chapter on, we will forget the theory and start building an application. The end goal is going to write a command line todo list manager which we want to use to manage our tasks.
+From this chapter on, we will start building an application. The end goal is going to write a command line todo list manager.
 
 The functionality is going to be something like this:
 
-	$ python tasks.py add title_of_task content_of_task
-	new task added
-	$ python task.py remove title_of_task
-	task deleted
-	$ python task.py list
-	task_one content_of_1
-	task_two content_of_2
+```bash
+$ python tasks.py add title_of_task content_of_task
+new task added
+$ python task.py remove title_of_task
+task deleted
+$ python task.py list
+task_one content_of_1
+task_two content_of_2
+```
 
-This is the basic idea behind the app.
+The software design phase is the most critical phase of software development, writing software is a cakewalk when the design is done properly.
 
-The first thing is to understand how to handle command line arguments.
+Before we can write the code, we have to:
 
-## User input
+1. Identify where the input source.
+1. The functionality the program should support. 
+1. What is the data store. 
+1. Where and what will be the output.
 
-The `sys` package has the command line arguments stored into a variable called `argv`.
+Out todo list manager is simple. It is going to support adding, deleting and listing items.
+
+## Input
+
+The user is going to give input in the command line arguments.
+
+The 'sys' package has the command line arguments stored into a variable called 'argv'.
 
 ###### file: tasks1.py
 
@@ -29,20 +40,18 @@ print(sys.argv)
 
 Try running the code, you will see something like this
 
-	ch10 $  python3 tasks.py
-	['tasks.py']
-	ch10 $  python3 tasks.py title content
-	['tasks.py', 'title', 'content']
+```
+ch10 $  python3 tasks.py
+['tasks.py']
+ch10 $  python3 tasks.py title content
+['tasks.py', 'title', 'content']
+```
 
-The command line arguments start with the script name and are separated by a single space. The script name is at index 0. 
+For the interpreter, tasks.py, title and content are all command line arguments, this is what you see as the output of the above script.
 
-	index 0 : tasks.py
-	index 1: title
-	index 2: content
+## Output
 
-This is our data input from the user. We will store this as a comma separated text file and would perform read/write operations on that file via `tasks.py`.
-
-Before we get into file writing, let's print the results on the terminal, we can later add in the file handling feature.
+The output of the program is going to be on the command line. 
 
 ## Formatting output
 
@@ -56,9 +65,7 @@ for i in range(len(sys.argv)):
 
 `print` allows us to have advanced printing features, rather than having to do `str` on each variable we want to print, we can use this syntax. 
 
-The syntax is 
-
-	print("%d %s"%(1,1)) # "format specifier" % (values)
+The syntax is ```print("%d %s"%(1,1)) # "format specifier" % (values)```.
 
 `%(values)` is compulsory syntax, without the % in this statement, it'll just print %d %s literally.
 
@@ -83,10 +90,10 @@ Try running tasks2.py with various command line arguments.
 	2 title
 
 First execution: We didn't give any parameter, since we know that the 0'th argument is going to be the file name itself, there are no suprises here.
-Second execution: we passed title and content, and the index 1 is title, index 2 is content.
-Third execution: we passed "add title content" as the commend line argument, and we get the expected output.
 
-Our application takes 3 commands, add, remove and list. The command is at index 1, so the first thing we check if we have a valid command at index 1.
+Second execution: we passed title and content, and the index 1 is title, index 2 is content.
+
+Third execution: we passed "add title content" as the command line argument, and we get the expected output.
 
 ## Adding commands
 
@@ -119,29 +126,28 @@ You'll get this output when you run the code, this is an `exception`.
 		command = args[1]
 	IndexError: list index out of range
 
-What went wrong? we'd encourage you to figure out what went wrong, so we aren't going to mention it here. Please figure out that before moving ahead.
+What went wrong? 
 
+We encourage you to try to figure out what went wrong, before moving ahead.
 
 ## Handling errors
 
-We didn't add a try-catch block to handle exception, so now the code looks like this.
+In the earlier file, we tried to access an list index which didn't exist. This raised an exception, we saw in the chapter about exceptions that a try-catch block is used to handle exceptions.
 
+Update the `command = args[1]` line in the file to this block:
 ```python
-	try:
-		command = args[1]
-	except IndexError:
-		print("Invalid arguments!")
-		sys.exit(1)
+try:
+	command = args[1]
+except IndexError:
+	print("Invalid arguments!")
+	sys.exit(1)
 ```
 	
 `exit` kills the program execution with the ID of what we pass in as an argument, 0 is successful exit, anything greater than 0 is unsuccessful exit 
 
-	`sys.exit(0)`: successful
-	`sys.exit(1)`: unsuccessful
-
 We catch IndexError exception. If there is an IndexError exception that means that the user has not given the appropriate arguments.
 
-Save and run the file, the output should be something like this.
+Save and run the file. The output should be this:
 
 	ch10 $ python tasks3.py
 	Invalid arguments!
@@ -155,13 +161,13 @@ We have handled the scenario where the user gives less input than what is requir
 
 We can see that the "invalid command" message is being repeated twice, we have to do something about that.
 
+We add another exit call after printing Invalid command. The reason being there is no need to go any further when we have established that the user has given us the invalid command.
+
 ```python
 if command not in ("add","remove","list"):
 	print("Invalid command\n Use add/remove/list")
 	sys.exit(1)
 ```
-
-We add another exit call after printing Invalid command. The reason being there is no need to go any further when we have established that the user has given us the invalid command.
 
 	ch10 $ python tasks3.py random
 	Invalid command
@@ -177,13 +183,14 @@ Now, let's test the `list` command.
 Now that we have finished getting started with our menu driven program, let's go ahead and create a list. We need a variable to store the task list. When the program would be used the additions and deletions would be done on this list object, which would be written to the file when the output is required.
 
 Add this line after `args = sys.argv`
+
 ```python
 tasks = []
 ```
 
 This will create a variable by the name `tasks` which is visible in this file to all functions.
 
-in the `list` block, we want to now print the values stored inside `tasks` variable. If the values aren't present, we should print "No tasks present", if there are tasks, then we should print task.
+In the `list` block, we want to now print the values stored inside `tasks` variable. If the values aren't present, we should print "No tasks present", if there are tasks, then we should print the elements inside `tasks`.
 
 We have to use the `len()` function to check if there is nothing in the variable.
 
@@ -218,6 +225,7 @@ for task in tasks:
 ```
 
 We will now work on adding a new task. The input would be taken from the command line argument.
+
 ```python
 if command == "add":
 	print("adding")
@@ -228,16 +236,16 @@ if command == "add":
 This block is changed to this:
 
 ```python
-	if command == "add":
-		title = args[2]
-		content = args[3]
-		task = title + content
-		tasks.append(task)
+if command == "add":
+	title = args[2]
+	content = args[3]
+	task = title + content
+	tasks.append(task)
 ```
 
 But changing this does nothing, this is because the `tasks` variable is stored during the runtime. It gets reset to the default variable when the program quits. We need to add file handling feature to store the task list.
 
-replace the `tasks` line to this to store an empty variable.
+Replace the `tasks` line to this to store an empty variable.
 
 ```python
 tasks = []
@@ -325,7 +333,7 @@ This is the output now
 This is great! We now are able to add and list the tasks.
 
 #### Note:
-When giving input over the command line, if you want to give multi word input, please use either ' or ". For instance, we gave the input "new title", because our title contained a space. If we had given tasks2.py add new title, "new" would be considered the title because space is the delimiting character for any command line input, hence the "new title" enclosed in quotes.
+When giving input over the command line, if you want to give multi word input, please enclose them in either single or double quote. For instance, we gave the input "new title", because our title contained a space. If we had given tasks2.py add new title, "new" would be considered the title because space is the delimiting character for any command line input, hence the "new title" enclosed in quotes.
 
 	ch10 $ python tasks3.py add "Finish Python book" "Working on 10'th chapter"
 	ch10 $ python tasks3.py list
@@ -449,10 +457,11 @@ We just copy pasted the file opening syntax.
 ## snippet
 elif command == "remove":
 	try:
-	file = open("tasks.txt", "r")
+		file = open("tasks.txt", "r")
 	except IOError as e:
-	print(str(e))
-	sys.exit(1)
+		print(str(e))
+		sys.exit(1)
+	
 	tasks = file.readlines()
 	tasks = [task.strip() for task in tasks]
 	task_id = args[2]

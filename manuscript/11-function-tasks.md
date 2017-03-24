@@ -6,18 +6,20 @@ We first start by defining the `main` function. There is no special significance
 
 We push everything _except_ the import statement into the main function.
 
-#### Note: 
 If you try to run the file at this point, there would not be any output, the reason for that is that you have declared a function but not **called** it. The interpreter runs the script and it creates a function named "main" and it does nothing. If you want to **run** the main, you have to call it. At the bottom, add `main()` and then try running the file, this time, it'll give _some_ output. 
 
 Now, we create three functions, `add_task`, `remove_task`, and `list_task`. These three would do the respective functions.
 
 The logic of our program should be split between modules. There should be one "controller" module which handles the IO and a supporting library which does something with the data, in that way, we can enable different input sources for the same app. Currently, the input source, which is the command line arguments is deeply coupled with our todo list manager, so if tomorrow, we want to take input from some other source, we have to rewrite the complete application.
 
-For this, what we do is this:
+We manage the functions in this way:
 
 main: handles the IO
+
 add_task(title,content): adds a new task with title and content
+
 list_task(): lists the tasks
+
 remove_task(index): deletes the task of index.
 
 By doing this, the main if-else ladder looks like this

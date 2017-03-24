@@ -1,13 +1,15 @@
 # Understanding the program
 
-## How to run Python scripts?
+## How to run Python code?
 
 Watch on [YouTube](https://www.youtube.com/watch?v=wSqRUTS7uAg)
 
-There are two ways of running Python programs, Interactive and Batch.
+There are two modes of running Python code: Interactive and Batch.
 
 #### Interactive mode
-In the Interactive mode, code is typed inside an interpreter session which gets evaluated immediately. This mode is suitable for small edits. To start the Python interpreter, type `python3` or `python` in the terminal. You should see something like this.
+Code is typed inside an interpreter session which gets evaluated immediately. This mode is suitable for small edits. 
+
+To start the interpreter, type `python3` or `python` on your machine, when the interpreter starts, it should look like this:
 
 ```
     Python 3.6.0 (default, Jan 13 2017, 22:22:15)
@@ -25,10 +27,12 @@ This shows that the default Python shell has started. `>>>` signifies the input 
 ...     print("another hi") # hit enter twice here
 ...
 ```
+
 #### Batch Mode
 
-In this mode, you type all the code and save it in a text file.
+Code is written in a file from which it is executed.
 
+Create a file named `file.py` and save the following lines in it.
 ```python
 import os
 files = os.listdir()
@@ -36,13 +40,12 @@ for file in files:
 	print(file)
 ```
 
-After saving the code in `file.py`, you'll have to `cd` to that directory inside your terminal.
+Open the terminal, change the directory to where you saved the above file and type the following to execute file.py.
 
-Assuming `$` is your terminal, just type
+Assuming `$` is your terminal.
 
     $ python3 file.py
 
-This will execute `file.py`.
 
 ###### Executing 3 vs 2
 We are going to use `python3` to run the code. Type `python --version`, if this says 2, then you'll need to install python3 and execute code using python3.
@@ -53,7 +56,7 @@ It is a better practice to use both interpreter and batch mode while writing Pyt
 
 ## Installing packages
 
-`pip` or `easy_install` is used for installing third party packages in Python. `pip` stands for Python installer package. The package that you are installing, needs to be hosted on https://pypi.python.org and you can just call `pip install ipython` to install a package named ipython. Read the [docs](https://docs.python.org/3/installing/index.html) for more details.
+`pip` or `easy_install` is used for installing third party packages in Python. `pip` stands for Python installer package. The package that you are installing, needs to be hosted on the official packages repository and you can just call `pip install ipython` to install a package named ipython. Read the [docs](https://docs.python.org/3/installing/index.html) for more details.
 
 ## Comments
 
@@ -63,11 +66,11 @@ Comments are the lines which the interpreter will _ignore_. The significance of 
 
 Each block of non obvious code should have appropriate comments associated with it. Consider `a+=1`, there is no need to add a comment saying `increments the variable a by 1` because it is ovious. 
 
-Now, consider `a = 4*c+4*d/6*c`. This is not obvious, it might be Sarick's coefficient, and thus would warrant a comment. There is no such thing as Sarick's coefficient.
+Now, consider `a = 4*c+4*d/6*c`. This is not obvious, it might be Sarick's coefficient, and thus would warrant a comment. 
 
 #### Single Line Comments
 
-They start with a `#`. It can be present in any position of a line, the text **after** the `#` till the end of the line is _ignored_ by the interpreter.
+They start with a #. It can be present in any position of a line, the text **after** the # till the end of the line is _ignored_ by the interpreter.
 
 Single line comments are used for statements other than functions/classes.
 

@@ -15,8 +15,6 @@ Animal is the highest class. (Animal class has abstract things like "should have
 Humans are a subclass of Animals. (we "inherit" things from our Parent class and we have our own attributes like greed, lust)
 Felines are a subclass of Animals (they have things like "love of milk").
 
-This is all there is to OOP.
-
 #### Define a class
 
 ```python
