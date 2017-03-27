@@ -6,19 +6,9 @@ In the last chapter we saw the various data types present in Python, in this cha
 
 Watch on [YouTube](https://www.youtube.com/watch?v=30S9LnvanwY) | Read the [docs](https://docs.python.org/3/library/stdtypes.html#list)
 
-Lists are an editable sequence of any data type. Each element of a list has an index, indices in Python start with 0. Lists in Python can be negative, as we can see in the below example.
+An ordered collection of n values (n >= 0)
 
-Let's say we have a list of five values, `a = [11,22,33,44,55]`.
-
-| Value | Positive Index  | Negative Index |
-| ----| ----| ----| 
-|11|0|-5|
-|22|1|-4|
-|33|2|-3|
-|44|3|-2|
-|55|4|-1|
-
-Now that we understood list indices, let's see how we can create a list.
+Creating a list is simple:
 
 ```python
 l = [] # creates an empty list.
@@ -26,13 +16,49 @@ l = [1,2,3] # creates a list with integer values.
 l = [1,2,3, 'sh', 'bm'] # creates a list with integer and string values. 
 l = [1,2,3, [1,2,3]] # creates a list which contains a list as a member.
 l = [ 1,1,1,1,1,1,1 ] # lists allow duplicates
+```
 
+Each element of a list has an index, indices in Python start with 0. 
+
+Let's say we have a list of five values, `a = [11,22,33,44,55]`.
+
+| Value | Positive Index  | 
+| ----| ----| 
+|11|0|
+|22|1|
+|33|2|
+|44|3|
+|55|4|
+
+Lists in Python can be negative.
+
+| Value |  Negative Index |
+| ----|  ----| 
+|11|-5|
+|22|-4|
+|33|-3|
+|44|-2|
+|55|-1|
+
+List elements can be accessed using indices. `l[0]` will return the first value of the list `l`. `0` is the index, if we try to access an index which doesn't exist, like `l[100]`, then it throws an error.
+
+```python
+l = [11,22,33,44,55]
 print(l[0]) # first value.
 print(l[1]) # second value.
 print(l[-1]) # last value.
 print(l[-2]) # second last value.
 print(l[-100]) # index out of range error.
 ```
+
+List elements can be modified.
+
+```python
+l[0] = 12 # will replace the value at the 
+         # index 0 to 12.
+```
+
+We can perform other operations like `l[0]*12`, basically anything which we can do with integers.
 
 ## Getting Help
 
