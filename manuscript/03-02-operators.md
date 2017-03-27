@@ -9,7 +9,7 @@ When expressions containing more than one operators are evaluated, the operator 
 
 `a = 3 * 2 + 20 - 45` returns `-19`
 
-`a = 3 * (2 + 20 - 45)`, this will multiply 3 _after_ doing other calculations.
+`a = 3 * (2 + 20 - 45)` returns -69. This will multiply 3 _after_ doing other calculations.
 
 ## Assignment
 
@@ -29,9 +29,9 @@ When expressions containing more than one operators are evaluated, the operator 
 `==` is the equality operator, it returns true if both operands have the same value.
 
 ```python
->>> a = 1
->>> b = 1
->>> a == b
+>>> a = 1 # creates variable a with value 1.
+>>> b = 1 # creates variable a with value 1
+>>> a == b # checks if a and b are equal.
 True
 ```
 
@@ -98,14 +98,16 @@ True
 
 ### not
 
-`not` is the negation operator.
+NOT is the negation operator. At it's core, the `not` operator will transform `True` to `False` and `False` to `True`.
 
-Variables of any data type when they are null or have no value, they are `Falsy` values. Falsy is a term given to those values which are False like but not exactly equal to the Boolean False.
+Variables of any data type when they are null or have no value, they are `Falsy` values. 
+
+Falsy is a term given to those values which are False like but not exactly equal to the Boolean False.
 
 Variables of any data type when have _some_ value, any value, they are Truthy.
 
-The negation of a False like value is True.
-The negation of a True like value is False.
+* The negation of a False like value is True.
+* The negation of a True like value is False.
 
 ```python
 >>> not True
@@ -151,7 +153,6 @@ True
 >>> False or False
 False
 ```
-
 
 ### and
 
