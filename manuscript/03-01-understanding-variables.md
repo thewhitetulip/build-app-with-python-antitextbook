@@ -2,29 +2,33 @@
 
 Watch on [YouTube](https://www.youtube.com/watch?v=3_-W0S1VdLo) | Read the [docs](https://docs.python.org/3/reference/expressions.html#atom-identifiers)
 
-Variables are used to store values in memory. This chapter introduces us to variables, their types and usage. It is understandable if you can't recollect each and every type of data type, come back to this chapter until you remember each data type by heart.
+Variables are used to store values in memory. We do not have to declare the datatype of the variable, the interpreter will evaluate the data type on automatically.
 
-Since Python is a dynamic language, we do not have to declare the data type of the variable. The interpreter will automatically deduce the data type during runtime. Python is a completely object oriented language (even data types are classes) hence all variables are objects. 
-
-A variable has an address and a value.
-
-Creating a variable is simple, the below block creates a variable named `i`, the data type of the variable is deduced by the interpreter as `int`.
+Creating a variable in Python is simple, below is a simple example of creating a variable named `i`.
 
 ```python
->>> i = 1
->>> print(i)
-1
+>>> i = 1 
+>>> # creates an integer variable of value 1.
+>>> print(id(i))
+405911019
+# address of the variable i
+>>> type(1) # returns the data type of variable i.
+<class 'int'>
+>>> i = 'Python'
+>>> # Creates a string variable with value Python
+>>> print(id(i))
+505911019
+>>> type(i) # variable i is of type string now.
+<class 'string'> 
 ```
+
+Variable = address of memory location (returned by `id(i)` function call) + value (which we assign).
+
+As we saw in the earlier example, we can use the same variable name for multiple data types, initially `i` was having value 1, later, it was having value Python. The interpreter does this conversion automatically.
 
 #### Finding address of variables.
 
 id() is a function which returns the address of an object. You can read more in the docs [here](https://docs.python.org/3/library/functions.html?highlight=id#id).
-
-```python
->>> i = 1
->>> print(id(i))
-405911019
-```
 
 #### Finding data type of variables.
 `type` is a builtin function which returns the data type of the argument passed to it. `type(1)` returns the data type of 1, which is an integer. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=id#type)
@@ -37,14 +41,7 @@ type("") # <class 'string'>
 # "" or '' is an empty string, equivalent of 0 of integer.
 ```
 
-## isinstance
-
-isinstance takes two arguments, object and class. If the object is an instance of the class, it returns True, otherwise, it returns False. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=isinstance#isinstance)
-
-```python
->>> isinstance('a string', str)
-True
-```
+Now that we learned how to create a variable, find it's data type and it's address, let's have a brief overview of the data types, we will be looking at them in detail in the next chapter.
 
 ## Variable types
 
@@ -112,7 +109,7 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-l
 
 #### List
 
-List stores multiple values of heterogenous type. Lists can have lists as elements. List values are stored in a continuous order, we can access elements of a list by using idexes, which is the place of the item in the list, indexes start with 0.
+List stores multiple values of heterogenous type. 
 
 ```python
 i = [1,"Linux",3,"bash",[1,2,"sh"]]]
@@ -122,19 +119,25 @@ i = [1,"Linux",3,"bash",[1,2,"sh"]]]
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
 
-Sets stores "hashable" data types. You can remember this by remembering that sets allow you to store immutable data types (like integer, string, float, tuples). Basic data types like int, float and strings are immutable, when you perform any operation on them, python creates a new variable and does not modify the existing variable, for checking if a new variable is created, you can use the `id()` function described below.
+Sets are same as lists, but they don't allow duplicates. Only hashable elements are allowed as their members (basic data types like int, float, string, complex).
 
 ### Immutability
-`id()` returns the address of the variable, if two `id` function call return the same address, then it is the same variable, thus, mutable. Read the [docs](https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types)
+
+When a data type is said to be immutable, the data type doesn't allow modifications.
+
+`id()` returns the address of the variable, if two `id` function call return the same address, then it is the same variable, thus, mutable. Strings are immutable, as we can see in the below example.
+
+Read the [docs](https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types)
 
 ```python
->>> a = 1
+>>> a = '1'
 >>> id(a)
 4469201376
->>> a = a + 1
+>>> a = a + '1'
 >>> id(a)
 4469201408
 ```
+### Hashing
 
  Hashing is the process of converting some large amount of data into a much smaller amount (typically a single integer) in a repeatable way so that it can be looked up in a table in constant-time (O(1)), which is important for high-performance algorithms and data structures. [1](http://stackoverflow.com/questions/2671376/ddg#2671398)
 
@@ -148,7 +151,7 @@ i = set([1,2,3,4,5])
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#tuple)
 
-They are like lists but immutable. Once you create a tuple, you can't delete or add elements. Tuples typically are used when you want to store values which aren't going to change in the lifetime of a program.
+Tuples are immutable lists, that is, once a tuple is created, elements can't be added/deleted/modified.
 
 ```python
 >>> a = (1,2)
@@ -166,7 +169,7 @@ print(a)
 #### Dictionary
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict)
 
-Lists store multiple heterogenous values in an indexed order starting from 0 and increasing by one, dictionaries are to be used when there is no apparent order in the data, for instance the country acronym and the long form, we can't store that in a list because we would then require two lists, one to store acronym and one to store the full name.
+Dictionaries are key value pairs, lists/tuples/sets are indexed sequences, dictionaries aren't.
 
 Here, 'IN' and 'US' are the keys and 'India', 'United States' are the values. The values can be any Python data type, but keys can only be hashable data types (basic data types, int/float/string/complex).
 
@@ -175,6 +178,7 @@ i = {'IN':'India', 'US': 'United States'}
 print(i['IN'])
 print(i['US'])
 ```
+
 **Output:**
 ```
 India
