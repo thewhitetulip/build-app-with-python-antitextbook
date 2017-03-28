@@ -171,11 +171,11 @@ All the read functions returns characters based from the current pointer, you ca
 'f'
 >>> f.tell() # pointer shifted to 1st character
 1
->>> f.read(20) # reads 21 characters after 1
+>>> f.read(20) # reads 20 characters after 1 ('\n' is considered as single character)
 'irst line\n second li'
 >>> f.tell()
 21
->>> f.read(10000) # reads 22 char after 10000
+>>> f.read(10000) # reads 17 char after 21
 'ne \n third line \n'
 >>> f.tell() # pointer on 38
 38
