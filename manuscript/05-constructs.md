@@ -1,23 +1,22 @@
 # Constructs
 
-> Note: If you don't remember the indentation rule, you might want to go back and read the previous chapter.
-
 ### if-else statment
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement) | Watch [video 1](https://youtu.be/fbCsCFuj6zE)| Watch [video 2](https://youtu.be/YjUo6TQ2EzE)
 
 if-else statement is for conditional branching. 
 
-###### Syntax
-
 ```python
-if condition:
-	<code>
-elif condition:
-	<code>
+if <condition>:
+    # statements here are in the 
+    # scope of the if statement.
+    print("condition is true")
 else:
-	<code>
+    # statements here are in the 
+    # scope of the else statement.
+    print("condition is false")
 ```
+
 ###### Evaluation
 
 `condition` is an expression which evaluates to True or False. 
@@ -81,6 +80,104 @@ Is a less than 100 (and not greater than 100)  -> A is less than 100.
 
 Both of above conditions are False? -> A is equal to 100.
 
+## Indentation and scoping
+
+The above examples were simple if-else statements, when we start writing complex programs, scoping comes into picture.
+
+```python
+if a > 1:
+	print("In the scope of the IF block")
+	print("In the scope of the IF block")
+	print("In the scope of the IF block")
+	print("In the scope of the IF block")
+print("not in the scope of the IF block")
+print("not in the scope of the IF block")
+```
+
+#### Scoping
+
+When we use indentation, we need to understand the scope of each block which we use. Each statement belongs to one or more "scopes", one direct scope and multiple indirect scopes. 
+
+For visualization, let's draw `[]` around the spaces, so the code now looks like this:
+
+> Note: This is not valid Python code, `[]` is used just to show the indentation.
+
+```
+if a > 1:
+[   ]print("In the scope of the IF block")
+[   ]print("In the scope of the IF block")
+[   ]print("In the scope of the IF block")
+[   ]print("In the scope of the IF block")
+print("not in the scope of the IF block")
+print("not in the scope of the IF block")
+```
+All lines except the last two are in the scope of the `if` block.
+
+#### How to find scope?
+1. After a construct which ends with a colon (if/for/while/try/except), calculate the number of spaces in the immediate next line. In this example, it is `four spaces`. The first `[]` block.
+1. Every line below this line which has `four spaces` at the start until we get a line which **doesn't** have four spaces is in the if block.
+
+> Note: Having indentation **without** an if/for/while/elif block is a syntax error, for instance, you can't do the following:
+
+```python
+if a > 1:
+	print("hi")
+print("bye")
+	print("hi")
+```
+
+The syntax error is because the interpreter isn't able to find out what block the statement belongs to.
+
+#### Nesting
+
+We can have multiple if blocks inside an if block (same is true with for/while statements). This is called nesting. When we write nested if statements, then the same logic applies to indentation.
+
+This is an example of two level nesting:
+
+```python
+if a > 1:
+	if b < 1:
+		print(" b is less than 1")
+	print("a is greater than 1")
+print("This is not in either of the above blocks")
+```
+Let's add `[]` to the code to understand scoping for nested blocks. 
+
+Each `[ ]` can be considered as an indentation block, we can see that `if b < 1` has only one block, but this statement, `print(" b is less than 1")` has two blocks of spaces, the first one is to `if b < 1` which is the primary scope, the secondary scope is to `if a > 1`.
+
+> Note: This is not valid Python code, `[]` is used just to show the indentation.
+
+```
+if a > 1:
+[	]if b < 1:
+[	][	]print(" b is less than 1")
+[	]print("a is greater than 1")
+print("This is not in either of the above blocks")
+```
+### Scoping for nested blocks
+
+Here, the statements which lie in the inner if statement lie in two blocks, the inner if statement's block and the outer if statement's block.
+
+```python
+if True:
+    # statements here are in the 
+    # scope of the if statement.
+    print("Statement is true")
+    if True:
+        # statements here are in the inner if
+	# but overall, lie in the scope of 
+	# the outer if. 
+        print("Another statement")
+else:
+    # statements here are in the 
+    # scope of the else statement.
+    print("Statement is false")
+    if True:
+        # statements here are in the inner if
+	# but overall, lie in the scope of 
+	# the outer else.
+        print("Another statement")
+```
 ### for loop.
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)
