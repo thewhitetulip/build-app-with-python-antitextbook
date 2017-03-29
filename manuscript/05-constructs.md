@@ -1,5 +1,21 @@
 # Constructs
 
+### del
+
+`del` can be used to delete any variable, it de-allocates a variable. After you run `del a`, the variable `a` was deleted, so we can't access it.
+
+```python
+>>> a
+['2', 1.11111, [1, 2, 3], 1, 2, 3]
+>>> del a
+>>> a 
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    a
+NameError: name 'a' is not defined
+```
+
+
 ### if-else statment
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement) | Watch [video 1](https://youtu.be/fbCsCFuj6zE)| Watch [video 2](https://youtu.be/YjUo6TQ2EzE)
