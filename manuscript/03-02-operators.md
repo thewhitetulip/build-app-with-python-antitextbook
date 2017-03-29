@@ -2,7 +2,7 @@
 
 Python has the following major operators:
 
-`<,>,=,==,>=,<=,!=,\*,+,-,\*\*, +=, -=, /=, \*=, in, and, not, is.`
+`<, >, =, ==, >=, <=, !=, *, +, -, **, +=, -=, /=, *=, in, and, not, is.`
 
 ## Operator priority
 When expressions containing more than one operators are evaluated, the operator priority is followed, it is just like the BODMAS rule of maths. Usage of `()` can override priority. 
@@ -22,7 +22,30 @@ When expressions containing more than one operators are evaluated, the operator 
 	  # and stores the address in variable a.
 >>> b = a # stores the address of variable a inside
  	  # variable b, they point to the same object.
+```
 
+## Multiply
+
+```python
+>>> a = 12
+>>> a * 12
+144
+>>> a = "ab_"
+>>> a * 2 # when * is used with strings,
+          # it returns a new string twice.
+ab_ab_
+```
+## Add
+
+```python
+>>> a = 1
+>>> a + 1
+2
+>>> a = 'py'
+>>> a + 'thon' # concatenates 'thon' to 'py' and creates a new string.
+python
+>>> a # we did not reassign a, so it's value is unchanged.
+py
 ```
 
 ## Equality
@@ -38,8 +61,6 @@ True
 > Note: It is a classic mistake to use `==` when you really want to use `=` or vice versa. 
 
 ## Division
-
-There are three division operators `/`, `//`, and `%`. The `/` operator works in a different way from most languages.
 
 ```python
 >>> i = 10
@@ -98,6 +119,8 @@ True
 
 ### not
 
+Read the [docs](http://docs.python.org/3/library/stdtypes.html#truth-value-testing)
+
 NOT is the negation operator. At it's core, the `not` operator will transform `True` to `False` and `False` to `True`.
 
 Variables of any data type when they are null or have no value, they are `Falsy` values. 
@@ -137,7 +160,6 @@ True
 False
 ```
 
-Read the [docs](http://docs.python.org/3/library/stdtypes.html#truth-value-testing)
 
 ## Boolean Operators
 
@@ -170,11 +192,11 @@ True
 
 ## Shortcut operators
 
-`+=, -=, /=, \*=`
+`+=, -=, /=, *=`
 
 `a = a + 1` increments the value of variable `a` and stores it back in `a`.
 
-There is no operator for `++` or `--`, but, you can use `a+=1` and `a-=1` for those purposes.
+There is no operator for `++` or `--`, you can use `a+=1` and `a-=1` instead.
 
 Along with this, you can use this syntax for other operations like -=, /=. In each of such operation you perform that operation and store it's value in the variable itself.
 
