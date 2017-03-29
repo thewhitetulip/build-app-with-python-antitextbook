@@ -111,3 +111,25 @@ This is a human of name Suraj and age 99
 It is a matter of taste, but the ideal condition in which we can use OOP is when we are encapsulating data related to objects which we can encapsulate as classes, for instance, if we have three lists, one containint 100 names and other two containing marks of those 100 students in two subjects, then we can create a `Student` class and perform operations on it by creating a list of `Student` objects.
 
 We encourage you to write that program.
+
+#### Docstring Comments
+
+Read the [docs](https://docs.python.org/3/library/doctest.html)
+
+Python does not support multiple line comments. Triple quotes can be used as 'docstrings', for documentation purposes of functions and classes. 
+
+Triple quotes can either be made up of three single quote or three double quotes. They need to be closed appropriately, otherwise they result in an error. Unlike comments, which are ignored, docstrings are evaluated, **not ignored**.
+
+Below is an example:
+
+```python
+>>> def function():
+...     """ this is a function which does something"""
+...     print("hello world")
+...
+>>> function.__doc__
+' this is a function which does something'
+```
+> From the official docs:
+A string literal which appears as the first expression in a class, function or module. While ignored when the suite is executed, it is recognized by the compiler and put into the `__doc__` attribute of the enclosing class, function or module. Since it is available via introspection, it is the canonical place for documentation of the object.
+
