@@ -35,6 +35,7 @@ When expressions containing more than one operators are evaluated, the operator 
           # it returns a new string twice.
 ab_ab_
 ```
+
 ## Add
 
 ```python
@@ -77,9 +78,9 @@ True
 `**` is the operator for power.
 
 ```python	
->>> a = 12
->>> a**2
-144
+>>> a = 2
+>>> a**3
+8
 ```
 
 ## Membership test
@@ -92,42 +93,16 @@ The `in` operator tests if the element on the left hand side is present in the r
 True
 ```
 
-## Object Identity
-
-Read the [docs](https://docs.python.org/3.6/reference/expressions.html#is)
-
-The operators `is` and `is not` test for object identity. `x is y` returns True only if x and y are the same object. Object identity is determined using the id() function; `x is not y` yields the inverse truth value.)
-
-```python
->>> a = False
->>> b = False
->>> a is bool
-False
->>> a is int
-False
->>> a is B
-True
-# Can be rewritten as
->>> id(x) == id(x)
-True
-```
-
 ## Boolean operators
-
-## True and False
-`True` and `False` are special values in Python3. In previous version of the language, we were allowed to create a variable of name True and False, but now they are reserved. 
 
 ### not
 
 Read the [docs](http://docs.python.org/3/library/stdtypes.html#truth-value-testing)
 
-NOT is the negation operator. At it's core, the `not` operator will transform `True` to `False` and `False` to `True`.
+The `not` operator will transform `True` to `False` and `False` to `True`.
 
-Variables of any data type when they are null or have no value, they are `Falsy` values. 
-
-Falsy is a term given to those values which are False like but not exactly equal to the Boolean False.
-
-Variables of any data type when have _some_ value, any value, they are Truthy.
+* Variables of any data type when they are null or have no value, they are False like values. 
+* Variables of any data type when have _some_ value, any value, they are True like values.
 
 * The negation of a False like value is True.
 * The negation of a True like value is False.
@@ -135,31 +110,23 @@ Variables of any data type when have _some_ value, any value, they are Truthy.
 ```python
 >>> not True
 False
->>> a = 2
->>> not a
-False
->>> True==False
-False
->>> True==True
-True
->>> not ''
+>>> not '' # empty string is False like.
 True
 >>> not 'dd'
 False
->>> not 1
+>>> not 1 # non zero is True like.
 False
->>> not 0
+>>> not 0 # 0 is False like.
 True
->>> not -1
+>>> not -1 # non zero is True like.
 False
->>> not dict()
+>>> not dict() # empty dict is False like.
 True
->>> not list()
+>>> not list() # empty list is False like.
 True
->>> not [1,2,3]
+>>> not [1,2,3] # list having any value is True like.
 False
 ```
-
 
 ## Boolean Operators
 

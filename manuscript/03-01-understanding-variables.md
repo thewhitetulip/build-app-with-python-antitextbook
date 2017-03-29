@@ -2,9 +2,18 @@
 
 Watch on [YouTube](https://www.youtube.com/watch?v=3_-W0S1VdLo) | Read the [docs](https://docs.python.org/3/reference/expressions.html#atom-identifiers)
 
-Variables are used to store values in memory. We do not have to declare the datatype of the variable, the interpreter will evaluate the data type on automatically.
+Variables are used to store values in memory. 
 
-Creating a variable in Python is simple, below is a simple example of creating a variable named `i`.
+We do not have to declare the datatype of the variable, the interpreter will evaluate the data type on automatically, this is called dynamic typing.
+
+A variable name has to start with any valid unicode letter except those that have special significance like `\` or numbers.
+
+```python
+0b = 2 # invalid variable name
+\a = 4 # invalid variable name
+```
+
+Creating a variable in Python is simple.
 
 ```python
 >>> i = 1 
@@ -22,16 +31,14 @@ Creating a variable in Python is simple, below is a simple example of creating a
 <class 'string'> 
 ```
 
-Variable = address of memory location (returned by `id(i)` function call) + value (which we assign).
-
-As we saw in the earlier example, we can use the same variable name for multiple data types, initially `i` was having value 1, later, it was having value Python. The interpreter does this conversion automatically.
+Variable = address of memory location (returned by `id(i)` function call) + value.
 
 #### Finding address of variables.
 
 id() is a function which returns the address of an object. You can read more in the docs [here](https://docs.python.org/3/library/functions.html?highlight=id#id).
 
 #### Finding data type of variables.
-`type` is a builtin function which returns the data type of the argument passed to it. `type(1)` returns the data type of 1, which is an integer. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=id#type)
+`type` is a builtin function which returns the data type of the argument passed to it. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=id#type)
 
 ```python
 type(1) # <class 'int'>
@@ -41,7 +48,7 @@ type("") # <class 'string'>
 # "" or '' is an empty string, equivalent of 0 of integer.
 ```
 
-Now that we learned how to create a variable, find it's data type and it's address, let's have a brief overview of the data types, we will be looking at them in detail in the next chapter.
+Let's have a brief overview of the data types, we will be looking at them in detail in the next chapter.
 
 ## Variable types
 
@@ -55,18 +62,17 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#numeric-types-in
 >>> i = 10000
 >>> i = 123333
 >>> print(type(1))
-`<type 'int'>`
+<type 'int'>
 ```
 
 #### Float
 
 ```python
-i = 1.1
-i = 3.3333344445
-print(type(1.0))
+>>> i = 1.1
+>>> i = 3.3333344445
+>>> print(type(1.0))
+<type 'float'>
 ```
-
-The output of `print(type(1.0))` is `<type 'float'>`.
 
 #### Complex
 
@@ -92,26 +98,26 @@ i = """
 
 ##### String validity
 
-The location of the ending triple quote doesn't matter, the only thing which matters is that **it should exist**. The value of a documentation string is in between the starting and ending triple quotes.
+The location of the ending quotes doesn't matter, the only thing which matters is that **it should exist**. The value of a string is in between the starting and ending quotes, either single, double or triple.
 
-Take the following strings as an example, `'this is a string', "this is a string", "'this is a string", '"this is a string', """ this is 'a string '""", '"""hi'`
+`'this is a string', "this is a string", "'this is a string", '"this is a string', """ this is 'a string '""", '"""hi'`
 
-These all are *valid* strings, they start and end with the same quote. If a string starts and ends with a single quote, then any number of double quotes can be part of the string, the same is true vice versa. 
+All are *valid* strings, they start and end with the same quote. If a string starts and ends with a single quote, then any number of double quotes can be part of the string, the same is true vice versa. 
 
-But, when the string starts with a single quote, but has no ending single quote (or has more than one single quote), it is a syntax error. `'"sherlock"` is an invalid string, so is `"sherlock''`, because both of these strings do not start and end with the same quote.
+`'"sherlock"` and `"sherlock''` are invalid strings. Both of them do not start and end with the same quote.
 
 
 #### Boolean
 
+`True` and `False` are special values in Python3. In previous version of the language, we were allowed to create a variable of name True and False, but now they are reserved. 
+
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#boolean-values)
 
 ```python
-i = True
-j = False
-print(i)
-print(i and j)
-print(i or j)
-print(not j)
+>>> i = True
+>>> j = False
+>>> print(i)
+True
 ```
 
 ### Sequence type
@@ -130,7 +136,7 @@ i = [1,"Linux",3,"bash",[1,2,"sh"]]]
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
 
-Sets are same as lists, but they don't allow duplicates. Only hashable elements are allowed as their members (basic data types like int, float, string, complex).
+Sets are same as lists, but they don't allow duplicates. Only hashable elements are allowed as their members (int, float, string, complex, tuples).
 
 ### Immutability
 
@@ -162,7 +168,7 @@ i = set([1,2,3,4,5])
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#tuple)
 
-Tuples are immutable lists, that is, once a tuple is created, elements can't be added/deleted/modified.
+Tuples are lists from which elements can't be added/deleted/modified.
 
 ```python
 >>> a = (1,2)

@@ -19,30 +19,23 @@ To start the interpreter, type `python3` or `python` on your machine, when the i
 
 This shows that the default Python shell has started. `>>>` signifies the input location. 
 
-> Note: When you type an if/for/while block in the interpreter, you need to hit the Enter or Return key **twice** for the block to be evaluated.
-
 ```python
->>> if True:
-...     print("hi")
-...     print("another hi") # hit enter twice here
-...
+>>> print("hi")
+hi
 ```
 
 #### Batch Mode
 
-Code is written in a file from which it is executed. Open the terminal, change the directory to where you saved the above file and type the following to execute `file.py`.
-
-Assuming `$` is your terminal.
-
-    $ python3 file.py
+Save the code in a file. if the file name is `file.py`, then we execute it like by typing `python3 file.py` in the command line **not** the interpeter.
 
 
 #### Executing 3 vs 2
-We are going to use `python3` to run the code. Type `python --version`, if this says 2, then you'll need to install python3 and execute code using python3.
-If `python --version` gives you 3, then you'll need to run all the code in this book as `python file.py`
+We are going to use `python3` to run the code, depending on your machine, you might need to use `python` instead of `python3` to execute code. 
 
-#### Hybrid approach
-It is a better practice to use both interpreter and batch mode while writing Python scripts, that way, we can incrementally test small blocks and later add them to our file.
+Type `python --version` on your command prompt. 
+
+    If it says Python 2, then you'll need to install python3 and execute code using `python3 file.py`.
+    If it says Python 3, then you'll need to run all the code in this book as `python file.py`
 
 ## Installing packages
 
@@ -52,25 +45,19 @@ It is a better practice to use both interpreter and batch mode while writing Pyt
 
 Watch on [YouTube](https://www.youtube.com/watch?v=oU1rHEnfgcM) | Read the [docs](https://docs.python.org/3/reference/lexical_analysis.html?highlight=comments#comments)
 
-Comments are the lines which the interpreter will _ignore_. The significance of comments lies purely for code readability. It makes  maintaining the project easier. If programming is a religion then Comment would be it's most powerful God capable of making or breaking lives. 
+Comments in Python start with the # character. It can be present in any position of a line, the text **after** the # till the end of the line is the comment.
 
-Each block of non obvious code should have appropriate comments associated with it. Consider `a+=1`, there is no need to add a comment saying `increments the variable a by 1` because it is ovious. 
+Comments are ignored by the interpreter. They are used for code readability & maintainability.
 
-Now, consider `a = 4*c+4*d/6*c`. This is not obvious, it might be Sarick's coefficient, and thus would warrant a comment. 
+Non obvious code should have comments associated with it. 
 
-#### Syntax
+Consider `a+=1`, there is no need to add a comment saying `increments the variable a by 1` because it is obvious. 
 
-They start with a #. It can be present in any position of a line, the text **after** the # till the end of the line is _ignored_ by the interpreter. They are used for statements other than functions/classes.
-
-## Indentation
-
-Watch on [YouTube](https://www.youtube.com/watch?v=hhMDv0Q6Kps)
-
-Python uses indentation as a part of the syntax as opposed to `{` which C/Java use. Either spaces or tabs can be used for indentation. Typically, four spaces are used. Either spaces or tabs can be used, as long as we do not mix them. If we mix tabs and spaces then it causes an error.
+Now, consider `a = 4*c+4*d/6*c`. This is not obvious, thus, would warrant a comment. 
 
 ## Getting Help
 
-Before we start understanding how to manipulate lists, we need to understand how to get help in Python.
+We need to understand how to get help in Python.
 
 * `help`: returns the documentation of the data type.
 * `dir`: returns all the methods valid for that data type.

@@ -15,7 +15,6 @@ Traceback (most recent call last):
 NameError: name 'a' is not defined
 ```
 
-
 ### if-else statment
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement) | Watch [video 1](https://youtu.be/fbCsCFuj6zE)| Watch [video 2](https://youtu.be/YjUo6TQ2EzE)
@@ -26,11 +25,20 @@ if-else statement is for conditional branching.
 if <condition>:
     # statements here are in the 
     # scope of the if statement.
-    print("condition is true")
+    # executed when the condition is True.
+    print("if block.")
+elif <condition2>:
+    # statements here are in the 
+    # scope of the elif statement.
+    # executed when condition of if is False
+    # but condition2 is True.
+    print("elif block")
 else:
     # statements here are in the 
     # scope of the else statement.
-    print("condition is false")
+    # executed when both condition and condition2
+    # are False.
+    print("else block.")
 ```
 
 ###### Evaluation
@@ -42,15 +50,17 @@ When the condition of the `if` block evaluates to False, it will go to the `elif
 Try running this block:
 
 ```python
-if True:
-   print("The if block.")
-
 if False:
    print("The if block.")
 else:
+   # since condition to the 
+   # above if is False, 
+   # this block gets executed.
    print("The else block.")
 
 if True:
+   # since condition is True
+   # this block gets executed.
    print("The if block.")
 else:
    print("The else block.")
@@ -58,26 +68,25 @@ else:
 **Output:**
 
 ```
-The if block.
 The else block.
 The if block.
 ```
-
-**Explanation:**
-
-The statements in the `if` block get executed if the condition evaluates to `True`.
-
-The statements in the `else` block get executed when the `if condition` evaluates to `False`.
 
 #### elif
 
 The `elif` block is special, it gets evaluated if the parent `if` block has been evaluated to False.
 
-```Python
+```python
 a = 10
 if a > 100:
+    # as a is 10, this condition is 
+    # False, thus, this block is not
+    # executed.
     print("A is greater than 100")
 elif a < 100:
+    # since condition to the above if is False
+    # and a is less than 100, this block
+    # is executed.
     print("A is less than 100")
 else:
     print("A is equal to 100")
@@ -98,7 +107,9 @@ Both of above conditions are False? -> A is equal to 100.
 
 ## Indentation and scoping
 
-The above examples were simple if-else statements, when we start writing complex programs, scoping comes into picture.
+After understanding the basic syntax of the if-else statement, we need to understand indentation and scoping.
+
+Python uses spaces for indentation, as opposed to other languages which use curly brackets. Either spaces or tabs can be used for indentation, but not both. Usage of four spaces is recommended.
 
 ```python
 if a > 1:
@@ -112,7 +123,7 @@ print("not in the scope of the IF block")
 
 #### Scoping
 
-When we use indentation, we need to understand the scope of each block which we use. Each statement belongs to one or more "scopes", one direct scope and multiple indirect scopes. 
+Each statement belongs to one or more "scopes", one direct scope and multiple indirect scopes. 
 
 For visualization, let's draw `[]` around the spaces, so the code now looks like this:
 
@@ -127,6 +138,7 @@ if a > 1:
 print("not in the scope of the IF block")
 print("not in the scope of the IF block")
 ```
+
 All lines except the last two are in the scope of the `if` block.
 
 #### How to find scope?
@@ -142,7 +154,7 @@ print("bye")
 	print("hi")
 ```
 
-The syntax error is because the interpreter isn't able to find out what block the statement belongs to.
+The error is because the interpreter isn't able to find out what block the statement belongs to.
 
 #### Nesting
 

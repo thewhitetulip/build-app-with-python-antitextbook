@@ -11,11 +11,11 @@ An ordered collection of n values (n >= 0)
 Creating a list is simple:
 
 ```python
-l = [] # creates an empty list.
-l = [1,2,3] # creates a list with integer values.
-l = [1,2,3, 'sh', 'bm'] # creates a list with integer and string values. 
-l = [1,2,3, [1,2,3]] # creates a list which contains a list as a member.
-l = [ 1,1,1,1,1,1,1 ] # lists allow duplicates
+>>> l = [] # creates an empty list.
+>>> l = [1,2,3] # creates a list with integer values.
+>>> l = [1,2,3, 'sh', 'bm'] # creates a list with integer and string values. 
+>>> l = [1,2,3, [1,2,3]] # creates a list which contains a list as a member.
+>>> l = [ 1,1,1,1,1,1,1 ] # lists allow duplicates
 ```
 
 Each element of a list has an index, indices in Python start with 0. 
@@ -30,7 +30,7 @@ Let's say we have a list of five values, `a = [11,22,33,44,55]`.
 |44|3|
 |55|4|
 
-Lists in Python can be negative.
+Indices can be negative. 
 
 | Value |  Negative Index |
 | ----|  ----| 
@@ -40,7 +40,7 @@ Lists in Python can be negative.
 |44|-2|
 |55|-1|
 
-List elements can be accessed using indices. `l[0]` will return the first value of the list `l`. `0` is the index, if we try to access an index which doesn't exist, like `l[100]`, then it throws an error.
+List elements can be accessed using indices. 
 
 ```python
 l = [11,22,33,44,55]
@@ -64,7 +64,7 @@ List elements can be used just like any other variable.
 l[0]*12 # multiplies value at l[0] by 12.
 ```
 
-## Methods of the List datatype.
+## List Methods.
 
 ### append
 The `append` function takes **one** argument and adds it to the end of the list. 
@@ -87,7 +87,6 @@ The `append` function takes **one** argument and adds it to the end of the list.
 # here, the entire list was inserted at the end of 
 # the existing list.
 ```
-When we append sequences to a list, the entire sequence is inserted as one record at the end of the list.
 
 ### extend
 
@@ -103,9 +102,9 @@ When we append sequences to a list, the entire sequence is inserted as one recor
 ```	
 
 ### pop
-pop deletes and returns one element. It takes one optional argument:
+pop deletes and returns one element. It takes one optional argument.
 
-If no argument is passed: Deletes and returns the last element.
+* No argument is passed: Deletes and returns the last element.
 
 ```python
 >>> a
@@ -115,7 +114,7 @@ If no argument is passed: Deletes and returns the last element.
 >>> a
 [1, '2', 1.11111, [1, 2, 3], 1, 2]
 ```
-If a valid index is passed: deletes and returns the value at that index.
+* Valid index is passed: Deletes and returns the value at that index.
 
 ```python
 >>> a
@@ -125,7 +124,29 @@ If a valid index is passed: deletes and returns the value at that index.
 >>> a
 ['2', 1.11111, [1, 2, 3], 1]
 ```
+### copy
+`a.copy()` creates a new list with the values of list `a`.
 
+```python
+>>> a = [1, 2, 3, 4, 5, 6]
+>>> b = a # a and b are pointing to same object.
+>>> a[1]=-111 # when we change a, b also changes.
+>>> a
+[1, -111, 3, 4, 5, 6]
+>>> b # b changed when a changed.
+[1, -111, 3, 4, 5, 6]
+>>> c = a.copy() # creates a new list object.
+				 # having the values of list a.
+>>> a
+[1, -111, 3, 4, 5, 6]
+>>> a[1]=999
+>>> a
+[1, 999, 3, 4, 5, 6]
+>>> c # c didn't change when a changed.
+[1, -111, 3, 4, 5, 6]
+>>> b # b changed when a changed.
+[1, 999, 3, 4, 5, 6]
+```
 #### Other functions
 Learning a language requires self practice! If we explain each and every function, we will hinder your path of exploring the language, we encourage you to use the `help()` function to find out more about other functions which are allowed on Lists.
 
@@ -171,7 +192,7 @@ Slicing returns a new object (list or string or tuple) from the `start_index` to
 4
 ```
 
-Slicing works in the same was with strings and tuples as well, we invite you to try them out, we'd like to reiterate our stance here, we want you to program as much as you can while reading this book.
+Slicing also works with strings and tuples. We invite you to try them out. Don't just read this book, execute code!
 
 ## Tuples
 
@@ -180,7 +201,7 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#tuple) | Watch t
 Tuples are read only lists. A tuple object, once created, doesn't allow us to add, delete or update an element. When we use the `dir` on a tuple object, we find that there are only two methods, `count` and `index`.
 
 ```python
->>> a = (1,2)
+>>> a = (1,2,3,4)
 >>> type(a)
 <class 'tuple'>
 >>> 1 in a
@@ -188,13 +209,15 @@ True
 >>> a[0]
 1
 >>> a[::-1]
-(2,1)
+(4,3,2,1)
+>>> a[0:2]
+(1,2)
 ```
 
 ### List vs Tuple
-Lists are used when we are not sure how many values we'll be having, since lists support addition and deletion.
+Lists are used when we are not sure how many values we'll be having.
 
-Tuples are used when there is a fixed number of values to deal with, since tuples don't support addition and deletion.
+Tuples are used when there is a fixed number of values to deal with.
 
 ## Set
 
@@ -277,10 +300,12 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict) | Watch on
 
 Dictionaries are key value pairs. Keys can only be hashable data types i.e. basic data types. There is no such restriction on the values.
 
-Lists are indexed starting from 0 onwards, it is done by the Interpreter itself. Dictionaries allow custom indexes i.e. keys.
+Lists are indexed starting from 0, it is done by the interpreter itself. Dictionaries allow custom indexes i.e. keys.
+
+> Note: the representation of both set and dictionary is by using curly braces, `{}`.
 
 ```python
->>> a = {} # creates an empty dictionary
+>>> a = dict() # creates an empty dictionary
 >>> a
 {}
 >>> a["IN"] = "India" # creates a new key value pair
@@ -317,6 +342,20 @@ ES : Espanol
 ```
 
 We also encourage you to try out everything we did in this chapter, again! (on strings too)
+
+Exercises:
+
+1. Find the number of occurances of 1 in the list [1,2,1,2,1,2,3,4,1,2,3].
+1. Find all the unique elements of a list. Input; a = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4]. Output; [1, 2, 3, 4].
+1. Find the count of each element of a list except "\n". a = [1, 2, 2, 3] should return this output. 1 : 1,, 2 : 2, 3 : 1.
+1. Create a random dictionary and print key : value pair in ascending order of keys. Input: a = {"IN":"India", "ES":"Español"}, output: "ES"":"Español", "IN":"India". You have to use `dir` to find out the necessary functions.
+1. The same example as above, print in descending order.
+1. Given two list, find their
+    1. common elements.
+	1. elements present in list a but not in b.
+	1. elements present in list b but not in a.
+	hint: use sets.
+1. Print a reverse of a list without using the `reverse` method.
 
 ##### Links
 
