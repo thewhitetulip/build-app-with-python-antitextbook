@@ -78,6 +78,53 @@ Watch on [YouTube](https://www.youtube.com/watch?v=hhMDv0Q6Kps)
 
 Python uses indentation as a part of the syntax. Either spaces or tabs can be used for indentation, typically, four spaces are used. It does not matter if we use tabs or spaces as long as we do not mix them. If we mix tabs and spaces then it causes an error.
 
+## Getting Help
+
+Before we start understanding how to manipulate lists, we need to understand how to get help in Python.
+
+* `help`: returns the documentation of the data type.
+* `dir`: returns all the methods valid for that data type.
+
+Example:
+
+```python
+help(1) # help about integer class.
+help('') # help about strings.
+help(1.1) # help about float.
+help([]) # help about lists
+```
+
+### Output of `help`
+
+```python
+>>> help('')
+Help on class str in module builtins:
+
+class str(object)
+	|  str(object='') -> str
+	|  str(bytes_or_buffer[, encoding[, errors]]) -> str
+	|
+	|  Create a new string object from the given object. If encoding or
+	|  errors is specified, then the object must expose a data buffer
+	|  that will be decoded using the given encoding and error handler.
+	|  Otherwise, returns the result of object.__str__() (if defined)
+	|  or repr(object).
+```
+
+### Output of `dir`
+
+```python
+>>> dir('')
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+'__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', 
+'__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', 
+'__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 
+'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 
+'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 
+'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+```
+
+
 ##### Links
 
 |[Next](03-01-understanding-variables.md) | [Previous](01-intro-to-python.md) |  [Index](SUMMARY.md)
