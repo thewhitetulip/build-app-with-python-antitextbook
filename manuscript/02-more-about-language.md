@@ -30,17 +30,7 @@ This shows that the default Python shell has started. `>>>` signifies the input 
 
 #### Batch Mode
 
-Code is written in a file from which it is executed.
-
-Create a file named `file.py` and save the following lines in it.
-```python
-import os
-files = os.listdir()
-for file in files:
-	print(file)
-```
-
-Open the terminal, change the directory to where you saved the above file and type the following to execute file.py.
+Code is written in a file from which it is executed. Open the terminal, change the directory to where you saved the above file and type the following to execute `file.py`.
 
 Assuming `$` is your terminal.
 
@@ -76,7 +66,7 @@ They start with a #. It can be present in any position of a line, the text **aft
 
 Watch on [YouTube](https://www.youtube.com/watch?v=hhMDv0Q6Kps)
 
-Python uses indentation as a part of the syntax. Either spaces or tabs can be used for indentation, typically, four spaces are used. It does not matter if we use tabs or spaces as long as we do not mix them. If we mix tabs and spaces then it causes an error.
+Python uses indentation as a part of the syntax as opposed to `{` which C/Java use. Either spaces or tabs can be used for indentation. Typically, four spaces are used. Either spaces or tabs can be used, as long as we do not mix them. If we mix tabs and spaces then it causes an error.
 
 ## Getting Help
 
