@@ -90,6 +90,17 @@ i = """
 	"""
 ```
 
+##### String validity
+
+The location of the ending triple quote doesn't matter, the only thing which matters is that **it should exist**. The value of a documentation string is in between the starting and ending triple quotes.
+
+Take the following strings as an example, `'this is a string', "this is a string", "'this is a string", '"this is a string', """ this is 'a string '""", '"""hi'`
+
+These all are *valid* strings, they start and end with the same quote. If a string starts and ends with a single quote, then any number of double quotes can be part of the string, the same is true vice versa. 
+
+But, when the string starts with a single quote, but has no ending single quote (or has more than one single quote), it is a syntax error. `'"sherlock"` is an invalid string, so is `"sherlock''`, because both of these strings do not start and end with the same quote.
+
+
 #### Boolean
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#boolean-values)
