@@ -58,55 +58,11 @@ l[0] = 12 # will replace the value at the
          # index 0 to 12.
 ```
 
-We can perform other operations like `l[0]*12`, basically anything which we can do with integers.
-
-## Getting Help
-
-Before we start understanding how to manipulate lists, we need to understand how to get help in Python.
-
-* `help`: returns the documentation of the data type.
-* `dir`: returns all the methods valid for that data type.
-
-Example:
+List elements can be used just like any other variable. 
 
 ```python
-help(1) # help about integer class.
-help('') # help about strings.
-help(1.1) # help about float.
-help([]) # help about lists
+l[0]*12 # multiplies value at l[0] by 12.
 ```
-
-### Output of `help`
-
-```python
->>> help('')
-Help on class str in module builtins:
-
-class str(object)
-	|  str(object='') -> str
-	|  str(bytes_or_buffer[, encoding[, errors]]) -> str
-	|
-	|  Create a new string object from the given object. If encoding or
-	|  errors is specified, then the object must expose a data buffer
-	|  that will be decoded using the given encoding and error handler.
-	|  Otherwise, returns the result of object.__str__() (if defined)
-	|  or repr(object).
-```
-
-### Output of `dir`
-
-```python
->>> dir('')
-['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
-'__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', 
-'__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', 
-'__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 
-'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 
-'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 
-'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
-```
-
-Find out the methods related to the List data type.
 
 ## Methods of the List datatype.
 
@@ -146,40 +102,28 @@ When we append sequences to a list, the entire sequence is inserted as one recor
 # to the list a.
 ```	
 
-### del
-`del` can be used to delete any variable, it de-allocates a variable. It can also be used to delete elements from any data type except tuple. 
-
-```python
->>> del a[0]
->>> a
-['2', 1.11111, [1, 2, 3], 1, 2, 3]
-```
-
 ### pop
 pop deletes and returns one element. It takes one optional argument:
 
 If no argument is passed: Deletes and returns the last element.
 
 ```python
+>>> a
+[1, '2', 1.11111, [1, 2, 3], 1, 2, 3]
 >>> a.pop()
 3
->>> a.pop()
-2
 >>> a
-[1, '2', 1.11111, [1, 2, 3], 1]
+[1, '2', 1.11111, [1, 2, 3], 1, 2]
 ```
 If a valid index is passed: deletes and returns the value at that index.
 
 ```python
 >>> a
 [1, '2', 1.11111, [1, 2, 3], 1]
->>> deleted_item = a.pop(0)
->>> print(deleted_item)
+>>> a.pop(0)
 1
 >>> a
 ['2', 1.11111, [1, 2, 3], 1]
->>> a[1]
-1.11111
 ```
 
 #### Other functions
@@ -187,17 +131,19 @@ Learning a language requires self practice! If we explain each and every functio
 
 #### Slicing
 
-Lists and strings allow you to slice elements. It is an easy way to fetch sub parts of them. This feature also allows a programmer to write complex features with very few lines of code as compared to other languages.
+Slicing is an easy way to fetch sub parts of them. Lists, strings and tuples allow Slicing.
 
 The syntax of slicing is `l[start_index : end_index]`.
 
 ```
 l: the list
-start_index: Starting point with the element at this index included; defaults to 0 if left blank.
-end_index: Ending point, but this index is excluded; defaults to -1 if left blank.
+start_index: Starting point with the element at this 
+             index included; defaults to 0 if left blank.
+end_index: Ending point, but this index is excluded;
+           defaults to -1 if left blank.
 ```
 
-Slicing returns a new object (list or string) from the `start_index` to the `end_index` without including `end_index`.
+Slicing returns a new object (list or string or tuple) from the `start_index` to the `end_index` without including `end_index`.
 
 ```python
 >>> l = [0,1,2,3,4]
@@ -255,24 +201,23 @@ Tuples are used when there is a fixed number of values to deal with, since tuple
 Watch on [YouTube](https://www.youtube.com/watch?v=QmfDyjp0Z8E) | Read the [docs](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
 
 Sets are same as lists with the following limitations:
- 1. duplicate entries are not allowed
+
+ 1. Duplicate entries are not allowed
  1. Sets can only have basic data types as elements (lists/dictionary/set/tuple)
+ 1. Sets do not allow indexing
 
 ```python
 >>> a = [1,2,3,4]
 >>> b = set(a)
->>> a
-[1, 2, 3, 4]
 >>> b
 {1, 2, 3, 4}
 >>> type(b)
 <class 'set'>
->>> type(a)
-<class 'list'>
->>> a[1]
-2
+>>> b[0] # sets do not allow this.
+TypeError: 'set' object does not support indexing
 ```
-When we try to create a set from a list which has a list element, it is an error:
+
+When we try to create a set from a list which has a list element, it is an error (only basic elements int, float, string are allowed) :
 
 ```python
 a = [1,2,3,[2,3]]
@@ -332,9 +277,7 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict) | Watch on
 
 Dictionaries are key value pairs. Keys can only be hashable data types i.e. basic data types. There is no such restriction on the values.
 
-When you use a list, they are indexed starting with 0. First element has index 0, second element has 1 and so on. But dictionaries are different, you choose the key and value _both_, instead of just the value as in the case of the list. They are not stored in continuous memory locations.
-
-Before we go any further, we recommend you to read the `help` and `dir` output of `{}`, this is an empty dictionary object. type `help({})`
+Lists are indexed starting from 0 onwards, it is done by the Interpreter itself. Dictionaries allow custom indexes i.e. keys.
 
 ```python
 >>> a = {} # creates an empty dictionary
@@ -363,8 +306,6 @@ dict_values(['India', 'United States of America', 'Espanol'])
 ```
 
 `keys()` and `values()` are two functions which return all the keys and values of the dictionary object. Since we can't use `for i in ` syntax to loop over dictionaries, we have to do this
-
-
 
 ```python
 >>> for i in a.keys():
