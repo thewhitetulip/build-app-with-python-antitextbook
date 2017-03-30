@@ -88,6 +88,7 @@ Try running tasks2.py with various command line arguments.
 	0 tasks2.py
 	1 add
 	2 title
+	3 content
 
 First execution: We didn't give any parameter, since we know that the 0'th argument is going to be the file name itself, there are no suprises here.
 
