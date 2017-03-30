@@ -29,7 +29,8 @@ even_file.close()
 odd_file.close()
 ```
 
-** Why close a file?**
+**Why close a file?**
+
 It is mandatory to close the file after use to free system resources. When we write anything to a file, it gets written to a buffer and not directly to the underlying file. The buffer is flushed to the underlying file after we call the close method. However, the buffer can be bypassed by using `flush()` immediately after a `write` call, that way, everything is written down to the underlying file and not just in the buffer.
 
 Run the above code by removing the `write("\n")` method call. After that, open "even.txt" in a text editor. You'll notice that it wrote the numbers in a single line. This is where file handling differs from printing on the terminal. On the terminal, the print() statement adds a newline ("\n") but the `write` method does not.
