@@ -88,6 +88,7 @@ Try running tasks2.py with various command line arguments.
 	0 tasks2.py
 	1 add
 	2 title
+	3 content
 
 First execution: We didn't give any parameter, since we know that the 0'th argument is going to be the file name itself, there are no suprises here.
 
@@ -210,7 +211,7 @@ elif command == "list":
 ```
 
 
-We now simulate data, before we let the user have the ability to add a task, we will populate the task variable my ourselves.
+We now simulate data, before we let the user have the ability to add a task, we will populate the task variable by ourselves.
 
 For simplicity, we choose this format, the title and content would be concatenated by a | character.
 
