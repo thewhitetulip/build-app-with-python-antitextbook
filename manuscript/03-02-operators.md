@@ -83,6 +83,16 @@ True
 8
 ```
 
+## Shortcut operators
+
+`+=, -=, /=, *=`
+
+`a = a + 1` increments the value of variable `a` and stores it back in `a`.
+
+There is no operator for `++` or `--`, you can use `a+=1` and `a-=1` instead.
+
+Along with this, you can use this syntax for other operations like -=, /=. In each of such operation you perform that operation and store it's value in the variable itself.
+
 ## Membership test
 
 The `in` operator tests if the element on the left hand side is present in the right hand side sequence (list, tuple, set).
@@ -95,42 +105,49 @@ True
 
 ## Boolean operators
 
+Read the [docs](http://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
+
 ### not
 
 Read the [docs](http://docs.python.org/3/library/stdtypes.html#truth-value-testing)
-
-The `not` operator will transform `True` to `False` and `False` to `True`.
-
-* Variables of any data type when they are null or have no value, they are False like values. 
-* Variables of any data type when have _some_ value, any value, they are True like values.
-
-* The negation of a False like value is True.
-* The negation of a True like value is False.
+`not` converts True to False and vice versa.
 
 ```python
 >>> not True
 False
+>>> not False
+True
+```
+
+#### False like values
+Variables of any data type when they are null or have no value, they are False like values. 
+The negation of a False like value is True
+
+```python
 >>> not '' # empty string is False like.
 True
->>> not 'dd'
-False
->>> not 1 # non zero is True like.
-False
 >>> not 0 # 0 is False like.
 True
->>> not -1 # non zero is True like.
-False
 >>> not dict() # empty dict is False like.
 True
 >>> not list() # empty list is False like.
 True
+```
+
+#### True like 
+Variables of any data type when have _some_ value, any value, they are True like values.
+The negation of a True like value is False
+
+```python
+>>> not 'dd'
+False
+>>> not 1 # non zero is True like.
+False
+>>> not -1 # non zero is True like.
+False
 >>> not [1,2,3] # list having any value is True like.
 False
 ```
-
-## Boolean Operators
-
-Read the [docs](http://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
 
 ### or
 
@@ -156,18 +173,7 @@ False
 True
 ```
 
-
-## Shortcut operators
-
-`+=, -=, /=, *=`
-
-`a = a + 1` increments the value of variable `a` and stores it back in `a`.
-
-There is no operator for `++` or `--`, you can use `a+=1` and `a-=1` instead.
-
-Along with this, you can use this syntax for other operations like -=, /=. In each of such operation you perform that operation and store it's value in the variable itself.
-
-#### Comparision Operators
+### Comparision Operators
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#comparisons)
 
