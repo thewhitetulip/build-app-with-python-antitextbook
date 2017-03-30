@@ -1,8 +1,8 @@
 # Build applications in Python the anti-textbook
 
-| Source | Read online | Watch  | Download | Code | Donate |
-| ----| ---- | ---- | ------ | ------ | -------|
-| On [Github](https://github.com/thewhitetulip/build-app-with-python-antitextbook)| Free on [Gitbooks](https://thewhitetulip.gitbooks.io/build-applications-in-python-the-anti-textbook) | The [YouTube series](https://www.youtube.com/playlist?list=PL41psiCma00wwvtQyLFMFpzWxUYmSZwZy) | [Leanpub](https://leanpub.com/antitextbookpy/) | On [Github](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook) |[ ![Paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/sapatil)|
+| Source | Read online | Watch  | Download | Code |  
+| ----| ---- | ---- | ------ | ------ | 
+| On [Github](https://github.com/thewhitetulip/build-app-with-python-antitextbook)| Free on [Gitbooks](https://thewhitetulip.gitbooks.io/build-applications-in-python-the-anti-textbook) | The [YouTube series](https://www.youtube.com/playlist?list=PL41psiCma00wwvtQyLFMFpzWxUYmSZwZy) | [Leanpub](https://leanpub.com/antitextbookpy/) | On [Github](https://github.com/thewhitetulip/code-build-app-with-python-antitextbook) |
 
 ## Who is this tutorial for?
 This book is not for a completely noob programmer, it expects _some_ initial programming experience.
