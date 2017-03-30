@@ -12,10 +12,8 @@ Creating a list is simple:
 
 ```python
 >>> l = [] # creates an empty list.
->>> l = [1,2,3] # creates a list with integer values.
->>> l = [1,2,3, 'sh', 'bm'] # creates a list with integer and string values. 
->>> l = [1,2,3, [1,2,3]] # creates a list which contains a list as a member.
->>> l = [ 1,1,1,1,1,1,1 ] # lists allow duplicates
+>>> l = list() # creates an empty list.
+>>> l = [1, 2, 3]
 ```
 
 Each element of a list has an index, indices in Python start with 0. 
@@ -293,7 +291,6 @@ Sets allow various methods like add, copy, deepcopy, update, pop, remove.
 {1, 2, 3, 4, 5, 12}
 ```
 
-
 ## Dictionary
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict) | Watch on [YouTube](https://www.youtube.com/watch?v=pQV3wbSMBRI)
@@ -323,14 +320,14 @@ Lists are indexed starting from 0, it is done by the interpreter itself. Diction
 
 Dictionaries do not support slicing.
 
+`keys()` and `values()` are two functions which return all the keys and values of the dictionary object. Since we can't use `for i in ` syntax to loop over dictionaries, we have to do this
+
 ```python
 >>> a.keys()
 dict_keys(['IN', 'US', 'ES'])
 >>> a.values()
 dict_values(['India', 'United States of America', 'Espanol'])
 ```
-
-`keys()` and `values()` are two functions which return all the keys and values of the dictionary object. Since we can't use `for i in ` syntax to loop over dictionaries, we have to do this
 
 ```python
 >>> for i in a.keys():
@@ -347,6 +344,7 @@ Exercises:
 
 1. Find the number of occurances of 1 in the list [1,2,1,2,1,2,3,4,1,2,3].
 1. Find all the unique elements of a list. Input; a = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4]. Output; [1, 2, 3, 4].
+1. Solve the above problem using a dictionary.
 1. Find the count of each element of a list except "\n". a = [1, 2, 2, 3] should return this output. 1 : 1,, 2 : 2, 3 : 1.
 1. Create a random dictionary and print key : value pair in ascending order of keys. Input: a = {"IN":"India", "ES":"Español"}, output: "ES"":"Español", "IN":"India". You have to use `dir` to find out the necessary functions.
 1. The same example as above, print in descending order.

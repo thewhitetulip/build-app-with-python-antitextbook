@@ -8,7 +8,7 @@ We do not have to declare the datatype of the variable, the interpreter will eva
 
 A variable name has to start with any valid unicode letter except those that have special significance like `\` or numbers.
 
-```python
+```
 0b = 2 # invalid variable name
 \a = 4 # invalid variable name
 ```

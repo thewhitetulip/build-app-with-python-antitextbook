@@ -15,110 +15,60 @@ Traceback (most recent call last):
 NameError: name 'a' is not defined
 ```
 
+### Exercise:
+
+1. Given that a = [1,2,3,4,[5,6,7]]
+    1. Delete the first value.
+    2. Delete the second value of the list present at index 4.
+    1. Delete the variable a.
+1. Given that a = {"IN":"India", "ES":"Espanol"}
+    1. Delete the key "IN".
+    1. Delete the key "ES"
+    1. Delete the variable a.
+
+
 ### if-else statment
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement) | Watch [video 1](https://youtu.be/fbCsCFuj6zE)| Watch [video 2](https://youtu.be/YjUo6TQ2EzE)
 
-if-else statement is for conditional branching. 
+Let's say we work for a school and we are asked to write a program to print out if a student has passed or failed for a particular exam. `a` is the score that the student scored in a subject, `b` is the maximum marks for the subject. Passing percentage is 35.
 
 ```python
-if <condition>:
-    # statements here are in the 
-    # scope of the if statement.
-    # executed when the condition is True.
-    print("if block.")
-elif <condition2>:
-    # statements here are in the 
-    # scope of the elif statement.
-    # executed when condition of if is False
-    # but condition2 is True.
-    print("elif block")
+a = 67
+b = 100
+percent = (a/b)*100 # calculating percentage marks.
+
+if percent < 35:
+    # block executes if percent is less than 35.
+    print("Failed.")
 else:
-    # statements here are in the 
-    # scope of the else statement.
-    # executed when both condition and condition2
-    # are False.
-    print("else block.")
-```
-
-###### Evaluation
-
-`condition` is an expression which evaluates to True or False. 
-
-When the condition of the `if` block evaluates to False, it will go to the `elif` blocks until it finds a condition which evaluates to True, when no condition evaluates to True, then the else block is executed.
-
-Try running this block:
-
-```python
-if False:
-   print("The if block.")
-else:
-   # since condition to the 
-   # above if is False, 
-   # this block gets executed.
-   print("The else block.")
-
-if True:
-   # since condition is True
-   # this block gets executed.
-   print("The if block.")
-else:
-   print("The else block.")
+    # block executes if percent is greater than 35.
+    print("Passed! Keep it up!")
 ```
 **Output:**
 
 ```
-The else block.
-The if block.
+Passed! Keep it up!
 ```
 
-#### elif
+## Indentation
 
-The `elif` block is special, it gets evaluated if the parent `if` block has been evaluated to False.
+Python uses spaces for indentation. Either spaces or tabs can be used for indentation, but not both. Usage of four spaces is recommended.
 
 ```python
-a = 10
-if a > 100:
-    # as a is 10, this condition is 
-    # False, thus, this block is not
-    # executed.
-    print("A is greater than 100")
-elif a < 100:
-    # since condition to the above if is False
-    # and a is less than 100, this block
-    # is executed.
-    print("A is less than 100")
+a = 67
+b = 100
+percent = (a/b)*100 # calculating percentage marks.
+
+if percent < 35:
+    # block belongs to the if statement.
+    print("Failed.")
+    print("Please appear for exams again.")
 else:
-    print("A is equal to 100")
-```
-
-**Output:**
-```
-A is less than 100
-```
-
-**Explanation:**
-
-Is a greater than 100? -> A is greater than 100.
-
-Is a less than 100 (and not greater than 100)  -> A is less than 100.
-
-Both of above conditions are False? -> A is equal to 100.
-
-## Indentation and scoping
-
-After understanding the basic syntax of the if-else statement, we need to understand indentation and scoping.
-
-Python uses spaces for indentation, as opposed to other languages which use curly brackets. Either spaces or tabs can be used for indentation, but not both. Usage of four spaces is recommended.
-
-```python
-if a > 1:
-	print("In the scope of the IF block")
-	print("In the scope of the IF block")
-	print("In the scope of the IF block")
-	print("In the scope of the IF block")
-print("not in the scope of the IF block")
-print("not in the scope of the IF block")
+    # block belongs to the else statement.
+    print("Passed!")
+    print("Study for the next exams now.")
+print("END")
 ```
 
 #### Scoping
@@ -130,16 +80,14 @@ For visualization, let's draw `[]` around the spaces, so the code now looks like
 > Note: This is not valid Python code, `[]` is used just to show the indentation.
 
 ```
-if a > 1:
-[   ]print("In the scope of the IF block")
-[   ]print("In the scope of the IF block")
-[   ]print("In the scope of the IF block")
-[   ]print("In the scope of the IF block")
-print("not in the scope of the IF block")
-print("not in the scope of the IF block")
+if percent < 35: # global scope
+[    ]print("Failed.")
+[    ]print("Please appear for exams again.")
+else:
+[    ]print("Passed!")
+[    ]print("Study for the next exams now.")
+print("END") # global scope
 ```
-
-All lines except the last two are in the scope of the `if` block.
 
 #### How to find scope?
 1. After a construct which ends with a colon (if/for/while/try/except), calculate the number of spaces in the immediate next line. In this example, it is `four spaces`. The first `[]` block.
@@ -155,6 +103,43 @@ print("bye")
 ```
 
 The error is because the interpreter isn't able to find out what block the statement belongs to.
+
+#### elif
+
+The `elif` block is special, it gets evaluated if the parent `if` block has been evaluated to False. 
+
+In our school, we now want to print the grades of students.
+
+    F: percentage < 35
+    C: 35 < percentage <= 50
+    B: 50 < percentage <= 70
+    A: 70 < percentage <= 90
+    A+ 90 < percentage 
+
+> Note: `elif` and `else` can't exist without a corresponding `if` block. Only the `if` block can exist independently.
+
+```python
+a = 67
+b = 100
+percent = (a/b)*100 # calculating percentage marks.
+
+if percent < 35:
+    # block belongs to the if statement.
+    print("F")
+elif percent <= 50:
+    print("C")
+elif percent <= 70:
+    print("B")
+elif percent <= 90:
+    print("A")
+else:
+    print("A+")
+```
+
+**Output:**
+```
+B
+```
 
 #### Nesting
 
@@ -258,71 +243,41 @@ for i in range(len(l)):
 ```
 
 **Explanation:**
-`range` returns a list [0,1,2,3,4].
-
-The execution of this program is exactly the same as above, we have five iterations and we are printing the values of a list based on the by fetching elements of the list by index.
+`range(5)` returns a list [0,1,2,3,4].
 
 #### The Else Block
 
 `for` has an else block. It is strange at first glance, but it is quite helpful in certain cases, like finding if a number if prime or not.
 
+We will take a simple example where we want to find out if an element is present in a list or not.
 
 ```python
-for i in [1,2,3]:
-    print(i)
+l = [1,2,3,4,5]
+val = 99
+
+for i in l:
+    if i == val:
+        # for understanding break
+        # check the below section.
+        break
 else:
-    print("out of for loop")
+    print("Not present")
 ```
 
 **Output:**
 ```
-1
-2
-3
-out of for loop
+Not present
 ```
 
 **Explanation:**
-This is same as the else block of the `if` statement. The above program executes in three iterations
+The loop is killed by using a `break`, if the loop does not get killed, then the value is not present in the list.
 
-1'st iteration: value of i is 1
+### Exercise:
 
-2'nd iteration: value of i is 2
-
-3'rd iteration: value of i is 3
-
-4'th iteration: goes to the else block since all values have been consumed.
-
-
-### while loop.
-
-Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
-
-`while` is used when you have to loop for a specific condition. If you don't have a condition, you can use `True` and that would result in an infinite loop.
-
-```python
-i = 100
-while i >= 0:
-    print(i)
-    i = i - 1
-```
-
-**Output:**
-```
-100
-```
-
-**Explanation:**
-`while` is a looping statement like `for`, it is going through iterations, just the difference lies in the condition. The `while` statement will loop on the condition, until the condition evaluates to `False`. The loop exits when the condition becomes False.
-
-###### Syntax
-
-```python
-while condition:
-	<code>
-```
-
-> Note: The `while` statement also has an else block, we encourage you to play with it to understand it better.
+1. Print all numbers till 100.
+1. Print all numbers from 20 to 100.
+1. Print all even numbers less than 100.
+1. Print all odd numbers less than 100.
 
 #### break, continue, pass
 
@@ -333,7 +288,7 @@ Read the [docs](https://docs.python.org/3/reference/simple_stmts.html#break)
 The break statement kills the current loop. If we have nested loops, then we have to position the `break` properly to kill the correct loop.
 
 ```python
-for i in range(100):
+for i in range(10):
     if i == 4:
         break
     print(i)
@@ -356,6 +311,8 @@ for i in range(100):
 
 The above block will print all numbers **except** 4. It continues to the next iteration.
 
+> Note: break and continue work with loops only, either `for` or `while`.
+
 #### pass
 Pass can be used as an empty placeholder in places where you don't have anything to add.
 
@@ -368,12 +325,55 @@ else:
 
 For instance, in the above if-else block, you really don't know what logic you are going to put, so you can either use `print("TODO")`, or use the pass statement. pass doesn't print anything. You can use pass in any loop.
 
+
+### while loop.
+
+Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
+
+`while` is used when you have to loop for a specific condition. If you don't have a condition, you can use `True` and that would result in an infinite loop.
+
+```python
+i = 10
+while i >= 0:
+    print(i)
+    i = i - 1
+```
+
+**Output:**
+```
+10
+9
+7
+6
+5
+4
+3
+2
+1
+0
+```
+
+**Explanation:**
+The `while` statement will loop on the condition, until the condition evaluates to `False`. The loop exits when the condition becomes False.
+
+> Note: The `while` statement also has an else block, we encourage you to play with it to understand it better.
+
+### Exercise:
+
+1. Print all numbers till 100 using while.
+1. Print all numbers from 100 to 1 using while.
+1. Print all even numbers less than 100 using while.
+1. Print all odd numbers less than 100 using while.
+1. For a list [1,2,3,4,5], write a program which checks if 6 is present in the list, using while.
+
 #### try - except - finally
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-try-statement)
 
 try-except is used for exception handling, we'll take a look at it in a later chapter. 
 
 #### with 
+> Note: requires the knowledge of file handling, you can come back to this chapter after reading the file handling chapter.
+
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-with-statement)
 
 The with block was added in [PEP 343](https://www.python.org/dev/peps/pep-0343/). support of the [Resource Acquisition Is Initialization](http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization) idiom commonly used in C++. It is intended to allow safe acquisition and release of operating system resources.

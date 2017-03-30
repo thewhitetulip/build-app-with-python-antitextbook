@@ -4,95 +4,35 @@ Managing files is one of the most important features of any programming language
 
 There are two basic modes in which we can manipulate files, Text and Binary.
 
-Files need to be opened for any manipulation, we can open files in the following modes:
-
-###  read
+1. Write all even numbers till 100 to a file named "even.txt" and write all odd numbers to "odd.txt".
 
 ```python
-f = open("file.txt", "r")
-```
-	
-	* The second argument to the `open` function should be `r`.
-	* Files which are already existing can be read.
-	* An exception is thrown if the file doesn't exist.
-	* Writing or appending the file is not allowed.
+# The second argument should be `w`.
+# Creates a file if it isn't present. 
+# If a file is present, it gets overwritten. 
+# If a file is overwritten, all the data is lost and is unrecoverable.
+# Doesn't allow the file to be read.
+even_file = open("even.txt", "w")
+odd_file = open("odd.txt","w")
 
-### write
-
-```python
-f = open("file.txt", "w")
-```
-	
-	* The second argument should be `w`.
-	* Creates a file if it isn't present. 
-	* If a file is present, it gets overwritten. If a file is overwritten, all the data is lost and is unrecoverable.
-	* Doesn't allow the file to be read.
-
-### append
-
-```python
-f = open("file.txt", "a")
-```
-	
-	* The second argument should be `a`.
-	* Creates a file if it isn't present. 
-	* Adds content to the end of the file.
-	* Does not overwrite the file like the write mode.
-	* Doesn't allow file to be read.
-
-
-When we use the above modes (read/write/append), they mean text files unless we use the binary mode.
-
-
-### Binary Mode
-
-```python
-f = open("file.txt", "rb")
-```
-
-Python allows us to manipulate binary files, we have to club the modes, `b` stands for binary, along with `b`, we can use any of r/w/a.
-
-Clubbing can be done without using the binary mode:
-	
-	* Read a binary file: "rb".
-	* Write a binary file: "wb".
-	* Read and append to a file: "ra".
-	* Read and write: "rw".
-
-### Sample file handling programs
-
-1. write the first 100 even numbers to a file named even.txt
-
-```python
-f = open("even.txt", "w")
 for i in range(100):
-	if i % 2 == 0:
-		f.write(i)
-f.close()
+    if i % 2 == 0:
+	    # All IO operations happen via strings.
+		# so argument of write should be a string.
+	    even_file.write(str(i))
+		even_file.write("\n")
+	else:
+	    odd_file.write(str(i))
+		odd_file.write("\n")
+
+even_file.close()
+odd_file.close()
 ```
-Save this program in a file and run it.
 
-After executing, you'll see this error: 
+** Why close a file?**
+It is mandatory to close the file after use to free system resources. When we write anything to a file, it gets written to a buffer and not directly to the underlying file. The buffer is flushed to the underlying file after we call the close method. However, the buffer can be bypassed by using `flush()` immediately after a `write` call, that way, everything is written down to the underlying file and not just in the buffer.
 
-```
-Traceback (most recent call last):
-File "<stdin>", line 3, in <module>
-TypeError: write() argument must be str, not int
-```
-
-Change `f.write(i)` to `f.write(str(i))`.
-
-**Explanation:**
-
-All read or write operations (on files, networks everwhere) are done via strings. The `f.write(i)` function call expects a string argument, but the `i` variable is an integer and that is a syntax error.
-
-It is mandatory to close the file after it's use to free system resources. Another reason for closing files is when file writing is taking place. 
-
-When we write anything to a file, it gets written to a buffer and not directly to the underlying file. The buffer is flushed to the underlying file after we call the close method. However, the buffer can be bypassed by using `flush()` immediately after a `write` call, that way, everything is written down to the underlying file and not just in the buffer.
-
-Try running the code again, this time, it will succeed. 
-
-Open the output file in a text editor. You'll notice that it wrote the numbers in a single line. This is where file handling differs from printing on the terminal. On the terminal, the print() statement adds a newline ("\n") but the `write` method does not.
+Run the above code by removing the `write("\n")` method call. After that, open "even.txt" in a text editor. You'll notice that it wrote the numbers in a single line. This is where file handling differs from printing on the terminal. On the terminal, the print() statement adds a newline ("\n") but the `write` method does not.
 
 Create a new file with the name "lines.txt" and write four random lines to it. After that, save the following code in a file in the same directory and run the file.
 
@@ -114,14 +54,27 @@ f.close()
 
 Now open the even.txt, you'll see everything printed into the file on a new line.
 
-#### Note
-
-`str(i)` converts anything that is stored in the variable i to string. There are other functions like `int()`, `list()`, `dict()`, `set()` which do type conversions, but they convert specific types and don't work with anything you throw at them.
-
-> Note: One essential part of working with files is removing the `\n` or adding it when it is required.
+2. Read all the content from the file "even.txt" and print it to the terminal
 
 ```python
-f = open("lines.txt")
+# The second argument to the `open` function should be `r`.
+# then the file is opened in read mode.
+# Files which are already existing can be read.
+# An exception is thrown if the file doesn't exist.
+# Writing or appending the file is not allowed.
+input_file = open("even.txt", "r")
+
+# readlines reads the complete file and returns a list
+# of all lines.
+lines = input_file.readlines()
+for line in lines:
+    print(line)
+```
+
+While reading a file, we need to deal with the "\n" present at the end of each line. There is a shortcut to remove the "\n".
+
+```python
+f = open("even.txt")
 lines = f.readlines()
 print(lines)
 lines = [line.strip() for line in lines] # list comprehension
@@ -151,10 +104,47 @@ List comprehension returns a new list based on the current list, the first argum
 a = ["a.txt", "b.txt", "c.tct", "j.txt"]
 # list comprehension to remove *.tct
 b = [f for i in a if not a.endswith(".tct")]
-# write another list comprehension to remove all .txt files
+# write another list comprehension to remove all .tct files
 ```
 
-There are various functions for File IO
+3. Write even numbers from 100 to 200 in a file "even.txt" which already contains even numbers from 0 to 100.
+
+```python
+# The second argument should be `a`.
+# Creates a file if it isn't present. 
+# Does not overwrite the file like the write mode.
+# Adds content to the end of the file.
+# Doesn't allow file to be read.
+file = open("even.txt", "a")
+
+for i in range(100, 200):
+    if i % 2 == 0:
+	    file.write(str(i))
+		file.write("\n")
+
+file.close()
+```
+
+When we use the above modes (read/write/append), they mean text files unless we use the binary mode.
+
+
+### Binary Mode
+
+```python
+f = open("file.txt", "rb")
+```
+
+Python allows us to manipulate binary files, we have to club the modes, `b` stands for binary, along with `b`, we can use any of r/w/a.
+
+Clubbing can be done without using the binary mode:
+	
+	* Read a binary file: "rb".
+	* Write a binary file: "wb".
+
+> Note: One essential part of working with files is removing the `\n` or adding it when it is required.
+
+
+## Other methods
 
 1. read()
 Takes an argument as number of bytes to be read. When you open a file for reading, the pointer is at the 0'th position. if you do `f.read(1)`, the pointer moves to 1. If you do `f.read(1)` again, the pointer would return the 2nd character of the file and not the first one.
