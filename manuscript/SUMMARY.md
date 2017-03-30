@@ -5,7 +5,6 @@
 * [Lists, sets, dictionaries](manuscript/04-list-set-dict.md)
 * [Constructs](manuscript/05-constructs.md)
 * [File handling](manuscript/06-file-handling.md)
-* [Some examples](manuscript/07-examples.md)
 * [Exception handling](manuscript/08-exception.md)
 * [Functions](manuscript/09-functions.md)
 * [Writing a todo manager](manuscript/10-task.md)
