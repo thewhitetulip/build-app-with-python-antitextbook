@@ -211,7 +211,7 @@ elif command == "list":
 ```
 
 
-We now simulate data, before we let the user have the ability to add a task, we will populate the task variable my ourselves.
+We now simulate data, before we let the user have the ability to add a task, we will populate the task variable by ourselves.
 
 For simplicity, we choose this format, the title and content would be concatenated by a | character.
 
