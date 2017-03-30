@@ -27,7 +27,7 @@ This is the way any module is imported:
 1. If found, it executes it
 1. If not found, it complains as ModuleNotFoundError: No module named ""
 
-Special care needs to be taken so that we give the same name as a stdlib package, the humans reading the code would surely get confused, even if Python won't!
+Special care needs to be taken so that we don't create a file with the same file name as a stdlib package, the humans reading the code would surely get confused, even if Python won't!
 
 As an example, try creating a file `sys.py` in the current folder. Add one line to that file, `print("something")`. Add an import statement `import sys` and later run `python3 tasks.py`, you'll see that it doesn't print "something", it refers to the stdlib package called 'sys'.
 
