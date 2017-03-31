@@ -30,7 +30,7 @@ for line in first_lines:
     if line not in final_lines.keys():
         final_lines[line] = 0
     else:
-        final_lines+=1
+        final_lines[line]+=1
 
 for line in second_lines:
     if line not in final_lines.keys():
