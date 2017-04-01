@@ -418,5 +418,5 @@ We encourage you to read more about the `range` function. Please **do not use th
 
 ##### Links
 
-|[Next](06-file-handling.md) | [Previous](04-list-set-dict.md) |  [Index](SUMMARY.md)
+|[Next](06-file-handling.md) | [Previous](04-list-set-dict.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
 | ----| ----| ----| 
