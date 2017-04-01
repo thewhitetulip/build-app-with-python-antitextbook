@@ -36,6 +36,10 @@ When expressions containing more than one operators are evaluated, the operator 
 ab_ab_
 ```
 
+## Exercise:
+1. Take two numbers from the user and print their multiplication.
+1. Take three numbers from the user and print their multiplication.
+
 ## Add
 
 ```python
@@ -48,6 +52,11 @@ python
 >>> a # we did not reassign a, so it's value is unchanged.
 py
 ```
+
+## Exercise:
+1. Take two strings from a variable and print their concatenation.
+1. Take two numbers from the user and add them (you need to use the int() to convert the input to integer)
+1. Take three numbers from the user and print their addition.
 
 ## Equality
 `==` is the equality operator, it returns true if both operands have the same value.
@@ -87,9 +96,9 @@ True
 
 `+=, -=, /=, *=`
 
-`a = a + 1` increments the value of variable `a` and stores it back in `a`.
+There is no operator for `++` or `--`, you can use `a+=1` and `a-=1` instead. No spaces are allowed between -=, +=.
 
-There is no operator for `++` or `--`, you can use `a+=1` and `a-=1` instead.
+`a = a + 1` increments the value of variable `a` and stores it back in `a`.
 
 Along with this, you can use this syntax for other operations like -=, /=. In each of such operation you perform that operation and store it's value in the variable itself.
 

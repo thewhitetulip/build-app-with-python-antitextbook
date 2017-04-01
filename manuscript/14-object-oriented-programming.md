@@ -133,3 +133,9 @@ Below is an example:
 > From the official docs:
 A string literal which appears as the first expression in a class, function or module. While ignored when the suite is executed, it is recognized by the compiler and put into the `__doc__` attribute of the enclosing class, function or module. Since it is available via introspection, it is the canonical place for documentation of the object.
 
+This is a very high level overview of Object Oriented Programming. We encourage you to read more about OOP and try to write programs using OOP.
+
+##### Links
+
+|[Previous](13-examples.md) |  [Index](SUMMARY.md)
+| ----| ----| 

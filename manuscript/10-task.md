@@ -5,10 +5,12 @@ From this chapter on, we will start building an application. The end goal is goi
 The functionality is going to be something like this:
 
 ```bash
-$ python tasks.py add title_of_task content_of_task
+$ python tasks.py add "title of the task" "content of the task"
 new task added
-$ python task.py remove title_of_task
+
+$ python task.py remove "title of the task"
 task deleted
+
 $ python task.py list
 task_one content_of_1
 task_two content_of_2
@@ -18,12 +20,14 @@ The software design phase is the most critical phase of software development, wr
 
 Before we can write the code, we have to:
 
-1. Identify where the input source.
-1. The functionality the program should support. 
-1. What is the data store. 
-1. Where and what will be the output.
-
-Out todo list manager is simple. It is going to support adding, deleting and listing items.
+1. Identify the input source.
+    Our input source will be command line arguments.
+1. Define the functionality of the program.
+	Program will support adding/removing/listing todo items.
+1. Identify where to store data. 
+	Program will store content in a flat file.
+1. Identify what will be the output.
+	Program will print data on the terminal.
 
 ## Input
 
@@ -43,7 +47,8 @@ Try running the code, you will see something like this
 ```
 ch10 $  python3 tasks.py
 ['tasks.py']
-ch10 $  python3 tasks.py title content
+
+ch10 $  python3 tasks.py "title" "content"
 ['tasks.py', 'title', 'content']
 ```
 
@@ -60,41 +65,38 @@ The output of the program is going to be on the command line.
 ```python
 import sys
 for i in range(len(sys.argv)):
-	print("%d %s"%(i, sys.argv[i]))
+	print("{0} {1}".format(i, sys.argv[i]))
 ```
 
-`print` allows us to have advanced printing features, rather than having to do `str` on each variable we want to print, we can use this syntax. 
+## Formatting.
+Starting from Python3.6, we can do this:
 
-The syntax is ```print("%d %s"%(1,1)) # "format specifier" % (values)```.
-
-`%(values)` is compulsory syntax, without the % in this statement, it'll just print %d %s literally.
-
-A few format specifier values:
-
-	%d decimal
-	%s string
-	%o octal
-	%x hexadecimal
+```python
+print(f"{i} {sys.argv[i]}")
+```
+Where, `i` and `sys.argv[i]` are variables. Read the [docs](https://docs.python.org/3/whatsnew/3.6.html#pep-498-formatted-string-literals)
 
 Try running tasks2.py with various command line arguments.
 
 	ch10 $ python tasks2.py
 	0 tasks2.py
+
+We didn't give any parameter, since we know that the 0'th argument is going to be the file name itself, there are no suprises here.
+
 	ch10 $ python tasks2.py title content
 	0 tasks2.py
 	1 title
 	2 content
+
+We passed title and content, and the index 1 is title, index 2 is content.
+
 	ch10 $ python tasks2.py add  title content
 	0 tasks2.py
 	1 add
 	2 title
 	3 content
 
-First execution: We didn't give any parameter, since we know that the 0'th argument is going to be the file name itself, there are no suprises here.
-
-Second execution: we passed title and content, and the index 1 is title, index 2 is content.
-
-Third execution: we passed "add title content" as the command line argument, and we get the expected output.
+We passed "add title content" as the command line argument, and we get the expected output.
 
 ## Adding commands
 
@@ -143,7 +145,8 @@ except IndexError:
 	print("Invalid arguments!")
 	sys.exit(1)
 ```
-	
+
+### Exit
 `exit` kills the program execution with the ID of what we pass in as an argument, 0 is successful exit, anything greater than 0 is unsuccessful exit 
 
 We catch IndexError exception. If there is an IndexError exception that means that the user has not given the appropriate arguments.
@@ -195,7 +198,7 @@ In the `list` block, we want to now print the values stored inside `tasks` varia
 
 We have to use the `len()` function to check if there is nothing in the variable.
 
-Update this block
+Update this block.
 
 ## Listing tasks
 
@@ -222,8 +225,10 @@ And the else block of len(tasks) to this
 ```python
 for task in tasks:
 	title, content = task.split('|')
-	print("%s %s" %(title, content))
+	print("{0} {1}".format(title, content))
 ```
+
+## Adding a task
 
 We will now work on adding a new task. The input would be taken from the command line argument.
 
@@ -232,9 +237,7 @@ if command == "add":
 	print("adding")
 ```
 
-## Adding a task
-
-This block is changed to this:
+This block is changed to:
 
 ```python
 if command == "add":
@@ -272,7 +275,7 @@ elif command == "list":
 	else:
 		for task in tasks:
 			title, content = task.split('|')
-			print("%s %s" %(title, content))
+			print("{0} {1}".format(title, content))
 	file.close()
 ```
 
@@ -305,6 +308,9 @@ Now when we run the code,
 This is a graceful handling of the scenario where we aren't able to access the file due to an I/O (Input/Output) operation error.
 
 	ch10 $ python tasks3.py add "new task" "new content"
+
+Now, let's list the tasks.
+
 	ch10 $ python tasks3.py list
 	Traceback (most recent call last):
 	File "tasks3.py", line 38, in <module>
@@ -316,14 +322,9 @@ Now, we run the add command and try to list the values. We get an error, we can'
 	ch10 $ cat tasks.txt
 	new tasknew content
 
-We don't have a | character between the title and content! We did a mistake when we concatenated title and content. Remove the file by doing `rm tasks.txt`.
+We don't have a | character between the title and content! We did a mistake when we concatenated title and content. Remove the file by doing `rm tasks.txt`, or, delete the file manually if you are on windows.
 
-We need to do this, instead of `task = title + content`.
-
-
-```python
-task = title + "|" + content
-```
+Instead of `task = title + content`, we need this, `task = title + "|" + content`.
 
 This is the output now
 
@@ -347,11 +348,11 @@ You can see that the output of the list command isn't particularly good, so let'
 Replace the else block of `if len(tasks)==0` by this.
 
 ```python
-print("|-----%s----%s----|"%("title", "content"))	
+print("|-----{0}----{1}----|".format("title", "content"))	
 tasks = [task.strip() for task in tasks]
 for task in tasks:
 	title, content = task.split('|')
-	print("|-%s----%s-|" %(title, content))
+	print("|-{0}----{1}-|".format(title, content))
 ```
 
 Format specifiers enable us to control the layout of the print, we encourage you to try various things out.
@@ -395,11 +396,11 @@ elif command == "list":
 	if len(tasks) == 0:
 		print("there are no tasks!")
 	else:
-		print("|-----%s----%s----|"%("title", "content"))
+		print("|-----{0}----{1}----|".format("title", "content"))
 		tasks = [task.strip() for task in tasks]
 		for task in tasks:
 			title, content = task.split('|')
-			print("|-%s----%s-|" %(title, content))
+			print("|-{0}----{1}-|".format(title, content))
 	file.close()
 else:
 	print("invalid command!")
@@ -418,11 +419,11 @@ We can't loop like `for task in tasks`, we need to loop using `range`, `for i in
 ```python
 ## Snippet, else can't exist without parent if
 else:
-	print("|-%s----%s----%s----|"%("index", "title", "content"))
+	print("|-{0}----{1}----{2}----|"%("index", "title", "content"))
 	tasks = [task.strip() for task in tasks]
 	for i in range(len(tasks)):
 		title, content = tasks[i].split('|')
-		print("|-%d--%s----%s-|" %(i, title, content))
+		print("|-{0}--{1}----{2}-|" %(i, title, content))
 ```
 
 In the actual delete block, we will use the del keyword which will simplify our task greatly.
@@ -433,6 +434,7 @@ elif command == "remove":
 	task_id = args[2]
 	del tasks[task_id]
 ```
+
 	ch10 python3 tasks4.py remove 0
 	Traceback (most recent call last):
 	  File "tasks4.py", line 27, in <module>
@@ -450,10 +452,9 @@ We also need to read the file, for each instance, we read the file or appended i
 del tasks[int(task_id)]
 ```
 
+We also need to write the updated `tasks` variable to our file, we add a "\n" to each element using the list comprehension mechanism.
+
 Now try running the code.
-
-We just copy pasted the file opening syntax.
-
 ```python
 ## snippet
 elif command == "remove":
@@ -463,10 +464,16 @@ elif command == "remove":
 		print(str(e))
 		sys.exit(1)
 	
+	file.close()
 	tasks = file.readlines()
 	tasks = [task.strip() for task in tasks]
 	task_id = args[2]
 	del tasks[int(task_id)]
+
+	file = open("tasks.txt", "w")
+	tasks = [task + "\n" for task in tasks]
+	file.writelines(tasks)
+
 ```
 
 Output:
@@ -475,7 +482,7 @@ Output:
 	ch10 $  python3 tasks4.py remove 1
 
 ###### Note:
-We do not print confirmation like "task deleted", "task added", it can be added. But we are following the philosophy of "no message = no error message", thus we skipped that. If something goes wrong, our program complains, if everything goes right, we say nothing.
+We do not print confirmation like "task deleted", "task added", but you can add them if you want.
 
 We have a fully working todo list manager as of now, what we need to do, is to reduce the redundancy. That'll be undertaken in the next chapter.
 

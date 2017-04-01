@@ -1,5 +1,7 @@
 # Using modules
 
+> Note: Please see the accompanying code. https://github.com/thewhitetulip/code-build-app-with-python-antitextbook
+
 In the last chapter, we left off by creating three functions for our core functionality. In this chapter, we'd split the functions into two packages, 
 
 1. the main package
@@ -37,7 +39,9 @@ There are many ways that we can make our code great again (ahem), there are lots
 
 1. add a "task status" field
 1. change the formatting to show a checkbox like 
+
     [ ] Do this and that (for incomplete)
+
     [x] Do this and that (for complete) 
 1. ability to search
 1. ability to set deadline

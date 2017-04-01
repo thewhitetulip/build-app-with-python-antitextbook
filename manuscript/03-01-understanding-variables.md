@@ -50,6 +50,44 @@ type("") # <class 'string'>
 
 Let's have a brief overview of the data types, we will be looking at them in detail in the next chapter.
 
+## Taking input from the user.
+
+We can take input from the user by using the `input` function.
+
+```python
+>>> a = input("enter your name: ")
+enter your name: python
+
+>>> print("Your name is ", a)
+Your name is  python
+```
+
+By default, `input` returns a string, if we want to take input an integer, we use this.
+
+```python
+>>> a = input("enter your age: ")
+enter your age: 23
+
+>>> a = int(a)
+
+>>> type(a)
+int
+```
+
+The `int(a)` converts the variable `a` to integer and throws an error if it can't convert it into integer. There are other functions like `float()`, `str()` which do data type conversions.
+
+In the above case, we took only one input from the user, we can take as many as we want, we just need to have that many input statements.
+
+```python
+a = input("enter your name")
+b = input("enter your school name")
+c = input("enter your college name")
+```
+
+## Exercise
+1. Take the user's name, age and height and print it to the terminal.
+1. Take a number from the user and print it.
+
 ## Variable types
 
 ## Numeric 
@@ -104,7 +142,7 @@ The location of the ending quotes doesn't matter, the only thing which matters i
 
 All are *valid* strings, they start and end with the same quote. If a string starts and ends with a single quote, then any number of double quotes can be part of the string, the same is true vice versa. 
 
-`'"sherlock"` and `"sherlock''` are invalid strings. Both of them do not start and end with the same quote.
+`'"python"` and `"python''` are invalid strings. Both of them do not start and end with the same quote.
 
 
 #### Boolean
@@ -156,7 +194,7 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#immutable-sequen
 ```
 ### Hashing
 
- Hashing is the process of converting some large amount of data into a much smaller amount (typically a single integer) in a repeatable way so that it can be looked up in a table in constant-time (O(1)), which is important for high-performance algorithms and data structures. [1](http://stackoverflow.com/questions/2671376/ddg#2671398)
+ Hashing is the process of converting some large amount of data into a much smaller amount (typically a single integer) in a repeatable way so that it can be looked up in a table in constant-time (O(1)), which is important for high-performance algorithms and data structures. You can read more [here](http://stackoverflow.com/questions/2671376/ddg#2671398)
 
  Dictionary and List are not allowed, but Tuples are.
 

@@ -21,6 +21,7 @@ NameError: name 'a' is not defined
     1. Delete the first value.
     2. Delete the second value of the list present at index 4.
     1. Delete the variable a.
+    1. Take an input value from the user and delete it (if it is present), print "value not present" if the value is not present in the list.
 1. Given that a = {"IN":"India", "ES":"Espanol"}
     1. Delete the key "IN".
     1. Delete the key "ES"
@@ -191,6 +192,16 @@ else:
 	# the outer else.
         print("Another statement")
 ```
+
+## Exercise
+1. Take the name, age and score of the user as input. Print their percentage. If the percentage is less than 60, print F, if percentage is between 60 and 70 print B and if percentage is greater than 70 print A. Marks are out of 100.
+1. Take a number from the user and print if it is even or odd.
+1. Take two numbers from the user and print which number is largest.
+1. Take two numbers from the user and print which number is smallest.
+1. Take three numbers from the user and print largest and smallest number.
+1. Take four numbers from the user and create a list.
+1. Take four numbers from the user and create a set.
+
 ### for loop.
 
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)
@@ -313,6 +324,11 @@ The above block will print all numbers **except** 4. It continues to the next it
 
 > Note: break and continue work with loops only, either `for` or `while`.
 
+## Exercise:
+1. Print all numbers from 0 till 10 except 4 and 5.
+1. Print all numbers from 0 till 20 except those divisible by 3.
+1. a = [1,2,3,4,5], take an integer as input from the user. Print all numbers which are less than the input number using break.
+
 #### pass
 Pass can be used as an empty placeholder in places where you don't have anything to add.
 
@@ -365,6 +381,7 @@ The `while` statement will loop on the condition, until the condition evaluates 
 1. Print all even numbers less than 100 using while.
 1. Print all odd numbers less than 100 using while.
 1. For a list [1,2,3,4,5], write a program which checks if 6 is present in the list, using while.
+1. Print all numbers from 0 to 10 except 4 and 5.
 
 #### try - except - finally
 Read the [docs](https://docs.python.org/3/reference/compound_stmts.html#the-try-statement)

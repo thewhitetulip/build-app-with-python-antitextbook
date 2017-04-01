@@ -1,6 +1,8 @@
 # Adding functions
 
-In the earlier chapter we saw how to take input, update a task, but if you see the code, task4.py, there is a lot of redundant code, what we need to do is write functions to save repeated code.
+> Note: Please see the accompanying code. https://github.com/thewhitetulip/code-build-app-with-python-antitextbook
+
+In the earlier chapter we saw how to take input, delete a task, but if you see the code, `task4.py`, there is a lot of redundant code, what we need to do is write functions to save repeated code.
 
 We first start by defining the `main` function. There is no special significance to the main function, just that we chose to call it as `main`, we can very well choose to call it 'somerandomfunctionasfasdf'.
 
@@ -46,16 +48,13 @@ We also do not want to write "add" every time we refer to the add command, so we
 
     ADD,REMOVE,LIST = "add","remove","list"
 
-###### Note: Magic numbers
-Constants like "add", "remove", "list" are generally called magic numbers (although, I have no clue why magic numbers, because they are neither magic nor numbers), so, it is better to have a variable defined to their name, the variable name is typically put in capital case.
-
 So, the next time we want to refer to "add", we will refer to ADD.
 
 This block also changes.
 
 ```python
     if command not in (ADD,REMOVE,LIST):
-        print("Invalid command\n Use %s/%s/%s"%(ADD,REMOVE,LIST))
+        print("Invalid command\n Use {0}/{1}/{2}".format(ADD,REMOVE,LIST))
         sys.exit(1)
 ```
 

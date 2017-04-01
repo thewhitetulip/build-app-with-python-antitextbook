@@ -39,7 +39,9 @@ Type `python --version` on your command prompt.
 
 ## Installing packages
 
-`pip` or `easy_install` is used for installing third party packages in Python. `pip` stands for Python installer package. The package that you are installing, needs to be hosted on the official packages repository and you can just call `pip install ipython` to install a package named ipython. Read the [docs](https://docs.python.org/3/installing/index.html) for more details.
+`pip` or `easy_install` is used for installing third party packages in Python. `pip` stands for Python installer package. The package that you are installing, needs to be hosted on the official packages repository.
+
+ `pip install ipython` Installs the ipython package. This might work differently if you are on Windows, read the [docs](https://docs.python.org/3/installing/index.html) for more details.
 
 ## Comments
 
