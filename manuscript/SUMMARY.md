@@ -1,4 +1,4 @@
-* [Introduction](manuscript/01-intro-to-python.md)
+* [Introduction](/01-intro-to-python.md)
 * [More about Language](manuscript/02-more-about-language.md)
 * [Variables](manuscript/03-01-understanding-variables.md)
 * [Operators](manuscript/03-02-operators.md)
