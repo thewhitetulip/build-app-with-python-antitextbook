@@ -241,5 +241,5 @@ United States
 ```
 ##### Links
 
-|[Next](03-02-operators.md) | [Previous](02-more-about-language.md) |  [Index](SUMMARY.md)
+|[Next](03-02-operators.md) | [Previous](02-more-about-language.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
 | ----| ----| ----| 
