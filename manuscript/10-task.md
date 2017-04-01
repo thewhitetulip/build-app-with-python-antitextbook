@@ -64,9 +64,11 @@ The output of the program is going to be on the command line.
 
 ```python
 import sys
-for i in range(len(sys.argv)):
-	print("{0} {1}".format(i, sys.argv[i]))
+for i, item in enumerate(sys.argv):
+    print("{0} {1}".format(i, item))
 ```
+
+Enumerate takes a sequence and returns (index,value) for each value.
 
 ## Formatting.
 Starting from Python3.6, we can do this:
