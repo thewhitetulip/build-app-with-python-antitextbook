@@ -33,5 +33,5 @@ Python3 is the successor of Python2. In 2020 Python2 will be history. This tutor
 
 
 ##### Links
-|[Next](02-more-about-language.md) | [Previous](README.md) |  [Index](~/SUMMARY.md)
+|[Next](02-more-about-language.md) | [Previous](README.md) |  [Index](/../SUMMARY.md)
 | ---- | ---- | ---- |
