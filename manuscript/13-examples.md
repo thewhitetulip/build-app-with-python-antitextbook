@@ -119,5 +119,5 @@ output_file.close()
 
 ##### Links
 
-| [Previous](12-modules-tasks.md) |  [Index](SUMMARY.md)
+| [Previous](12-modules-tasks.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
 | ----| ----| 

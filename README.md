@@ -71,5 +71,5 @@ We need your help to become a great guide! All contributions are welcome. Please
 
 ##### Links
 
-| [Next](manuscript/01-intro-to-python.md) | [Index](SUMMARY.md)
+| [Next](manuscript/01-intro-to-python.md) | [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
 | ----| ----| 

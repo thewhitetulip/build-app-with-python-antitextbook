@@ -62,5 +62,5 @@ Of course, you can pick up something other than the Exception class. If you want
 
 ##### Links
 
-|[Next](09-functions.md) | [Previous](07-examples.md) |  [Index](SUMMARY.md)
+|[Next](09-functions.md) | [Previous](07-examples.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
 | ----| ----| ----| 

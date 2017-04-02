@@ -137,5 +137,5 @@ This is a very high level overview of Object Oriented Programming. We encourage 
 
 ##### Links
 
-|[Previous](13-examples.md) |  [Index](SUMMARY.md)
+|[Previous](13-examples.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
 | ----| ----| 
