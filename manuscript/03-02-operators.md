@@ -6,11 +6,10 @@ Python has the following major operators:
 
 ## Operator priority
 When expressions containing more than one operators are evaluated, the operator priority is followed, it is just like the BODMAS (PEMDAS for Americans) rule of maths. Usage of `()` can override priority. 
-```
+
+```python
 >>> 3 * 2 + 20 - 46
 -20
-```
-```python
 >>> 3 * (2 + 20 - 46)
 -72 
 ```
