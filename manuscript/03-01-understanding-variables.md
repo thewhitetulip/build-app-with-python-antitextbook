@@ -2,27 +2,85 @@
 
 Watch on [YouTube](https://www.youtube.com/watch?v=3_-W0S1VdLo) | Read the [docs](https://docs.python.org/3/reference/expressions.html#atom-identifiers)
 
-Variables are used to store values in memory. 
+Variables are used to store values in memory. When using variables in Python, we do not have to declare the datatype of the variable. Python is a dynamic typing language, which means that when the interpreter will execute the code, it will figure out the data type of the variables on it's own.
 
-We do not have to declare the datatype of the variable, the interpreter will evaluate the data type on automatically, this is called dynamic typing.
+Every variable has these things:
 
-A variable name has to start with any valid unicode letter except those that have special significance like `\` or numbers.
+1. Name: The variable name has to start with any valid unicode letter except those that have special significance like `\` or numbers.
+1. Value: The content which is being stored in the variable.
+1. Address: The location of the variable in the memory.
 
-```
-0b = 2 # invalid variable name
-\a = 4 # invalid variable name
-```
+There are restrictions about the variable name, 
 
-Creating a variable in Python is simple.
+* They can't start with numbers or special characters. We can not name a variable `0b` or `\a `.
+* They can not use reserved keywords (try, catch, if, for, while, except, in among others).
+
+If you want to create a variable `i` with the value 1, type this in the interpreter:
 
 ```python
 >>> i = 1 
->>> # creates an integer variable of value 1.
+```
+
+This will create a variable `i` which:
+
+1. Has the value 1.
+1. Is of the data type integer.
+1. Is located in some memory location.
+
+#### Finding address of a variable.
+
+To find out the address of the variable, we use the [id()](https://docs.python.org/3/library/functions.html?highlight=id#id) function.
+
+```python
 >>> print(id(i))
 405911019
-# address of the variable i
->>> type(1) # returns the data type of variable i.
+```
+
+405911019 is the memory location of the variable `i`.
+
+#### Finding data type of a variable.
+`type` is a builtin function which returns the data type of the argument passed to it. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=id#type)
+
+```python
+>>> print(type(1))
 <class 'int'>
+```
+
+The type() function takes an argument and returns the data type of the argument.
+
+## Taking input from the user.
+
+At times, we want to take input from the user, we can use the `input()` function to do so.
+
+```python
+>>> name = input("enter your name: ")
+enter your name: python
+
+>>> print("Your name is ", name)
+Your name is  python
+```
+
+This will take the name of the user as input and store it in variable `name`. `input` takes a string argument which is the message it should print while taking the input.
+
+By default, `input` returns a string. We have to convert a variable from string to integer by using the `int()` function. Each data type provides a function for data type conversion, for instance, `str()` is used to convert a value from other data type to string.
+
+```python
+>>> age = input("enter your age: ")
+enter your age: 23
+
+>>> age = int(age)
+
+>>> print(type(age))
+<class='int'>
+```
+
+When we do `age = int(age)`, this is not a syntax error, because the interpreter is going to create a **new** integer variable with the name of age (and delete the old string variable).
+
+## Exercise
+1. Take the user's name, age and height and print it to the terminal.
+1. Take a number from the user and print it.
+
+```python
 >>> i = 'Python'
 >>> # Creates a string variable with value Python
 >>> print(id(i))
@@ -30,63 +88,6 @@ Creating a variable in Python is simple.
 >>> type(i) # variable i is of type string now.
 <class 'string'> 
 ```
-
-Variable = address of memory location (returned by `id(i)` function call) + value.
-
-#### Finding address of variables.
-
-id() is a function which returns the address of an object. You can read more in the docs [here](https://docs.python.org/3/library/functions.html?highlight=id#id).
-
-#### Finding data type of variables.
-`type` is a builtin function which returns the data type of the argument passed to it. Read the [docs](https://docs.python.org/3/library/functions.html?highlight=id#type)
-
-```python
-type(1) # <class 'int'>
-type("this is a string") # <class 'str'>
-type(1.2) # <class 'float'>
-type("") # <class 'string'> 
-# "" or '' is an empty string, equivalent of 0 of integer.
-```
-
-Let's have a brief overview of the data types, we will be looking at them in detail in the next chapter.
-
-## Taking input from the user.
-
-We can take input from the user by using the `input` function.
-
-```python
->>> a = input("enter your name: ")
-enter your name: python
-
->>> print("Your name is ", a)
-Your name is  python
-```
-
-By default, `input` returns a string, if we want to take input an integer, we use this.
-
-```python
->>> a = input("enter your age: ")
-enter your age: 23
-
->>> a = int(a)
-
->>> type(a)
-int
-```
-
-The `int(a)` converts the variable `a` to integer and throws an error if it can't convert it into integer. There are other functions like `float()`, `str()` which do data type conversions.
-
-In the above case, we took only one input from the user, we can take as many as we want, we just need to have that many input statements.
-
-```python
-a = input("enter your name")
-b = input("enter your school name")
-c = input("enter your college name")
-```
-
-## Exercise
-1. Take the user's name, age and height and print it to the terminal.
-1. Take a number from the user and print it.
 
 ## Variable types
 
@@ -144,7 +145,6 @@ All are *valid* strings, they start and end with the same quote. If a string sta
 
 `'"python"` and `"python''` are invalid strings. Both of them do not start and end with the same quote.
 
-
 #### Boolean
 
 `True` and `False` are special values in Python3. In previous version of the language, we were allowed to create a variable of name True and False, but now they are reserved. 
@@ -164,44 +164,11 @@ Read the [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-l
 
 #### List
 
-List stores multiple values of heterogenous type. 
+List stores multiple values of any data type. 
 
 ```python
-i = [1,"Linux",3,"bash",[1,2,"sh"]]]
+>>> i = [1,"Linux",3,"bash",[1,2,"sh"]]]
 ```
-
-#### Set
-
-Read the [docs](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
-
-Sets are same as lists, but they don't allow duplicates. Only hashable elements are allowed as their members (int, float, string, complex, tuples).
-
-### Immutability
-
-When a data type is said to be immutable, the data type doesn't allow modifications.
-
-`id()` returns the address of the variable, if two `id` function call return the same address, then it is the same variable, thus, mutable. Strings are immutable, as we can see in the below example.
-
-Read the [docs](https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types)
-
-```python
->>> a = '1'
->>> id(a)
-4469201376
->>> a = a + '1'
->>> id(a)
-4469201408
-```
-### Hashing
-
- Hashing is the process of converting some large amount of data into a much smaller amount (typically a single integer) in a repeatable way so that it can be looked up in a table in constant-time (O(1)), which is important for high-performance algorithms and data structures. You can read more [here](http://stackoverflow.com/questions/2671376/ddg#2671398)
-
- Dictionary and List are not allowed, but Tuples are.
-
-```python
-i = set([1,2,3,4,5])
-```
-
 #### Tuples
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#tuple)
@@ -224,7 +191,7 @@ print(a)
 #### Dictionary
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#dict)
 
-Dictionaries are key value pairs, lists/tuples/sets are indexed sequences, dictionaries aren't.
+Dictionaries are a collection of key value pairs, lists/tuples/sets are indexed sequences, dictionaries aren't.
 
 Here, 'IN' and 'US' are the keys and 'India', 'United States' are the values. The values can be any Python data type, but keys can only be hashable data types (basic data types, int/float/string/complex).
 
@@ -239,6 +206,23 @@ print(i['US'])
 India
 United States
 ```
+
+#### Set
+Read the [docs](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
+
+```python
+i = set([1,2,3,4,5])
+```
+
+Sets are same as lists, but they don't allow duplicates. Only hashable elements are allowed as their members (int, float, string, complex, tuples).
+
+### Immutability
+When a data type is said to be immutable, the data type doesn't allow modifications.
+
+### Hashing
+Hashing is a complicated process, just remember, hashable data types = immutable data types.
+
+
 ##### Links
 
 |[Next](03-02-operators.md) | [Previous](02-more-about-language.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
