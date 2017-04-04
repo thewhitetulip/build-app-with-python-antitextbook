@@ -1,12 +1,10 @@
-# Understanding the program
-
-## How to run Python code?
+# How to run Python code?
 
 Watch on [YouTube](https://www.youtube.com/watch?v=wSqRUTS7uAg)
 
 There are two modes of running Python code: Interactive and Batch.
 
-#### Interactive mode
+### Interactive mode
 Code is typed inside an interpreter session which gets evaluated immediately. This mode is suitable for small edits. 
 
 To start the interpreter, type `python3` or `python` on your terminal or command prompt.
@@ -37,7 +35,7 @@ Hello Python!
 
 The interpreter evaluates each line which you type. The `print` function is used to print content on the terminal. This is why you saw "Hello Python!" printed immediately on the next line.
 
-### Using the Interpreter
+#### Using the Interpreter
 
 Start a new interpreter session and type this.
 
@@ -71,7 +69,7 @@ Start a new interpreter session and type this.
 
 `**` is called the power operator, it returns 10 to the power of 2.
 
-### Operator Types
+#### Operator Types
 
 In the above expressions, `+`, `-`, `*` are called operators, they operate on numbers (which are called operands).
 
@@ -83,7 +81,7 @@ In general, there are three types of operators:
 
 We won't be looking at unary and ternary operators now, we need to understand the language before jumping to ternary operators.
 
-#### Batch Mode
+### Batch Mode
 The interpreter makes it difficult to write big programs. The best you can do in an interpreter is type lines of code. But, when you want to write programs and build applications, it is better to use the batch mode. In this, you create a text file who's name ends with `.py` like `file.py` and save it to your machine on some folder. We then run the file as `python3 file.py`.
 
 To execute the program, you'd need to use the `cd` program to change folders.
