@@ -37,14 +37,14 @@ The interpreter evaluates each line which you type. The `print` function is used
 
 #### Using the Interpreter
 
-Start a new interpreter session and type this.
+Start a new interpreter session and type `1 + 1` and hit enter. You will see the below output.
 
 ```python
 >>> 1 + 1
 2
 ```
 
-`1 + 1` is called an expression. 
+Here, `1 + 1` is called an expression and `2` is the output.
 
 `+` will calculate the sum of two numbers (1 and 1) and return the result.
 
