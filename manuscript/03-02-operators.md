@@ -5,11 +5,15 @@ Python has the following major operators:
 `<, >, =, ==, >=, <=, !=, *, +, -, **, +=, -=, /=, *=, in, and, not, is.`
 
 ## Operator priority
-When expressions containing more than one operators are evaluated, the operator priority is followed, it is just like the BODMAS rule of maths. Usage of `()` can override priority. 
-
-`a = 3 * 2 + 20 - 45` returns `-19`
-
-`a = 3 * (2 + 20 - 45)` returns -69. This will multiply 3 _after_ doing other calculations.
+When expressions containing more than one operators are evaluated, the operator priority is followed, it is just like the BODMAS (PEMDAS for Americans) rule of maths. Usage of `()` can override priority. 
+```
+>>> 3 * 2 + 20 - 46
+-20
+```
+```python
+>>> 3 * (2 + 20 - 46)
+-72 
+```
 
 ## Assignment
 
@@ -72,19 +76,22 @@ True
 
 ## Division
 
+`27//7` divides 27 by 7 and returns a floating point result
+
+`27//7` divides 27 by 7 and returns an integer result.
+
 ```python
->>> i = 10
->>> i/2 # / returns the quotient (floating point number)
-5.0
->>> i//2 # // returns the quotient (integer number)
-5
->>> i%2 # % returns the remainder (integer number)
-0
+>>> 27/7 
+3.85714
+>>> 27//7
+3
+>>> 27%7 
+1
 ```
 
 ## Power
 
-`**` is the operator for power.
+`**` is the operator for calculating power.
 
 ```python	
 >>> a = 2
@@ -94,13 +101,24 @@ True
 
 ## Shortcut operators
 
-`+=, -=, /=, *=`
+Consider that you have to create a variable `a = 3`. If you want to add `4` to the variable `a`.
 
-There is no operator for `++` or `--`, you can use `a+=1` and `a-=1` instead. No spaces are allowed between -=, +=.
+You can do the following: 
 
-`a = a + 1` increments the value of variable `a` and stores it back in `a`.
+1. `a = a + 4`. But this tends to be verbose.
+1. `a += 4`: Another way to do exactly the same calculation.
 
-Along with this, you can use this syntax for other operations like -=, /=. In each of such operation you perform that operation and store it's value in the variable itself.
+`+=` is a shortcut operator. There are other shortcut operators like: `+=, -=, /=, *=`. No spaces are allowed between -=, +=.
+
+In other languages, you can use `++` or `--`, but they are not available in Python.
+
+```python
+>>> a = 10
+>>> a += 10
+>>> a = a + 10 # same as a += 10
+>>> a *= 10
+>>> a /= 10
+```
 
 ## Membership test
 
@@ -186,7 +204,7 @@ True
 
 Read the [docs](https://docs.python.org/3/library/stdtypes.html#comparisons)
 
-There are eight comparison operations in Python. They all have the same priority (which is higher than that of the Boolean operations). Comparisons can be chained arbitrarily; for example, x < y <= z is equivalent to x < y and y <= z, except that y is evaluated only once (but in both cases z is not evaluated at all when x < y is found to be false).
+There are eight comparison operations in Python. They all have the same priority (which is higher than that of the Boolean operations). Comparisons can be chained arbitrarily; for example, x < y <= z is equivalent to x < y and y <= z, except that y is evaluated only once (but in both cases  y <= z is not evaluated at all if x < y is found to be false).
 
 This table summarizes the comparison operations:
 
