@@ -75,7 +75,7 @@ True
 
 ## Division
 
-`27//7` divides 27 by 7 and returns a floating point result
+`27/7` divides 27 by 7 and returns a floating point result
 
 `27//7` divides 27 by 7 and returns an integer result.
 
