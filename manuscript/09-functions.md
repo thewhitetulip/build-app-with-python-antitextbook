@@ -76,5 +76,5 @@ Here, we have a function which returns two values. The two values are then print
 
 ##### Links
 
-|[Next](10-task.md) | [Previous](08-exception.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
+|[Next](10-task.md) | [Previous](08-exception.md) |  [Index](../SUMMARY.md)
 | ----| ----| ----| 

@@ -225,5 +225,5 @@ Hashing is a complicated process, just remember, hashable data types = immutable
 
 ##### Links
 
-|[Next](03-02-operators.md) | [Previous](02-more-about-language.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
+|[Next](03-02-operators.md) | [Previous](02-more-about-language.md) |  [Index](../SUMMARY.md)
 | ----| ----| ----| 

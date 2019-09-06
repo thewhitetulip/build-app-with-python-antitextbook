@@ -105,5 +105,5 @@ You would need to create a file in this folder, save it by giving it a `.py` ext
 
 ##### Links
 
-|[Next](03-01-understanding-variables.md) | [Previous](01-intro-to-python.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
+|[Next](03-01-understanding-variables.md) | [Previous](01-intro-to-python.md) |  [Index](../SUMMARY.md)
 | --------| --------| --------| 
