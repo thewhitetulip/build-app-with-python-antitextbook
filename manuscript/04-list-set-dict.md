@@ -403,5 +403,5 @@ Exercises:
 
 ##### Links
 
-|[Next](05-constructs.md) | [Previous](03-02-operators.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
+|[Next](05-constructs.md) | [Previous](03-02-operators.md) |  [Index](../SUMMARY.md)
 | ----| ----| ----| 

@@ -493,5 +493,5 @@ Translate this todo list app to use sqlite3 database which comes inbuilt with Py
 
 ##### Links
 
-|[Next](11-function-tasks.md) | [Previous](09-functions.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
+|[Next](11-function-tasks.md) | [Previous](09-functions.md) |  [Index](../SUMMARY.md)
 | ----| ----| ----| 

@@ -104,5 +104,5 @@ At the bottom of `tasks.py` NOT in the if block, if you add it to the if block t
 
 ##### Links
 
-|[Next](13-examples.md) | [Previous](11-function-tasks.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
+|[Next](13-examples.md) | [Previous](11-function-tasks.md) |  [Index](../SUMMARY.md)
 | ----| ----| ----| 

@@ -220,5 +220,5 @@ This table summarizes the comparison operations:
 
 ##### Links
 
-|[Next](04-list-set-dict.md) | [Previous](03-01-understanding-variables.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
+|[Next](04-list-set-dict.md) | [Previous](03-01-understanding-variables.md) |  [Index](../SUMMARY.md)
 | ----| ----| ----| 

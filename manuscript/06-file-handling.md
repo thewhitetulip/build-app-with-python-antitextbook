@@ -350,5 +350,5 @@ Python allows us to manipulate binary files, we have to club the modes, `b` stan
 
 ##### Links
 
-|[Next](08-exception.md) | [Previous](05-constructs.md) |  [Index](https://github.com/thewhitetulip/build-app-with-python-antitextbook/blob/master/SUMMARY.md)
+|[Next](08-exception.md) | [Previous](05-constructs.md) |  [Index](../SUMMARY.md)
 | ----| ----| ----| 
