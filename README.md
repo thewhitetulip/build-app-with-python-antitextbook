@@ -39,7 +39,7 @@ We have thirteen chapters:
 	False
 ```
 In this case, `>>> not True` is the statement and `False` is the output.
-* Code that doesn't start with `>>>` is supposed to be run in a file of the extension .py
+* Code that doesn't start with `>>>` is supposed to be run in a file with the extension .py
 * If there is significant code for the chapter, you can find a file in the code repository, please look on the basis of chapters.
 
 ## How to use?
